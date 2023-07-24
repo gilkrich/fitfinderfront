@@ -5,17 +5,23 @@ import Login from './Login';
 import SignUp from './SignUp';
 import Layout from './Layout';
 import Home from './Home';
+import HomePage from './HomePage';
+import HomePage2 from './HomePage2';
+import HomePage3 from './HomePage3';
 
 function App() {
 
   return (
    <>
  <Routes>
-        <Route path='/' element={<Layout/>}>
-          <Route index element={<div> hey you</div>}/>
-          <Route path='/login' element={<Login/>}></Route>
+        <Route path='/' element={<Layout/>}>      
+          <Route path='/' element={<Login/>}></Route>
           <Route path='/signup' element={<SignUp/>}></Route>
           <Route path='/home' element={<Home/>}></Route>
+          <Route path='homepage' element={<HomePage/>}></Route>
+          <Route path='homepage2' element={<HomePage2/>}></Route>
+          <Route path='homepage3' element={<HomePage3/>}></Route>
+
         </Route>
       </Routes>
    </>

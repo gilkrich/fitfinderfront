@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Outlet, Link, useParams } from "react-router-dom";
 import "../components/Layout.css";
@@ -34,6 +35,7 @@ const Layout = () => {
           />
         </Link>
       </nav>
+
 
       <Outlet className="Outlet" />
       <footer></footer>
