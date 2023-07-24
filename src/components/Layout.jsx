@@ -9,8 +9,9 @@ const Layout = () => {
         <Link to='/'>Login</Link>
         <Link to='/signup'>SignUp</Link>
         <Link to='/homepage'>Home</Link>
+  
       </nav>
-      <Outlet/>
+     <Outlet></Outlet>
     </div>
   )
 

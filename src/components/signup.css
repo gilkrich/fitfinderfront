@@ -1,0 +1,120 @@
+.main-sign-up {
+    background-color: #5738af;
+    display: flex;
+    justify-content: center;
+    height: 94vh;
+    align-items: center;
+}
+
+.sign-box-cont {
+    height: 525px;
+    width: 350px;
+    border-radius: 16px;
+    background-color: #b7bbde;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign-title{
+    font-size: xx-large;
+    color: #5738af;
+}
+
+.title-box{
+    display: flex;
+    column-gap: 9px;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    row-gap: 30px;
+}
+
+.orange-input{
+    height: 23px;
+    width: 200px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #f6d5e0;
+    box-shadow: 4px 6px 0px 0px #f44f29;
+}
+
+.checkbox {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox > span {
+    color: #34495E;
+    padding: 0.5rem 0.25rem;
+}
+
+.checkbox > input {
+    height: 25px;
+    width: 25px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border-radius: 4px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: #f6d5e0;
+    cursor: pointer;
+  }
+
+.checkbox > input:checked {
+    background-color: #f44f29;
+}
+
+.check-cont{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.succses-cont{
+    height: 90%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #b7bbde;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.succses-messege-cont{
+    width: 20%;
+    border-radius: 10px;
+    background-color: #f6d5e0;
+    text-align: center;
+    box-shadow: 0px 6px 0px 4px #f44f29;
+}
+
+.buttons-cont{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.succses-button{
+    width: 240px;
+    height: 28px;
+    border-radius: 10px;
+    border: 0;
+    opacity: 0.9;
+    background-color: #f6d5e0;
+}
+
+.succses-button:hover{
+    opacity: 1;
+}
