@@ -4,19 +4,21 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Login';
 import SignUp from './SignUp';
 import Layout from './Layout';
-
+import Home from './Home';
 
 function App() {
 
   return (
-   <div>
+   <>
  <Routes>
         <Route path='/' element={<Layout/>}>
-          <Route path='/' element={<Login/>}></Route>
-          <Route path='signup' element={<SignUp/>}></Route>
+          <Route index element={<div> hey you</div>}/>
+          <Route path='/login' element={<Login/>}></Route>
+          <Route path='/signup' element={<SignUp/>}></Route>
+          <Route path='/home' element={<Home/>}></Route>
         </Route>
       </Routes>
-   </div>
+   </>
   )
 }
 

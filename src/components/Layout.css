@@ -1,0 +1,25 @@
+.top-nav {
+  height: 10vh;
+  background-color: #5738af;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.layout-link {
+  color: white;
+  text-decoration: none;
+}
+#layout-user {
+  object-fit: contain;
+  height: 8vh;
+}
+/* .Outlet {
+
+} */
+footer {
+  height: 10vh;
+  background-color: #5738af;
+}
+
