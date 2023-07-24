@@ -1,0 +1,184 @@
+.homepage2-container {
+  height: 80vh;
+  background-color: #5738af;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage2-card {
+  background-color: #b7bbde;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 90%;
+  border-radius: 3vw;
+}
+
+.homepage2-title {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  color: #5738af;
+  font-size: 3vw;
+  text-align: center;
+}
+
+.homepage2-web-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 35vh;
+}
+
+.homepage2-right-arrows {
+  margin-right: 3vw;
+  color: #f44f29;
+  font-weight: bolder;
+  font-size: 3vw;
+}
+
+.homepage2-right-side {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+
+
+}
+
+.homepage2-sen {
+  display: flex;
+  margin-bottom: 3vh;
+  font-size: 2vw;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.homepage2-both-sides {
+    display: flex;
+    flex-direction: row;
+    padding: 0 5vw;
+}
+
+.hompage2-justonemoreclick-btn {
+  width: 35%;
+  background-color: #f6d5e0;
+  text-align: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  cursor: pointer;
+  font-size: 1.5vw;
+  color: #f44e29c4;
+  border: none;
+  border-radius: 3vw;
+  margin-top: 5vh;
+}
+
+.homepage2-sen:hover .homepage2-right-arrows {
+  margin-left: 3vw;
+  transition: 0.5s;
+}
+
+.hompage2-justonemoreclick-btn:hover .hompage-left-arrows {
+  margin-right: 5vw;
+  transition: 0.5s;
+}
+
+.hompage2-justonemoreclick-btn:hover .hompage-right-arrows {
+  margin-left: 5vw;
+  transition: 0.5s;
+}
+
+.homepage2-clothes-img{
+    height: 100%;
+    width: 100%;
+}
+
+.homepage2-button-container{
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+    .homepage2-title {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        color: #5738af;
+        font-size: 5.5vw;
+        text-align: center;
+    }
+
+    .homepage2-web-options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 35vh;
+    }
+
+    .homepage2-sen {
+        display: flex;
+        margin-bottom: 3vh;
+        font-size: 4.5vw;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .homepage2-web-options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 35vh;
+    }
+
+    .homepage2-right-side {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+    }
+
+    .homepage2-title {
+        margin-top: 5vh;
+        margin-bottom: 3vh;
+        color: #5738af;
+        font-size: 5.5vw;
+        text-align: center;
+    }
+
+    .homepage2-both-sides {
+        display: flex;
+        flex-direction: column;
+        height: 50vh;
+    }
+
+    .hompage2-justonemoreclick-btn {
+        width: 80%;
+        background-color: #f6d5e0;
+        text-align: center;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        cursor: pointer;
+        font-size: 4vw;
+        color: #f44e29c4;
+        border: none;
+        border-radius: 3vw;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+  }
+  
