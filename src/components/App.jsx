@@ -5,9 +5,12 @@ import Login from './Login';
 import SignUp from './SignUp';
 import Layout from './Layout';
 import Home from './Home';
-import HomePage from './HomePage';
-import HomePage2 from './HomePage2';
-import HomePage3 from './HomePage3';
+import Tutorial1 from '../components/Tutorial/Tutorial1'
+import Tutorial2 from '../components/Tutorial/Tutorial2'
+import Tutorial3 from '../components/Tutorial/Tutorial3'
+import About from './AboutUs/About';
+import Chat from './Chat/Chat';
+import ProfilePage from './ProfilePage/ProfilePage';
 
 function App() {
 
@@ -18,9 +21,12 @@ function App() {
           <Route path='/' element={<Login/>}></Route>
           <Route path='/signup' element={<SignUp/>}></Route>
           <Route path='/home' element={<Home/>}></Route>
-          <Route path='homepage' element={<HomePage/>}></Route>
-          <Route path='homepage2' element={<HomePage2/>}></Route>
-          <Route path='homepage3' element={<HomePage3/>}></Route>
+          <Route path='tutorial1' element={<Tutorial1/>}></Route>
+          <Route path='tutorial2' element={<Tutorial2/>}></Route>
+          <Route path='tutorial3' element={<Tutorial3/>}></Route>
+          <Route path='profile' element={<ProfilePage/>}></Route>
+          <Route path='about' element={<About/>}></Route>
+          <Route path='chat' element={<Chat/>}></Route>
 
         </Route>
       </Routes>

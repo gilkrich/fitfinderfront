@@ -25,7 +25,7 @@ const Layout = () => {
         <Link className="layout-link" to={"/about"}>
           About Us
         </Link>
-        <Link className="layout-link" to={"/contactUs"}>
+        <Link className="layout-link" to={"/chat"}>
           Let's chat!
         </Link>
         <Link className="layout-link" to={"/profile"}>
