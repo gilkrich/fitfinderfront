@@ -1,7 +1,8 @@
 
 .top-nav {
   height: 10vh;
-  background-color: #5738af;
+  /* background-color: #5738af; */
+      background-image: linear-gradient( 83.2deg,  rgba(150,93,233,1) 10.8%, rgba(99,88,238,1) 94.3% );
   color: white;
   display: flex;
   justify-content: space-around;
@@ -24,4 +25,68 @@ footer {
   background-color: #5738af;
 }
 
+.middle-nav{
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
+
+.login-side{
+  display: flex;
+  width: 300px;
+  justify-content: flex-end;
+  column-gap: 30px;
+}
+
+.logo-side{
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
+
+.login-button{
+  border-color: white;
+  border-style: solid;
+  width: 100px;
+  height: 30px;
+  border-width: thin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.login-button:hover{
+  background-color: white;
+  color: #5738af;
+  border-color: #5738af;
+}
+
+.sign-button{
+  border-color: black;
+  background-color: black;
+  border-style: solid;
+  width: 100px;
+  height: 30px;
+  border-width: thin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.sign-button:hover{
+   border-color: #5738af;
+   color: #5738af;
+   background-color: white;
+}
+
+.glass-effect{
+  background: linear-gradient(135deg ,rgba(255,255,255,0.1),rgba(255,255,255,0)); 
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: (20px);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 32px;
+}
 
