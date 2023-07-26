@@ -11,7 +11,7 @@ function HomePage() {
         </h1>
         <button className='hompage-getstarted-btn'>
           <span className='hompage-left-arrows'>{"<<<"}</span>
-          Click here to get started
+          Click here to get start
           <span className='hompage-right-arrows'>{">>>"}</span>
         </button>
         <div></div>
