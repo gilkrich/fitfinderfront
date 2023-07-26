@@ -52,7 +52,12 @@ export default Layout;
         </Link> */}
         {/* <Link className="layout-link" to={"/about"}>
           About Us
+
+        </Link>
+        <Link className="layout-link" to={"/chat"}>
+
         </Link> */}
         {/* <Link className="layout-link" to={"/contactUs"}>
+
           Let's chat!
         </Link> */}

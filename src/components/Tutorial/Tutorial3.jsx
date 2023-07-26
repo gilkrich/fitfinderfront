@@ -1,7 +1,9 @@
 import React from 'react';
-import '../components/HomePage3.css';
+import { useNavigate } from "react-router-dom";
+import '../Tutorial/Tutorial3.css';
 
-function HomePage3() {
+function Tutorial3() {
+  const navigate = useNavigate();
   return (
     <div className='homepage3-container'>
       <div className='homepage3-card'>
@@ -12,7 +14,7 @@ function HomePage3() {
             Login
             <span className="hompage-right-arrows">{">>>"}</span>
           </button>
-          <button className="hompage3-justonemoreclick-btn">
+          <button className="hompage3-justonemoreclick-btn" onClick={()=>navigate("/signup")}>
             <span className="hompage-left-arrows">{"<<<"}</span>
             Sign Up
             <span className="hompage-right-arrows">{">>>"}</span>
@@ -23,4 +25,4 @@ function HomePage3() {
   );
 }
 
-export default HomePage3;
+export default Tutorial3;
