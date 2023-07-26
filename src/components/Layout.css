@@ -16,9 +16,9 @@
   object-fit: contain;
   height: 8vh;
 }
-/* .Outlet {
-
-} */
+.Outlet {
+/* height: 80vh; */
+}
 footer {
   height: 10vh;
   background-color: #5738af;
