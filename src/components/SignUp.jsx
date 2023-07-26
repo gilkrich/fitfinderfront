@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './signup.css'
 import axios from 'axios'
+import women from './images/women.png'
+import star from './images/star.png'
 
 const SignUp = () => {
   const [gender, setgender] = useState('')
@@ -28,6 +30,9 @@ const SignUp = () => {
 
   return (
     <div className='main-sign-up'>
+      <p className='bubble'>Just few more steps and were in</p>
+      <img src={women} alt="" width='350px' className='women'/>
+      <img src={star} alt="" width='100px' className='starnew'/>
       {!madenew&&<div className='sign-box-cont'>
       <div className='title-box'>
         <p className='sign-title'>
@@ -56,7 +61,7 @@ const SignUp = () => {
           <span>kids</span>
         </label>
       </div>
-        <button type='submit'>submit</button>
+        <button type='submit' className='submit-button'>submit</button>
       </form>
     </div>}
     {madenew&&<div className='succses-cont'>
