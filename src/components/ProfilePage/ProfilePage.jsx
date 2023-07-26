@@ -125,12 +125,12 @@ function ProfilePage() {
 
                 <div className="profilepage-details-right-div">
 
-                <div className="profilepage-detail-line">
+                <div className="profilepage-detail-line-second">
                   <div className="profilepage-details-icon">G</div>
                   <div className="profilepage-details-inputs">Gender</div>
                 </div>
 
-                <div className="profilepage-detail-line">
+                <div className="profilepage-detail-line-second">
                   <div className="profilepage-details-icon">A</div>
                   {editMode ? (
                     <input
