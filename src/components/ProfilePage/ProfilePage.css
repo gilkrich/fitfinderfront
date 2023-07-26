@@ -65,7 +65,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding: 0 10%;
+  padding-left: 20%;
 }
 
 .profilepage-details-left-div{
@@ -261,8 +261,8 @@
 .flip-card-front3 {
   background: linear-gradient(
     120deg,
-    rgb(11, 104, 226) 60%,
-    rgb(8, 133, 228) 88%,
+    rgb(88, 5, 136) 60%,
+    rgb(88, 5, 136) 88%,
     rgb(255, 211, 195) 40%,
     rgb(255, 255, 255) 48%
   );
@@ -272,8 +272,8 @@
 .flip-card-back3 {
   background: linear-gradient(
     120deg,
-    rgb(11, 104, 226) 60%,
-    rgb(8, 133, 228) 88%,
+    rgb(88, 5, 136) 60%,
+    rgb(88, 5, 136) 88%,
     rgb(255, 211, 195) 40%,
     rgb(255, 255, 255) 48%
   );
@@ -462,13 +462,28 @@
 
 }
 
+.profilepage-detail-line-second{
+  width: 100%;
+  text-align: start;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 2vh;
+}
+
 
 /* .profilepage-details-inputs::placeholder {
   color: white;
 } */
 
 .profilepage-details-icon {
-  width: 10%;
+  width: 17%;
+  scale: 1.7;
+}
+
+.profilepage-details-icon-second {
+  width: 12%;
   scale: 1.7;
 }
 
@@ -479,6 +494,14 @@
     flex-direction: row;
     width: 100%;
     padding-left: 12%;
+}
+
+.flip-card1 {
+  background-color: transparent;
+  width: 100%;
+  height: 85%;
+  perspective: 1000px;
+  font-family: sans-serif;
 }
   
   .profilepage-container {
@@ -536,11 +559,11 @@
 .profilepage-myprofile-title {
   font-size: 5vw;
   margin-bottom: 2vh;
-  margin-top: 3vh;
+  margin-top: 1.5vh;
 }
 
 .profilepage-details-icon {
-  width: 20%;
+  width: 22%;
   scale: 1.2;
 }
 
@@ -577,5 +600,103 @@
   display: flex;
   flex-direction: row;
   align-items: baseline;
+}
+
+.profilepage-myprofile-title {
+  font-size: 5vw;
+  margin-bottom: 1.5vh;
+  margin-top: 1.5vh;
+}
+
+.profilepage-detail-edit-btn {
+  height: 3vh;
+  width: 20vw;
+  background-color: white;
+  font-size: 3vw;
+  margin-bottom: 1vh;
+  margin-top: 0;
+}
+
+.profilepage-details-icon {
+  width: 20%;
+  scale: 1.2;
+}
+
+.profilepage-details-icon-second {
+  width: 20%;
+  scale: 1.1;
+}
+
+.profilepage-subusers-line {
+  width: 70%;
+  text-align: start;
+  margin-bottom: 2vh;
+  font-size: 4vw;
+  /* text-align: center; */
+  padding-right: 5vw;
+  margin-left: 50%;
+}
+
+.flip-card2 {
+  width: 100%;
+}
+
+.flip-card3 {
+  width: 100%;
+}
+
+.profilepage-mymeasures-title {
+  font-size: 5vw;
+  margin-bottom: 4vh;
+}
+
+.profilepage-measure-left-right {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.profilepage-data {
+  width: 100%;
+  font-size: 3.5vw;
+  text-align: start;
+  margin-bottom: 2vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.profilepage-measures-input {
+  width: 40%;
+  text-align: center;
+  font-size: 3.5vw;
+}
+.profilepage-icons {
+  width: 20%;
+  scale: 1.3;
+}
+.profilepage-measures-input {
+  width: 60%;
+  text-align: center;
+  font-size: 3.5vw;
+}
+
+.profilepage-mymeasures-title {
+  font-size: 5vw;
+  margin-bottom: 2vh;
+}
+
+.profilepage-measure-left {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flip-card4 {
+  width: 100%;
 }
 }
