@@ -1,8 +1,10 @@
 import React, { useEffect, createContext, useState } from "react";
 import axios from 'axios';
 
+
 export const Context = createContext({});
 
+<<<<<<< HEAD
 const MainContext = ({ children }) => {
   const [user, setUser] = useState({});
 
@@ -22,9 +24,26 @@ const MainContext = ({ children }) => {
   //   }
   //   getUser();
   // }, []);
+=======
+const MainContext = ({children}) => {
+  const [user,setuser] = useState('')
+    
+  useEffect(()=>{
+  async function getuser() { 
+      if (localStorage.getItem('token')) {
+        const finduser = await axios.post("http://localhost:3003/users/istoken", { token:JSON.parse(localStorage.getItem('token'))})
+        setuser(finduser.data)
+      }else{
+        setuser('')
+      }
+    }
+    getUser();
+  }, []);
+>>>>>>> aa2a7c5412c878af6406d381b5acefaf124866c1
 
   return (
-    <Context.Provider value={{ user }}>
+    <div>
+       <Context.Provider value={{userinfo:user}}>
       {children}
     </Context.Provider>
   );
