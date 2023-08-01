@@ -16,7 +16,7 @@ const MainContext = ({children}) => {
         setuser('')
       }
     }
-    getUser();
+    getuser();
   }, []);
 
   return (
@@ -24,6 +24,7 @@ const MainContext = ({children}) => {
        <Context.Provider value={{userinfo:user}}>
       {children}
     </Context.Provider>
+   </div>
   );
 };
 

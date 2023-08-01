@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../Tutorial/Tutorial1.css";
+import womenhome from '../images/result.png'
 
 function Tutorial1() {
 
@@ -18,7 +19,9 @@ function Tutorial1() {
           Click here to get started
           <span className="hompage-right-arrows">{">>>"}</span>
         </button>
-        <div></div>
+        <div>
+          <img className="background-image" src={womenhome} alt="" />
+        </div>
       </div>
     </div>
   );

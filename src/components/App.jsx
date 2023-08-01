@@ -11,6 +11,7 @@ import Tutorial3 from '../components/Tutorial/Tutorial3'
 import About from './AboutUs/About';
 import Chat from './Chat/Chat';
 import ProfilePage from './ProfilePage/ProfilePage';
+import Profile2 from './Profile2';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='tutorial2' element={<Tutorial2/>}></Route>
           <Route path='tutorial3' element={<Tutorial3/>}></Route>
           <Route path='profile' element={<ProfilePage/>}></Route>
+          <Route path='profile2' element={<Profile2/>}></Route>
           <Route path='about' element={<About/>}></Route>
           <Route path='chat' element={<Chat/>}></Route>
 

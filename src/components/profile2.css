@@ -1,0 +1,35 @@
+.profile-cont-main{
+    background-color: #b7bbde;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info-cont{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.img-info{
+    border-radius: 50%;
+    width: 150px;
+
+}
+
+.info-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 90%;
+    row-gap: 30px;
+}
+
+.profile-actions-cont{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 160px;
+    justify-content: center;
+    row-gap: 80px;
+    margin-top: 90px;
+    margin-bottom: 80px;
+}

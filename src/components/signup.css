@@ -1,5 +1,6 @@
 .main-sign-up {
     background-color: #5738af;
+    background-image: radial-gradient( circle 363px at 100.2% 3%,  #5738af 31.1%, #f44f29 36.4%, #f44f29 50.9%, #f44f29 60.7%, #f44f29 72.5%, #5738af 72.6% );
     display: flex;
     justify-content: center;
     height: 94vh;
@@ -145,6 +146,51 @@
   word-wrap: break-word;
 }
 
+.bubbletwo{
+    position: absolute;
+  transform: translatey(0px);
+  animation: float 5s ease-in-out infinite;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 6px;
+  color: #774f38;
+  background-color: #f6d5e0;
+  padding: 20px;
+  border-radius: 11px;
+  box-shadow: 12px 12px #f44f29;
+  font-family: "Baloo 2", cursive;
+  left: 120px;
+  bottom: 200px;
+  width: 50px;
+  word-wrap: break-word;
+  display: none;
+} 
+
+.bubbletwo::after{
+    transform: translatey(0px);
+    animation: float2 5s ease-in-out infinite;
+    content: ".";
+    font-weight: bold;
+     -webkit-text-stroke: 0.5px #c8c8a9;
+    -webkit-text-fill-color: #ece5ce;
+     border: 1px solid #c8c8a9;
+    text-shadow: 22px 22px #f44f29;
+    text-align: left;
+    font-size: 55px;
+    width: 55px;
+    height: 11px;
+    line-height: 30px;
+    border-radius: 11px;
+    background-color: #ece5ce;
+    position: absolute;
+    display: block;
+    bottom: -30px;
+    left: 0;
+    box-shadow: 22px 22px #f44f29;
+    z-index: -2;
+}
 .bubble::after{
     transform: translatey(0px);
     animation: float2 5s ease-in-out infinite;
@@ -202,11 +248,19 @@
     position: absolute;
     left: 10px;
     bottom: -80px;
+    width:350px;
+  }
+  .womenmobile{
+    position: absolute;
+    left: 10px;
+    bottom: -50px;
+    width:180px;
+    display: none;
   }
   .starnew{
-    position: absolute;
-    right: 460px;
-    bottom: -30px;
+    position: relative;
+    bottom: -30px; 
+    left: 228px;   
   }
 
   .submit-button{
@@ -229,3 +283,59 @@
     color: black;
     border-color: black;
   }
+
+  @media screen and (max-width: 1218px) {
+   .bubble{
+    left: 100px;
+   }
+
+   .women{
+    left: -100px;
+   }
+}
+  @media screen and (max-width: 923px) {
+    .bubble{
+      left: 20px;
+    }
+
+    .women{
+      left: -100px;
+      bottom: 20px;
+    }
+   
+}
+  @media screen and (max-width: 790px) {
+    .sign-box-cont{
+      width: 90%;
+      height: 99%;
+    }
+
+    .bubble{
+      display: none;
+    }
+
+    .women{
+    display: none;  
+    }
+   
+    .womenmobile{
+      display: block;
+    }
+
+    .bubbletwo{
+      display: block;
+    }
+   
+   
+}
+  @media screen and (max-width: 524px) {
+    .bubble{
+      z-index: 2;
+      width: 80px;
+      font-size: 4px;
+      bottom: 100px;
+      left: 150px;
+      line-height: 10px;
+      padding: 13px;
+    }
+}
