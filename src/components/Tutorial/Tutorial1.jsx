@@ -21,6 +21,7 @@ function Tutorial1() {
         </button>
         <div>
           <img className="background-image" src={womenhome} alt="" />
+          {/* <img className="background-image" src={womenhome} alt="" /> */}
         </div>
       </div>
     </div>
