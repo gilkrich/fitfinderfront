@@ -37,7 +37,7 @@ const MainContext = ({children}) => {
         setuser('')
       }
     }
-    getUser();
+    getuser();
   }, []);
 >>>>>>> aa2a7c5412c878af6406d381b5acefaf124866c1
 
@@ -46,6 +46,7 @@ const MainContext = ({children}) => {
        <Context.Provider value={{userinfo:user}}>
       {children}
     </Context.Provider>
+   </div>
   );
 };
 
