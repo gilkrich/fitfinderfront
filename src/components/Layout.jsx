@@ -12,7 +12,7 @@ const Layout = () => {
   let { userinfo } = useContext(Context)
   const [isOpen, setOpen] = useState(false)
 
-  console.log(userinfo);
+  // console.log(userinfo);
 
   return (
     <>
@@ -22,9 +22,9 @@ const Layout = () => {
         </div>
 
         <div className="middle-nav">
-          <Link className="layout-link" to='/homepage'>Home</Link>
+          <Link className="layout-link" to='/home'>Home</Link>
           <Link className="layout-link" to={"/home"}><div className="logo">fitfinder</div></Link>
-          <Link className="layout-link" to={"/profile2"}><div className="logo">profile</div></Link>
+          <Link className="layout-link" to={"/profile"}><div className="logo">profile</div></Link>
           <Link className="layout-link" to={"/home"}><div className="logo">fitfinder</div></Link>
         </div>
 

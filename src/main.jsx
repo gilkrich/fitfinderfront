@@ -8,11 +8,11 @@ import MainContext from './components/MainContext.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <BrowserRouter>
-  <React.StrictMode>
+  {/* <React.StrictMode> */}
     <MainContext>
     <App />
     </MainContext>
-  </React.StrictMode>
+  {/* </React.StrictMode> */}
   </BrowserRouter>
 
 )
