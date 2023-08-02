@@ -29,7 +29,7 @@ function App() {
           <Route path='tutorial3' element={<Tutorial3/>}></Route>
           <Route path='profile' element={<ProfilePage/>}></Route>
           <Route path='sizescalculator' element={<SizesCalculator/>}></Route>
-          <Route path='profile2' element={<Profile/>}></Route>
+          <Route path='profile2' element={<Profile2/>}></Route>
           <Route path='about' element={<About/>}></Route>
           <Route path='chat' element={<Chat/>}></Route>
 
