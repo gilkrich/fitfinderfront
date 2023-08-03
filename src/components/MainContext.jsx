@@ -1,12 +1,7 @@
 import React, { useEffect, createContext, useState } from "react";
 import axios from 'axios';
-
-
 export const Context = createContext({});
 
-<<<<<<< HEAD
-const MainContext = ({ children }) => {
-  const [user, setUser] = useState({});
 
   // useEffect(() => {
   //   async function getUser() {
@@ -24,7 +19,6 @@ const MainContext = ({ children }) => {
   //   }
   //   getUser();
   // }, []);
-=======
 const MainContext = ({children}) => {
   const [user,setuser] = useState('')
     
@@ -39,7 +33,6 @@ const MainContext = ({children}) => {
     }
     getuser();
   }, []);
->>>>>>> aa2a7c5412c878af6406d381b5acefaf124866c1
 
   return (
     <div>

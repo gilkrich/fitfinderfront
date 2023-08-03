@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { Context } from "./MainContext";
 import { useState } from "react";
 import Hamburger from 'hamburger-react'
+import fitlogo from './images/fitlogo.png'
 
 const Layout = () => {
 
@@ -18,14 +19,14 @@ const Layout = () => {
     <>
       <nav className="top-nav">
         <div className="logo-side">
-          <h1>logo</h1>
+          <img src={fitlogo} alt="" width='120px'/>
         </div>
 
         <div className="middle-nav">
           <Link className="layout-link" to='/homepage'>Home</Link>
           <Link className="layout-link" to={"/home"}><div className="logo">fitfinder</div></Link>
           <Link className="layout-link" to={"/profile2"}><div className="logo">profile</div></Link>
-          <Link className="layout-link" to={"/home"}><div className="logo">fitfinder</div></Link>
+          <Link className="layout-link" to={"/tutorial1"}><div className="logo">fitfinder</div></Link>
         </div>
 
         <div className="login-side">

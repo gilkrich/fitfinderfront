@@ -1,5 +1,4 @@
 .homepage2-container {
-  height: 80vh;
   background-color: #5738af;
   display: flex;
   justify-content: center;
@@ -10,9 +9,7 @@
   background-color: #b7bbde;
   display: flex;
   flex-direction: column;
-  width: 90%;
-  height: 90%;
-  border-radius: 3vw;
+  width: 100%;
 }
 
 .homepage2-title {
@@ -29,7 +26,7 @@
   align-items: center;
   justify-content: center;
   width: 50%;
-  height: 35vh;
+  height: 400px;
 }
 
 .homepage2-right-arrows {
@@ -46,7 +43,7 @@
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+
 
 
 }
@@ -78,21 +75,22 @@
   border: none;
   border-radius: 3vw;
   margin-top: 5vh;
+  margin-bottom: 4vh;
 }
 
 .homepage2-sen:hover .homepage2-right-arrows {
   margin-left: 3vw;
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
 }
 
 .hompage2-justonemoreclick-btn:hover .hompage-left-arrows {
   margin-right: 5vw;
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
 }
 
 .hompage2-justonemoreclick-btn:hover .hompage-right-arrows {
   margin-left: 5vw;
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
 }
 
 .homepage2-clothes-img{
