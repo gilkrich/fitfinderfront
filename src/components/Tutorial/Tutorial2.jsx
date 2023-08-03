@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../Tutorial/Tutorial2.css";
+import choose from '../images/choose.png'
 
 function Tutorial2() {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ function Tutorial2() {
             </h1>
           </div>
           <div className="homepage2-right-side">
-            <div className="homepage2-clothes-img"></div>
+            <img src={choose} alt="" />
           </div>
         </div>
         <div className="homepage2-button-container">

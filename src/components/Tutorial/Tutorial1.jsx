@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../Tutorial/Tutorial1.css";
 import womenhome from '../images/result.png'
+import fitlogo from '../images/fitlogo.png'
 
 function Tutorial1() {
 
@@ -10,7 +11,9 @@ function Tutorial1() {
   return (
     <div className="homepage-container">
       <div className="homepage-card">
-        <div className="homepage-img"></div>
+        <div>
+          <img src={fitlogo} alt="" width='340px' height='300px'/>
+        </div>
         <h1 className="hompage-welcome-title">
           Welcome to <span id="homepage-bold-text">Fit</span>Finder!
         </h1>

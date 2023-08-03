@@ -6,13 +6,11 @@
 }
 
 .homepage-card {
-  margin-top: 34px;
   background-color: #b7bbde;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 700px;
 }
 
 .homepage-img {
