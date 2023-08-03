@@ -19,6 +19,7 @@ export const Context = createContext({});
   //   }
   //   getUser();
   // }, []);
+
 const MainContext = ({children}) => {
   const [user,setuser] = useState('')
     
@@ -31,7 +32,7 @@ const MainContext = ({children}) => {
         setuser('')
       }
     }
-    getuser();
+    // getuser();
   }, []);
 
   return (
