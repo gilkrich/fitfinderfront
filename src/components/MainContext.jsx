@@ -21,7 +21,7 @@ export const Context = createContext({});
   // }, []);
 
 const MainContext = ({children}) => {
-  const [user,setuser] = useState('')
+  const [user,setuser] = useState('');
     
   useEffect(()=>{
   async function getuser() { 
@@ -32,7 +32,7 @@ const MainContext = ({children}) => {
         setuser('')
       }
     }
-    // getuser();
+    getuser();
   }, []);
 
   return (

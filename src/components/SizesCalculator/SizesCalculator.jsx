@@ -1,201 +1,113 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import SizesData from "../../companies.json";
+import React, { useEffect, useState } from "react";
+import clothingSizesPerCompany from "../../companies.json";
+
+const clothTypes = ["shirts", "pants"];
+const bodyParts = ["waist", "chest", "neckline", "arms", "hips"];
+const sizesArr = ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
+const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
 
 function SizesCalculator() {
-  const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
-  const [BodyArr, setBodyArr] = useState([]);
-  const [gender, setGender] = useState("");
-  const [clothType, setClothType] = useState("");
-  
-  const [SolutionArr, setSolutionArr] = useState(
-    companiesArr.map(() => ({
-      waist: "",
-      chest: "",
-      hips: "",
-      arms: "",
-    }))
-  );
+  const [gender, setGender] = useState("women");
 
   useEffect(() => {
-    if (SizesData && BodyArr.length === 0) {
-      let newWaistArr = [];
-      let newChestArr = [];
-      let newArmsArr = [];
-      let newHipsArr = [];
-      if (!BodyArr.length > 0) {
-        for (let i = 0; i < companiesArr.length; i++) {
-          BodyArr.push({
-            waist: SizesData[companiesArr[i]]?.[gender]?.[clothType]?.waist
-              ? [
-                  ...newWaistArr,
-                  ...SizesData[companiesArr[i]]?.[gender]?.[clothType]?.waist,
-                ]
-              : [],
-            chest: SizesData[companiesArr[i]]?.[gender]?.[clothType]?.chest
-              ? [
-                  ...newChestArr,
-                  ...SizesData[companiesArr[i]]?.[gender]?.[clothType]?.chest,
-                ]
-              : [],
-            arms: SizesData[companiesArr[i]]?.[gender]?.[clothType]?.arms
-              ? [
-                  ...newArmsArr,
-                  ...SizesData[companiesArr[i]]?.[gender]?.[clothType]?.arms,
-                ]
-              : [],
-            hips: SizesData[companiesArr[i]]?.[gender]?.[clothType]?.hips
-              ? [
-                  ...newHipsArr,
-                  ...SizesData[companiesArr[i]]?.[gender]?.[clothType]?.hips,
-                ]
-              : [],
-          });
+    // TODO: Remove this, this is just hardcoded for testing
+    const userBodyPartSizes = {
+      waist: 80,
+      chest: 78,
+      arms: 70,
+      hips: 80,
+      neckline: 79,
+    };
+
+    let userSizesPerCompany = [];
+    for (let companyName of companiesArr) {
+      let clothTypesArr = [];
+      console.log(clothingSizesPerCompany[companyName]);
+      for (const clothType of clothTypes) {
+        const clothBodyPartRages =
+          clothingSizesPerCompany[companyName][gender][clothType];
+        let textSizePerBodyPart = [];
+        for (let bodyPart in clothBodyPartRages) {
+          textSizePerBodyPart.push(
+            numberSizeToTextSize(
+              clothBodyPartRages[bodyPart],
+              userBodyPartSizes[bodyPart]
+            )
+          );
         }
+        clothTypesArr.push({[clothType]: calculateFinalSize(textSizePerBodyPart)});
       }
-      setBodyArr([...BodyArr]);
-      BodyArr[0]?.waist && Waist(78);
-      BodyArr[0]?.chest && Chest(78);
-      BodyArr[0]?.hips && Hips(78);
-      BodyArr[0]?.arms && Arms(78);
-      calculateFinalSize();
+      userSizesPerCompany.push({[companyName]: clothTypesArr});
     }
+    console.log(userSizesPerCompany);
   }, []);
 
-  function Waist(waist) {
-    const updatedSolutionArr = [...SolutionArr];
-    for (let i = 0; i < BodyArr.length; i++) {
-      if (BodyArr[i].waist.length === 0) {
-        updatedSolutionArr[i].waist = "Sorry";
-      }
-
-      for (let j = 0; j < BodyArr[i].waist.length; j++) {
-        const range = BodyArr[i]?.waist[j];
-        const [left, right] = range.split("-");
-
-        if (left > waist && j == 0) {
-          updatedSolutionArr[i].waist = "Sorry";
-        }
-        if (waist > right && j == 6) {
-          updatedSolutionArr[i].waist = "Sorry";
-        }
-        if (left <= waist && waist < right) {
-          const arr = ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
-          updatedSolutionArr[i].waist = arr[j];
-        }
-      }
+  function translateAgeGroupToTextualSizes() {
+    if (gender === "girls_2_8" || gender === "boys_2_8") {
+      return ["2Y", "3Y", "4Y", "5Y", "6Y", "7Y", "8Y"];
+    } else if (gender === "girls_9_14" || gender === "boys_9_14") {
+      return ["9Y", "10Y", "11Y", "12Y", "13Y", "14Y", "15Y"];
+    } else if (gender === "women" || gender === "men") {
+      return ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
+    } else {
+      console.log("error: invalid gender");
+      return [];
     }
-    setSolutionArr(updatedSolutionArr);
-  }
-  function Chest(chest) {
-    const updatedSolutionArr = [...SolutionArr];
-    for (let i = 0; i < BodyArr.length; i++) {
-      if (BodyArr[i].chest.length === 0) {
-        updatedSolutionArr[i].chest = "Sorry";
-      }
-
-      for (let j = 0; j < BodyArr[i].chest.length; j++) {
-        const range = BodyArr[i]?.chest[j];
-        const [left, right] = range.split("-");
-
-        if (left > chest && j == 0) {
-          updatedSolutionArr[i].chest = "Sorry";
-        }
-        if (chest > right && j == 6) {
-          updatedSolutionArr[i].chest = "Sorry";
-        }
-        if (left <= chest && chest < right) {
-          const arr = ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
-
-          updatedSolutionArr[i].chest = arr[j];
-        }
-      }
-    }
-    setSolutionArr(updatedSolutionArr);
-  }
-  function Hips(hips) {
-    const updatedSolutionArr = [...SolutionArr];
-    for (let i = 0; i < BodyArr.length; i++) {
-      if (BodyArr[i].hips.length === 0) {
-        updatedSolutionArr[i].hips = "Sorry";
-      }
-
-      for (let j = 0; j < BodyArr[i].hips.length; j++) {
-        const range = BodyArr[i]?.hips[j];
-        const [left, right] = range.split("-");
-
-        if (left > hips && j == 0) {
-          updatedSolutionArr[i].hips = "Sorry";
-        }
-        if (hips > right && j == 6) {
-          updatedSolutionArr[i].hips = "Sorry";
-        }
-        if (left <= hips && hips < right) {
-          const arr = ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
-
-          updatedSolutionArr[i].hips = arr[j];
-        }
-      }
-    }
-    setSolutionArr(updatedSolutionArr);
-  }
-  function Arms(arms) {
-    const updatedSolutionArr = [...SolutionArr];
-    for (let i = 0; i < BodyArr.length; i++) {
-      if (BodyArr[i].arms.length === 0) {
-        updatedSolutionArr[i].arms = "Sorry";
-      }
-
-      for (let j = 0; j < BodyArr[i].arms.length; j++) {
-        const range = BodyArr[i]?.arms[j];
-        const [left, right] = range.split("-");
-
-        if (left > arms && j == 0) {
-          updatedSolutionArr[i].arms = "Sorry";
-        }
-        if (arms > right && j == 6) {
-          updatedSolutionArr[i].arms = "Sorry";
-        }
-        if (left <= arms && arms < right) {
-          const arr = ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
-
-          updatedSolutionArr[i].arms = arr[j];
-        }
-      }
-    }
-    setSolutionArr(updatedSolutionArr);
   }
 
-  function calculateFinalSize() {
-    const sizesArr = ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
-    const finalSizesObj = {};
-  
-    companiesArr.forEach((company, index) => {
-      const companySizes = SolutionArr[index];
-  
-      const validSizes = Object.values(companySizes).filter(
-        (size) => size !== "Sorry" && size !== ""
-      );
-  
-      const totalSizeIndex = validSizes.reduce(
-        (acc, size) => acc + sizesArr.indexOf(size),
-        0
-      );
-  
-      const averageSizeIndex = Math.ceil(totalSizeIndex / validSizes.length);
-  
-      const finalSize = sizesArr[averageSizeIndex];
-  
-      finalSizesObj[company] = finalSize;
-    });
-  
-    Object.keys(finalSizesObj).forEach((company) => {
-      if (typeof finalSizesObj[company] === "undefined") {
-        finalSizesObj[company] = "Sorry, we don't have a fit size for you";
+  function numberSizeToTextSize(bodyPartRanges, bodyPartMesurement) {
+    let sizesArr = translateAgeGroupToTextualSizes();
+
+    // Verify parameters values
+    if (
+      !bodyPartRanges ||
+      bodyPartRanges.length === 0 ||
+      (typeof bodyPartMesurement === "number" &&
+        Number.isFinite(bodyPartMesurement))
+    ) {
+      return "Sorry";
+    }
+
+    // If the body part mesurement is out of all range, return "sorry"
+    const lowestRangeNumber = bodyPartRanges[0].split("-")[0];
+    const highestRangeNumber = bodyPartRanges[bodyPartRanges.length - 1].split("-")[1];
+    if (
+      lowestRangeNumber > bodyPartMesurement ||
+      bodyPartMesurement > highestRangeNumber
+    ) {
+      return "Sorry";
+    }
+
+    let bodyPartResult = "Sorry";
+    for (let j = 0; j < bodyPartRanges.length; j++) {
+      const range = bodyPartRanges[j];
+      const [lowerRangeNumber, HigherLeftNumber] = range.split("-");
+
+      if (
+        lowerRangeNumber <= bodyPartMesurement &&
+        bodyPartMesurement < HigherLeftNumber
+      ) {
+        bodyPartResult = sizesArr[j];
+        break;
       }
-    });
-  
-    console.log(finalSizesObj);
+    }
+
+    return bodyPartResult;
+  }
+
+  function calculateFinalSize(clothSizes) {
+    const validSizes = Object.values(clothSizes).filter(
+      (size) => size !== "Sorry" && size !== ""
+    );
+
+    const totalSizeIndex = validSizes.reduce(
+      (acc, size) => acc + sizesArr.indexOf(size),
+      0
+    );
+
+    const averageSizeIndex = Math.ceil(totalSizeIndex / validSizes.length);
+
+    return sizesArr[averageSizeIndex];
   }
 
   return <div></div>;
