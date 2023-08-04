@@ -13,6 +13,8 @@ import Chat from './Chat/Chat';
 import ProfilePage from './ProfilePage/ProfilePage';
 import SizesCalculator from './SizesCalculator/SizesCalculator';
 import Profile2 from './Profile2';
+import StaylistPage from './StaylistPage';
+import NewS from './SizesCalculator/NewS';
 
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
           <Route path='profile2' element={<Profile2/>}></Route>
           <Route path='about' element={<About/>}></Route>
           <Route path='chat' element={<Chat/>}></Route>
+          <Route path='style' element={<StaylistPage/>}></Route>
+          <Route path='calc' element={<NewS/>}></Route>
 
         </Route>
       </Routes>
