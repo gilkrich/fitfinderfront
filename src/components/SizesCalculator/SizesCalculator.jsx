@@ -35,9 +35,11 @@ function SizesCalculator() {
             )
           );
         }
-        clothTypesArr.push({[clothType]: calculateFinalSize(textSizePerBodyPart)});
+        clothTypesArr.push({
+          [clothType]: calculateFinalSize(textSizePerBodyPart),
+        });
       }
-      userSizesPerCompany.push({[companyName]: clothTypesArr});
+      userSizesPerCompany.push({ [companyName]: clothTypesArr });
     }
     console.log(userSizesPerCompany);
   }, []);
@@ -62,15 +64,16 @@ function SizesCalculator() {
     if (
       !bodyPartRanges ||
       bodyPartRanges.length === 0 ||
-      (typeof bodyPartMesurement === "number" &&
-        Number.isFinite(bodyPartMesurement))
+      typeof bodyPartMesurement !== "number"
     ) {
+      console.log("The parameters are invalid");
       return "Sorry";
     }
 
     // If the body part mesurement is out of all range, return "sorry"
     const lowestRangeNumber = bodyPartRanges[0].split("-")[0];
-    const highestRangeNumber = bodyPartRanges[bodyPartRanges.length - 1].split("-")[1];
+    const highestRangeNumber =
+      bodyPartRanges[bodyPartRanges.length - 1].split("-")[1];
     if (
       lowestRangeNumber > bodyPartMesurement ||
       bodyPartMesurement > highestRangeNumber
