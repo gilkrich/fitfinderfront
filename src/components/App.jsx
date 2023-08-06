@@ -20,7 +20,6 @@ import SizeByStyle from './SizeByStyle';
 
 
 function App() {
-
   return (
    < div style={{height:"100vh",width:"100vw"}}>
  <Routes>
@@ -46,4 +45,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

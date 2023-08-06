@@ -38,6 +38,14 @@
     align-items: center;
 }
 
+.form-cont-two{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 70px;
+  align-items: center;
+}
+
 .orange-input{
     height: 23px;
     width: 200px;
@@ -282,6 +290,11 @@
   .submit-button:hover{
     color: black;
     border-color: black;
+  }
+
+  .main-profile-icon-cont{
+    display: flex;
+    flex-wrap: wrap;
   }
 
   @media screen and (max-width: 1218px) {
