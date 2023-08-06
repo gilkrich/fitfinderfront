@@ -17,8 +17,8 @@
   z-index: 1;
   row-gap: 20px;
 }
-/* 
-.home-orangered-div {
+
+/* .home-orangered-div {
   background-color: orangered;
   position: absolute;
   height: 300px;
@@ -31,12 +31,13 @@
   justify-content: center;
 } */
 
+
 .home-btn {
   width: 200px;
   padding: 10px;
 }
 
-.star {
+/* .star {
   position: relative;
   display: block;
   color: #5738af;
@@ -47,13 +48,7 @@
   border-left: 100px solid transparent;
   transform: rotate(35deg);
   z-index: -900;
-}
-
-#start-1 {}
-
-#star-1 {}
-
-#start-2 {}
+} */
 
 .content-continer-h2 {
   display: flex;
@@ -73,19 +68,33 @@
   z-index: 1;
 }
 
-/* .purple-star-one{
+.purple-star-one{
   position: absolute;
-  top: 230px;
+  /* top: 230px; */
+  top: 15%;
   z-index: 2;
-  left: 560px;
+  /* left: 560px; */
+  left: 8%;
 }
 
 .purple-star-two{
   position: absolute;
-  top: 550px;
+  /* top: 550px; */
+  top: 70%;
   z-index: 2;
-  right:  570px;
-} */
+  /* right:  570px; */
+  right: 8%;
+}
+.womenhome{
+  position: absolute;
+  width: 400px;
+  /* top: 550px; */
+  bottom: -35px;
+  z-index: 2;
+  /* right:  570px; */
+  left: 0;
+  mix-blend-mode:multiply ;
+}
 
 .home-btn {
   width: 19em;
@@ -100,4 +109,9 @@
 .home-btn:hover {
   color: whitesmoke;
   background-color: #f6d5e0;
+}
+@media screen and (max-width: 768px) {
+  .womenhome {
+    display: none;
+  }
 }

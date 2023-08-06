@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Layout from "./Layout";
-import Home from "./Home";
+import Home from "./Home/Home";
 import Tutorial1 from "../components/Tutorial/Tutorial1";
 import Tutorial2 from "../components/Tutorial/Tutorial2";
 import Tutorial3 from "../components/Tutorial/Tutorial3";

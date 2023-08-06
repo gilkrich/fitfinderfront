@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import clothingSizesPerCompany from "../../companies.json";
-
+import { useContext } from "react";
+import { Context } from "../MainContext";
 const clothTypes = ["shirts", "pants"];
 const bodyParts = ["waist", "chest", "neckline", "arms", "hips"];
 const sizesArr = ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
 const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
 
-function SizesCalculator() {
-  const [gender, setGender] = useState("women");
-
+  function SizesCalculator() {
+  const {userinfo}=  useContext(Context);
+  const gender= userinfo.gender
+  
   useEffect(() => {
+    if (userinfo) {
     // TODO: Remove this, this is just hardcoded for testing
     const userBodyPartSizes = {
       waist: 80,
@@ -42,7 +45,8 @@ function SizesCalculator() {
       userSizesPerCompany.push({ [companyName]: clothTypesArr });
     }
     console.log(userSizesPerCompany);
-  }, []);
+  }
+  }, [userinfo]);
 
   function translateAgeGroupToTextualSizes() {
     if (gender === "girls_2_8" || gender === "boys_2_8") {
