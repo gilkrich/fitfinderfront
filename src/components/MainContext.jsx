@@ -32,7 +32,7 @@ const MainContext = ({children}) => {
         setuser('')
       }
     }
-    // getuser();
+    getuser();
   }, []);
 
   return (
