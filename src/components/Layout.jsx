@@ -30,6 +30,8 @@ const Layout = () => {
           <Link className="layout-link" to='/home'>Home</Link>
           <Link className="layout-link" to={"/profile2"}><div className="logo">Profile</div></Link>
           <Link className="layout-link" to={"/tutorial1"}><div className="logo">Tutorial</div></Link>
+          <Link className="layout-link" to={"/sizecalcpage"}><div className="logo">Calculator</div></Link>
+          <Link className="layout-link" to={"/bodytypesgraph"}><div className="logo">Body Type</div></Link>
    
 
         </div>

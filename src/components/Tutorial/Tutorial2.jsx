@@ -8,7 +8,7 @@ function Tutorial2() {
   return (
     <div className="homepage2-container">
       <div className="homepage2-card">
-        <h1 className="homepage2-title">You will be able to find here</h1>
+        <h1 className="homepage2-title">Here you will be able to find</h1>
         <div className="homepage2-both-sides">
           <div className="homepage2-web-options">
             <h1 className="homepage2-sen">

@@ -10,6 +10,7 @@ const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
   function SizesCalculator() {
   const {userinfo}=  useContext(Context);
   const gender= userinfo.gender
+
   
   useEffect(() => {
     if (userinfo) {
@@ -25,7 +26,7 @@ const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
     let userSizesPerCompany = [];
     for (let companyName of companiesArr) {
       let clothTypesArr = [];
-      console.log(clothingSizesPerCompany[companyName]);
+      // console.log(clothingSizesPerCompany[companyName]);
       for (const clothType of clothTypes) {
         const clothBodyPartRages =
           clothingSizesPerCompany[companyName][gender][clothType];
@@ -98,9 +99,10 @@ const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
         break;
       }
     }
-
     return bodyPartResult;
   }
+
+
 
   function calculateFinalSize(clothSizes) {
     const validSizes = Object.values(clothSizes).filter(
@@ -117,6 +119,10 @@ const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
     return sizesArr[averageSizeIndex];
   }
 
-  return <div></div>;
+
+
+  return <div>
+    
+  </div>;
 }
 export default SizesCalculator;
