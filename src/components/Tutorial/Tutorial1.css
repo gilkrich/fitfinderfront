@@ -79,14 +79,14 @@
     padding-top: 2vh;
     padding-bottom: 2vh;
     cursor: pointer;
-    font-size: 4vw;
+    font-size: 5vw;
     color: #f44e29c4;
   }
 
   .hompage-welcome-title {
     text-align: center;
     color: #5738af;
-    margin-bottom: 2vh;
+    margin-bottom: 6vh;
     font-weight: lighter;
     font-size: 7vw;
   }

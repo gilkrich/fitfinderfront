@@ -16,16 +16,15 @@ function Tutorial2() {
               Size Calculator
             </h1>
             <h1 className="homepage2-sen">
-              <span className="homepage2-right-arrows">{">>"}</span>The Perfect
-              Size Calculator
+              <span className="homepage2-right-arrows">{">>"}</span>The Stylist Recommendation
             </h1>
             <h1 className="homepage2-sen">
-              <span className="homepage2-right-arrows">{">>"}</span>The Perfect
-              Size Calculator
+              <span className="homepage2-right-arrows">{">>"}</span>A Fit Sharing System
+             
             </h1>
           </div>
           <div className="homepage2-right-side">
-            <img src={choose} alt="" />
+            <img className="homepage2-image" src={choose} alt="" />
           </div>
         </div>
         <div className="homepage2-button-container">

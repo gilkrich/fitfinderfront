@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: 277px;
+  column-gap: 15vw;
 }
 
 .layout-link {
