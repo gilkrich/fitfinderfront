@@ -16,7 +16,7 @@ const SizeContext = ({ children }) => {
 
   useEffect(() => {
 
-    if (
+   if(userinfo){ if (
       (userinfo.measurements && !userinfo.sizeincompaney)) {
       let userSizesPerCompany = [];
       for (let companyName of companiesArr) {
@@ -29,7 +29,7 @@ const SizeContext = ({ children }) => {
             textSizePerBodyPart.push(
               numberSizeToTextSize(
                 clothBodyPartRages[bodyPart],
-                parseInt(userinfo.measurements[bodyPart])
+                parseInt(userinfo.measurements[0].data[bodyPart])
               )
             );
           }
@@ -46,6 +46,7 @@ const SizeContext = ({ children }) => {
       setFinalObjSize(userSizesPerCompany);
     }
 
+   
     if(userinfo.subusers&&userinfo.subusers.length>0){
     for (let i = 0; i < userinfo.subusers.length ; i++) {
       if (
@@ -54,8 +55,9 @@ const SizeContext = ({ children }) => {
         for (let companyName of companiesArr) {
           let clothTypesArr = [];
           for (const clothType of clothTypes) {
+            console.log( clothingSizesPerCompany[companyName]);
             const clothBodyPartRages =
-              clothingSizesPerCompany[companyName][userinfo.subusers[i].gender][clothType];
+              clothingSizesPerCompany[companyName][userinfo?.subusers[i].gender][clothType];
             let textSizePerBodyPart = [];
             for (let bodyPart in clothBodyPartRages) {
               textSizePerBodyPart.push(
@@ -66,20 +68,26 @@ const SizeContext = ({ children }) => {
               );
             }
             clothTypesArr.push({
+              
               [clothType]: calculateFinalSize(textSizePerBodyPart),
             });
           }
           userSizesPerCompany.push({ [companyName]: clothTypesArr });
         }
+         
+        console.log(userSizesPerCompany);
 
-
+        axios.patch("http://localhost:3003/users/sizeincompaneysub", {
+          id: userinfo.subusers[i]._id,
+          sizeincompany: userSizesPerCompany,
+        });
       
       }
     }
     }
 
 
-
+}
 
 
 
