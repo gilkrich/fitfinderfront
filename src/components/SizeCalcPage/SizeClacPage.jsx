@@ -85,7 +85,7 @@ function SizeClacPage() {
               />
               {console.log(size[i])}
               <h1 className="sizecalcpage-text">
-                Size:{size[i][company][obj[currentCloth]][currentCloth]}
+                Size:{size[i][company][obj[currentCloth]][currentCloth]?size[i][company][obj[currentCloth]][currentCloth]:'sorry no match'}
               </h1>
             </div>
           ))}
@@ -95,4 +95,4 @@ function SizeClacPage() {
   );
 }
 
-export default SizeClacPage;
+export default SizeClacPage;

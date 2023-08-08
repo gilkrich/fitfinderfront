@@ -12,6 +12,7 @@ const SizeContext = ({ children }) => {
   const [measurementsClient, setMeasurementsClient] = useState("");
   const { userinfo } = useContext(Context);
   const gender = userinfo && userinfo.gender;
+  let {setrefresh,refresh} = useContext(Context)
 
   useEffect(() => {
 
@@ -47,6 +48,7 @@ const SizeContext = ({ children }) => {
         id: userinfo._id,
         sizeincompaney: userSizesPerCompany})
        
+       setrefresh(!refresh) 
       setFinalObjSize(userSizesPerCompany);
     }
 
@@ -86,6 +88,7 @@ const SizeContext = ({ children }) => {
           sizeincompany: userSizesPerCompany,
         });
       
+        setrefresh(!refresh) 
       }
     }
     }
