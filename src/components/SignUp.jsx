@@ -11,9 +11,15 @@ import blackman1 from './images/blackman1.png'
 import whitemwomen1 from './images/whitewomen1.png'
 import whitemwomen2 from './images/whitewomen2.png'
 import blackwomen2 from './images/blackwomen2.png'
+import { useContext } from "react";
+import { Context } from "./MainContext";
+import { useNavigate } from "react-router-dom";
+
 
 
 const SignUp = () => {
+  const navigate = useNavigate();
+  let {setrefresh,refresh} = useContext(Context)
   const [gender, setgender] = useState('')
   const [madenew,setmadenew] = useState(false)
   const [ username,setusername] = useState()
@@ -30,6 +36,7 @@ const SignUp = () => {
       if (password == verify) {
         const newuser = await axios.post("http://localhost:3003/users/register", { username: username, email: email, password: password, gender: gender , icon:icon })
         setmadenew(true)
+        setrefresh(!refresh)
       } else {
         console.log('passwords do not match')
       }

@@ -3,6 +3,7 @@ import "./home.css";
 import purplestar from "../images/purplestar.png";
 import womenhome from "../images/womenhome.png"
 import { Context } from "../MainContext";
+import { Link } from "react-router-dom";
 function Home() {
 const{userinfo}=useContext(Context);  
 return (
@@ -17,7 +18,9 @@ return (
       <img src={womenhome}  alt="" className="womenhome"/>
       <div className="home-content-container">
         <button className="home-btn">your FIT list</button>
-        <button className="home-btn">The Stylist Recommendation </button>
+        <Link to='/stylehome'>
+        <button className="home-btn" >The Stylist Recommendation </button>
+        </Link>
         <button className="home-btn">Share Your Fit</button>
         <button className="home-btn">Add Another User</button>
       </div>
