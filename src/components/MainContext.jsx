@@ -22,6 +22,7 @@ export const Context = createContext({});
 
 const MainContext = ({children}) => {
   const [user,setuser] = useState('');
+  const [refresh,setrefresh] = useState(false)
   const [clothes,setClothes]=useState([])
   useEffect(()=>{
   async function getuser() { 
@@ -33,14 +34,14 @@ const MainContext = ({children}) => {
       }
     }
     getuser();
-  }, []);
+  }, [refresh]);
 
   return (
     <div>
-       <Context.Provider value={{userinfo:user,clothes,setClothes}}>
+       <Context.Provider value={{userinfo:user,setrefresh:setrefresh,refresh:refresh,clothes,setClothes}}>
       {children}
-    </Context.Provider>
-   </div>
+      </Context.Provider>
+      </div>
   );
 };
 
