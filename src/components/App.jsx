@@ -14,10 +14,8 @@ import ProfilePage from './ProfilePage/ProfilePage';
 import SizesCalculator from './SizesCalculator/SizesCalculator';
 import Profile2 from './Profile2';
 import StylistPage from './StylistPage';
-import NewS from './SizesCalculator/NewS';
 import StylistHomePage from './StylistHomePage';
 import SizeByStyle from './SizeByStyle';
-
 
 function App() {
   return (
@@ -35,7 +33,7 @@ function App() {
           <Route path='profile2' element={<Profile2/>}></Route>
           <Route path='about' element={<About/>}></Route>
           <Route path='chat' element={<Chat/>}></Route>
-          <Route path='calc' element={<NewS/>}></Route>
+          <Route path='calc' element={<></>}></Route>
           <Route path='stylehome' element={<StylistHomePage/>}></Route>
           <Route path='stylesecond' element={<StylistPage/>}></Route>
           <Route path='stylesthird' element={<SizeByStyle/>}></Route>

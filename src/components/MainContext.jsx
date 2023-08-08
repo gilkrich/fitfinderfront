@@ -40,8 +40,7 @@ const MainContext = ({children}) => {
     <div>
        <Context.Provider value={{userinfo:user,setrefresh:setrefresh,refresh:refresh}}>
       {children}
-    </Context.Provider>
-   </div>
+      </Context.Provider>
   );
 };
 
