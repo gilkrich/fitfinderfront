@@ -56,7 +56,7 @@
 
 
 
-.subusers-form{
+.subusers-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,13 +64,26 @@
     text-align: center;
     width: 400px;
     height: 500px;
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
+    /* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+background: rgba(87, 56, 175, 0.28);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0px);
+-webkit-backdrop-filter: blur(0px);
+border: 1px solid rgba(87, 56, 175, 0.63);
     row-gap: 50px;
     margin-top: 50px;
     border-radius: 15px;
 }
 
-.measurements-cont{
+.measurements-cont {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -80,7 +93,7 @@
     margin-bottom: 30px;
 }
 
-.subusers{
+.subusers {
     display: flex;
     flex-direction: column;
     row-gap: 40px;
@@ -88,26 +101,43 @@
 }
 
 
-.measurements-inputs{
-    width: 80px;
+.measurements-inputs {
+    width: 100px;
     height: 30px;
     border: 0;
+    border-radius: 20px;
     background-color: #f6d5e0;
     border-color: #f44f29;
     box-shadow: 2px 2px 0px 0px #f44f29;
 }
 
-.measurments-div{
+.measurments-div {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 }
 
-.subusername-input{
+.subusername-input {
     width: 200px;
     height: 30px;
     border-radius: 20px;
     border-style: dotted;
     background-color: #f6d5e0;
     border-color: #f44f29;
+}
+
+@media screen and (max-width: 790px) {
+
+    .profile-action-cont {
+        width: 380px;
+
+    }
+
+    .top-part-cont {
+        flex-direction: row-reverse;
+    }
+
+    .circle {
+        left: 0px;
+    }
 }
