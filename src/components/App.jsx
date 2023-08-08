@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Login';
 import SignUp from './SignUp';
 import Layout from './Layout';
-import Home from './Home';
+import Home from './Home/Home'
 import Tutorial1 from '../components/Tutorial/Tutorial1'
 import Tutorial2 from '../components/Tutorial/Tutorial2'
 import Tutorial3 from '../components/Tutorial/Tutorial3'
@@ -14,14 +14,13 @@ import ProfilePage from './ProfilePage/ProfilePage';
 import SizesCalculator from './SizesCalculator/SizesCalculator';
 import Profile2 from './Profile2';
 import StylistPage from './StylistPage';
-import NewS from './SizesCalculator/NewS';
 import StylistHomePage from './StylistHomePage';
 import SizeByStyle from './SizeByStyle';
 
 
 function App() {
   return (
-   < div style={{height:"100vh",width:"100vw"}}>
+   < div style={{height:"100vh"}}>
  <Routes>
         <Route path='/' element={<Layout/>}>      
           <Route path='/' element={<Login/>}></Route>
@@ -35,10 +34,9 @@ function App() {
           <Route path='profile2' element={<Profile2/>}></Route>
           <Route path='about' element={<About/>}></Route>
           <Route path='chat' element={<Chat/>}></Route>
-          <Route path='calc' element={<NewS/>}></Route>
           <Route path='stylehome' element={<StylistHomePage/>}></Route>
           <Route path='stylesecond' element={<StylistPage/>}></Route>
-          <Route path='stylesthird' element={<SizeByStyle/>}></Route>
+          <Route path='stylethird/:genid/:id' element={<SizeByStyle/>}></Route>
         </Route>
       </Routes>
    </div>

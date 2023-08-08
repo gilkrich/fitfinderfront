@@ -9,7 +9,7 @@ const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
 
   function SizesCalculator() {
   const {userinfo}=  useContext(Context);
-  const gender= userinfo.gender
+  const gender= "men"
   
   useEffect(() => {
     if (userinfo) {
@@ -42,9 +42,10 @@ const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
           [clothType]: calculateFinalSize(textSizePerBodyPart),
         });
       }
+      console.log(clothTypesArr)
       userSizesPerCompany.push({ [companyName]: clothTypesArr });
     }
-    console.log(userSizesPerCompany);
+    // console.log(userSizesPerCompany);
   }
   }, [userinfo]);
 

@@ -22,7 +22,7 @@ export const Context = createContext({});
 
 const MainContext = ({children}) => {
   const [user,setuser] = useState('');
-    
+  const [clothes,setClothes]=useState([])
   useEffect(()=>{
   async function getuser() { 
       if (localStorage.getItem('token')) {
@@ -37,7 +37,7 @@ const MainContext = ({children}) => {
 
   return (
     <div>
-       <Context.Provider value={{userinfo:user}}>
+       <Context.Provider value={{userinfo:user,clothes,setClothes}}>
       {children}
     </Context.Provider>
    </div>

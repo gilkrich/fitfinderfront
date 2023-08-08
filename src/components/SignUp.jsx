@@ -75,7 +75,7 @@ const SignUp = () => {
           <input type="text" placeholder='veirfy' className='orange-input' required={true}  maxLength={12} minLength={6} onChange={(e)=>setverify(e.target.value)} defaultValue={verify?verify:''}/>
         <div className='check-cont'>
           <label  className="checkbox">
-            <input type="radio" name="gender" onChange={(e)=>setgender(e.target.value)} className='radio' id="1" value="man" />
+            <input type="radio" name="gender" onChange={(e)=>setgender(e.target.value)} className='radio' id="1" value="men" />
             <span>man</span>
           </label>
           <label  className="checkbox">
