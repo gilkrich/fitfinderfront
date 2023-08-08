@@ -13,6 +13,7 @@
     border-radius: 16px;
     background-color: #b7bbde;
     display: flex;
+    row-gap: 40px;
     flex-direction: column;
     align-items: center;
 }
@@ -20,7 +21,17 @@
 .login-form{
     display: flex;
     flex-direction: column;
-    row-gap: 28px;
+    row-gap: 34px;
+}
+
+.orange-two{
+    font: small-caption;
+    padding: 0px;
+    padding-bottom: 0px;
+    background-color: #f6d5e0;
+    /* border-bottom: 3px; */
+    /* border-style: solid; */
+    /* border-color: #f44f29; */
 }
 
 .orange-input-login{
@@ -31,4 +42,12 @@
     background-color: #f6d5e0;
     box-shadow: 4px 6px 0px 0px #f44f29;
     outline: none;
+}
+
+.show-password{
+    position: relative;
+    background: transparent;
+    border: 0;
+    right: 23px;
+    top: 5px;
 }

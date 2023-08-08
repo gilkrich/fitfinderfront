@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
@@ -39,6 +40,7 @@ function App() {
           <Route path="sizecalcpage" element={<SizeClacPage />}></Route>
           <Route path="bodytypesgraph" element={<BodyTypes />}></Route>
           <Route path="" element={<SizeByStyle />}></Route>
+
         </Route>
       </Routes>
     </div>

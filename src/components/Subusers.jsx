@@ -36,7 +36,9 @@ const Subusers = () => {
           neckline: e.target[6].value
         }
         if (currentsub=='') {
-          if (userinfo.subusers.leagth<4) {
+
+   
+          if (userinfo.subusers.length<4) {
           const finduser = await axios.patch("http://localhost:3003/users/createsub", { id: userinfo._id, measurements: measurments3, username: username, gender: gender ,icon:iconimage })
           }  else{
             alert("too much")
@@ -59,7 +61,7 @@ const Subusers = () => {
     <h1>mys sub users</h1>
     <div className='subusers-cards-cont'>
       {userinfo && userinfo?.subusers.map((item, index) =>(
-        <div className='subuser-card'>
+        <div key={index} className='subuser-card'>
            <div className='subuser-card-up'></div>
            <div className='subuser-card-down'>
              <h3>{item.username}</h3>
@@ -115,7 +117,7 @@ const Subusers = () => {
         </div>
             <div className='images-cont'>
               {photoarray&&photoarray.map((item,index)=>(
-                <img src={item} alt="" className='photo-profile-icon' onClick={(e)=>seticon(e.target.src)}/>                
+                <img src={item} alt=""key={index} className='photo-profile-icon' onClick={(e)=>seticon(e.target.src)}/>                
               ))}
             </div>
           <button type='submit'>submit</button>

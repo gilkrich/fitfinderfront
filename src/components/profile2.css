@@ -1,5 +1,6 @@
 .profile-cont-main{
     background-color: #b7bbde;
+    
     display: flex;
     flex-direction: column;
 }
@@ -56,3 +57,160 @@
     margin-bottom: 80px;
 }
 
+
+.profile-square-cont{
+    display: flex;
+    justify-content: center;
+}
+
+
+.subuser-card-main{
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.subuser-card-up-main{
+   height: 50%;
+   height: 200px;
+   width: 620px;
+   /* background-color: red; */
+   /* background-color: #21D4FD;
+background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%); */
+background-image: url(./images/wallpaper.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+
+}
+
+.subuser-card-down-main{
+  height: 50%;
+  width: 620px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 24px;
+  background-color: white;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.subuser-card-down-main-act{
+  height: 50%;
+  width: 620px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  background-color: white;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.image-circle-main{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-image-main{
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+}
+
+.women-image-black{
+    width: 200px;
+}
+
+.info-div{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.profile-info-act-div{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    row-gap: 10;
+    width: 85%;
+}
+
+@media screen and (max-width: 790px) {
+    
+    .subuser-card-up-main{
+        width: 380px;
+        height: 150px;
+    }
+
+    .subuser-card-down-main{
+        width: 380px;
+        height: 30px;
+    }
+
+    .profile-action-cont{
+width: 380px;
+
+    }
+
+    .top-part-cont{
+      flex-direction: row-reverse;
+     }
+
+     .circle{
+       left: 0px;
+     }
+}
+
+
+.user-mesurments-submit{
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  opacity: 0.8;
+  border-color: darkorchid;
+}
+
+.user-mesurments-submit:hover{
+cursor: pointer;
+opacity: 1;
+
+}
+
+
+/* @media screen and (max-width: 460px) {
+    
+    .subuser-card-up-main{
+        width: 400px;
+        height: 150px;
+    }
+
+    .subuser-card-down-main{
+        width: 400px;
+        height: 30px;
+    }
+
+    .profile-action-cont{
+width: 380px;
+
+    }
+
+    .top-part-cont{
+      flex-direction: row-reverse;
+     }
+
+     .circle{
+       left: 0px;
+     }
+} */
