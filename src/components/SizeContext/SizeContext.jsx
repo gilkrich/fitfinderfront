@@ -3,7 +3,7 @@ import clothingSizesPerCompany from "../../companies.json";
 import axios from "axios";
 import { Context } from "../MainContext";
 export const Sizecontext = createContext({});
-const clothTypes = ["shirts", "pants"];
+const clothTypes = ["shirts", "pants","dresses"];
 const bodyParts = ["waist", "chest", "neckline", "arms", "hips"];
 const sizesArr = ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
 const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
@@ -42,8 +42,7 @@ const SizeContext = ({ children }) => {
 
       axios.patch("http://localhost:3003/users/sizeincompaney", {
         id: userinfo._id,
-        sizeincompaney: userSizesPerCompany,
-      });
+        sizeincompaney: userSizesPerCompany})
       setFinalObjSize(userSizesPerCompany);
     }
 

@@ -131,3 +131,4 @@ import React, { useEffect, useState,useContext } from "react";
   </div>)
 }
 export default SizesCalculator;
+
