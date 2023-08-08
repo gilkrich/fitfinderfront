@@ -36,7 +36,8 @@ const Subusers = () => {
           neckline: e.target[6].value
         }
         if (currentsub=='') {
-          console.log(userinfo.subusers);
+
+   
           if (userinfo.subusers.length<4) {
           const finduser = await axios.patch("http://localhost:3003/users/createsub", { id: userinfo._id, measurements: measurments3, username: username, gender: gender ,icon:iconimage })
           }  else{

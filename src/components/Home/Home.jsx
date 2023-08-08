@@ -5,6 +5,7 @@ import womenhome from "../images/womenhome.png";
 import { Context } from "../MainContext";
 import { Link } from "react-router-dom";
 
+
 function Home() {
   const { userinfo } = useContext(Context);
   return (
@@ -19,6 +20,7 @@ function Home() {
       <img src={womenhome} alt="" className="womenhome" />
       <div className="home-content-container">
         <button className="home-btn">your FIT list</button>
+
         <Link to="/stylehome">
           <button className="home-btn">The Stylist Recommendation </button>
         </Link>
