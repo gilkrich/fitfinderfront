@@ -7,12 +7,23 @@ import ClothingCard from '../ClothingCard'
 function SizeByStyle() {
     let {id}=useParams()
     const {userinfo,clothes,setClothes}=useContext(Context)
-
+     
+    let fruits = {
+      "pear" : ['רגיל',"רחב","סלים",]
+    }
+    const filtered = clothes.filter((item,index)=>(
+      item.productfit === 'רגיל' || 
+      item.productfit === 'רחב' || 
+      item.productfit === 'סלים' || 
+      item.productfit === 'נינוח' || 
+      item.productfit === 'סקיני'
+    ))
   return (
     <div className='products-container' style={{width:"100%",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
         <h1>your size in {id} is ...</h1>
         <h2>pick from this list</h2>
        <div className='cards-container'>
+        
         {clothes&&clothes.map((item,index)=>{
             return(
                 <ClothingCard key={index} item={item}/>

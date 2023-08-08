@@ -122,12 +122,12 @@ import React, { useEffect, useState,useContext } from "react";
 //     const averageSizeIndex = Math.ceil(totalSizeIndex / validSizes.length);
 
 //     return sizesArr[averageSizeIndex];
-//   }
+  }
 
 
 
-  return <div>
+  return (<div>
     
-  </div>;
+  </div>)
 }
 export default SizesCalculator;

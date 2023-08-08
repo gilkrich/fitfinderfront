@@ -24,6 +24,8 @@ const MainContext = ({children}) => {
   const [user,setuser] = useState('');
   const [refresh,setrefresh] = useState(false)
   const [clothes,setClothes]=useState([])
+  const [userShape,setUserShape]=useState()
+
   useEffect(()=>{
   async function getuser() { 
       if (localStorage.getItem('token')) {
@@ -38,7 +40,7 @@ const MainContext = ({children}) => {
 
   return (
     <div>
-       <Context.Provider value={{userinfo:user,setrefresh:setrefresh,refresh:refresh,clothes,setClothes}}>
+       <Context.Provider value={{userinfo:user,setrefresh:setrefresh,refresh:refresh,clothes,setClothes,userShape,setUserShape}}>
       {children}
       </Context.Provider>
       </div>

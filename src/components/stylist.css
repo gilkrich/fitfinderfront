@@ -106,13 +106,13 @@ a {
     color: inherit;
     text-decoration: inherit;
   }
-  .card-img{
+  /* .card-img{ */
     /* border-radius: 15px; */
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.275), 0 6px 20px 0 rgba(0, 0, 0, 0.289); */
-  }
+  /* } */
   /* .card-img:hover{
     box-shadow: 0 4px 8px 0 rgba(255, 89, 0, 0.347), 0 6px 20px 0 rgba(255, 81, 0, 0.341);
-  } */
+   }*/
   .products-container{
     background-color:#b7bbde
   }
