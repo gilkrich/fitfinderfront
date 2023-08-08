@@ -1,9 +1,10 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 body{
   box-sizing: border-box;
   margin:0  ;
   padding:0;
+  font-family: 'Ubuntu' ;
   /* font-family: 'Edu SA Beginner', cursive; */
 }
 

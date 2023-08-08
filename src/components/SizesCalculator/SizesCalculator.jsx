@@ -8,9 +8,11 @@ import React, { useEffect, useState,useContext } from "react";
 // const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
 
   function SizesCalculator() {
-//   const {userinfo}=  useContext(Context);
-//   const gender= userinfo.gender
-  
+
+  const {userinfo}=  useContext(Context);
+  const gender= userinfo.gender
+
+
 //   useEffect(() => {
 //     if (userinfo) {
 //     // TODO: Remove this, this is just hardcoded for testing
@@ -22,31 +24,33 @@ import React, { useEffect, useState,useContext } from "react";
 //       neckline: 79,
 //     };
 
-//     let userSizesPerCompany = [];
-//     for (let companyName of companiesArr) {
-//       let clothTypesArr = [];
-//       console.log(clothingSizesPerCompany[companyName]);
-//       for (const clothType of clothTypes) {
-//         const clothBodyPartRages =
-//           clothingSizesPerCompany[companyName][gender][clothType];
-//         let textSizePerBodyPart = [];
-//         for (let bodyPart in clothBodyPartRages) {
-//           textSizePerBodyPart.push(
-//             numberSizeToTextSize(
-//               clothBodyPartRages[bodyPart],
-//               userBodyPartSizes[bodyPart]
-//             )
-//           );
-//         }
-//         clothTypesArr.push({
-//           [clothType]: calculateFinalSize(textSizePerBodyPart),
-//         });
-//       }
-//       userSizesPerCompany.push({ [companyName]: clothTypesArr });
-//     }
-//     console.log(userSizesPerCompany);
-//   }
-//   }, [userinfo]);
+
+    let userSizesPerCompany = [];
+     for (let companyName of companiesArr) {
+       let clothTypesArr = [];
+       console.log(clothingSizesPerCompany[companyName]);
+      for (const clothType of clothTypes) {
+         const clothBodyPartRages =
+           clothingSizesPerCompany[companyName][gender][clothType];
+         let textSizePerBodyPart = [];
+         for (let bodyPart in clothBodyPartRages) {
+           textSizePerBodyPart.push(
+             numberSizeToTextSize(
+               clothBodyPartRages[bodyPart],
+               userBodyPartSizes[bodyPart]
+             )
+           );
+         }
+         clothTypesArr.push({
+           [clothType]: calculateFinalSize(textSizePerBodyPart),
+         });
+       }
+       userSizesPerCompany.push({ [companyName]: clothTypesArr });
+     }
+     console.log(userSizesPerCompany);
+      }
+     }, [userinfo]);
+
 
 //   function translateAgeGroupToTextualSizes() {
 //     if (gender === "girls_2_8" || gender === "boys_2_8") {
@@ -100,24 +104,30 @@ import React, { useEffect, useState,useContext } from "react";
 //       }
 //     }
 
+
 //     return bodyPartResult;
 //   }
 
-//   function calculateFinalSize(clothSizes) {
-//     const validSizes = Object.values(clothSizes).filter(
-//       (size) => size !== "Sorry" && size !== ""
-//     );
+  function calculateFinalSize(clothSizes) {
+    const validSizes = Object.values(clothSizes).filter(
+       (size) => size !== "Sorry" && size !== ""
+    );
 
-//     const totalSizeIndex = validSizes.reduce(
-//       (acc, size) => acc + sizesArr.indexOf(size),
-//       0
-//     );
+     const totalSizeIndex = validSizes.reduce(
+       (acc, size) => acc + sizesArr.indexOf(size),
+       0
+     );
+
 
 //     const averageSizeIndex = Math.ceil(totalSizeIndex / validSizes.length);
 
 //     return sizesArr[averageSizeIndex];
 //   }
 
-  return <div></div>;
+
+
+  return <div>
+    
+  </div>;
 }
 export default SizesCalculator;

@@ -31,11 +31,16 @@ const Layout = () => {
 
         <div className="middle-nav">
           <Link className="layout-link" to='/home'>Home</Link>
-          <Link className="layout-link" to={"/profile2"}><div className="logo">profile2</div></Link>
-          <Link className="layout-link" to={"/tutorial1"}><div className="logo">fitfinder</div></Link>
-          <Link className="layout-link" to={"/profile"}><div className="logo">profile</div></Link>
+
+          <Link className="layout-link" to={"/profile2"}><div className="logo">Profile</div></Link>
+          <Link className="layout-link" to={"/tutorial1"}><div className="logo">Tutorial</div></Link>
+          <Link className="layout-link" to={"/sizecalcpage"}><div className="logo">Calculator</div></Link>
+          <Link className="layout-link" to={"/bodytypesgraph"}><div className="logo">Body Type</div></Link>
+   
+
           {/* <Link className="layout-link" to={"/style"}><div className="logo">style</div></Link> */}
           <Link className="layout-link" to={"/calc"}><div className="logo">calc</div></Link>
+
 
 
         </div>
