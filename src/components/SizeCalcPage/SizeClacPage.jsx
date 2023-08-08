@@ -18,12 +18,11 @@ function SizeClacPage() {
     pants: 1,
     dresses: 2
   };
-  const [size, setSize] = useState(userinfo.sizeincompaney);
+  const [size, setSize] = useState(userinfo?.sizeincompaney);
   const [currentCloth, setCurrentCloth] = useState("shirts");
   // const size = userinfo?.sizeincompaney;
   // console.log(size);
   // console.log(userinfo.subusers[0].username);
-
 
 
   return (
@@ -33,19 +32,24 @@ function SizeClacPage() {
         <br />
         Choose a type of garment and get the suitable measurements for you{" "}
       </h1>
-
-      <select name="" id="" onChange={e => {
-        if(e.target.value !==  'userinfo?.sizeincompaney') {
-          setSize(userinfo.subusers[userinfo.subusers.findIndex(v => v.username === e.target.value)].sizeincompaney)
-        }
+      
+      <select name="subusers" id="" onChange={(e) => {setSize(userinfo?.subusers[e.target.value].sizeincompany)
+        // if(e.target.value !==  'userinfo?.sizeincompaney') {
+        //   setSize(userinfo.subusers[userinfo.subusers.findIndex(v => v.username === e.target.value)].sizeincompaney)
+        // }
+        ,console.log(e.target.value);
       }}>
-      <option value="userinfo.username">{userinfo.username}</option>
-        {userinfo?.subusers?.map((subuserobj, i) => (
-          <option key={i} value={subuserobj.username}>
+        <option value="choose" selected={size==userinfo?.sizeincompaney?"true":"false"} disabled="disabled">choose</option>
+        {userinfo?.subusers?.map((subuserobj, i) => {return(
+          console.log(subuserobj.username
+            ),
+          <option key={i} value={i}>
             {subuserobj.username}
           </option>
-        ))}
+        )})}
       </select>
+
+      <button onClick={()=>setSize(userinfo?.sizeincompaney)}>clear sub</button>
 
       <div className="sizecalcpage-clothes-div">
         <div
@@ -79,9 +83,9 @@ function SizeClacPage() {
                 src={imagesArr[i]}
                 alt={`${company} Logo`}
               />
-              {/* {console.log(size[i][company][obj[currentCloth]][currentCloth])} */}
+              {console.log(size[i])}
               <h1 className="sizecalcpage-text">
-                Size:{size[i][company][obj[currentCloth]][currentCloth]}
+                Size:{size[i][company][obj[currentCloth]][currentCloth]?size[i][company][obj[currentCloth]][currentCloth]:'sorry no match'}
               </h1>
             </div>
           ))}
@@ -91,4 +95,4 @@ function SizeClacPage() {
   );
 }
 
-export default SizeClacPage;
+export default SizeClacPage;
