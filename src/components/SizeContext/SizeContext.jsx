@@ -15,18 +15,13 @@ const SizeContext = ({ children }) => {
 
 
   useEffect(() => {
-    // console.log(userinfo && userinfo.subusers.length);
-    // console.log(gender);
-    if (
-      (userinfo.measurements && !userinfo.sizeincompaney) ||
-      userinfo.subusers?.length > 0
-    ) {
+
+   if(userinfo){ if (
+      (userinfo.measurements && !userinfo.sizeincompaney)) {
       let userSizesPerCompany = [];
       for (let companyName of companiesArr) {
         let clothTypesArr = [];
-        // console.log(clothingSizesPerCompany[companyName]);
         for (const clothType of clothTypes) {
-          // console.log(clothingSizesPerCompany[companyName][gender]);
           const clothBodyPartRages =
             clothingSizesPerCompany[companyName][gender][clothType];
           let textSizePerBodyPart = [];
@@ -34,23 +29,9 @@ const SizeContext = ({ children }) => {
             textSizePerBodyPart.push(
               numberSizeToTextSize(
                 clothBodyPartRages[bodyPart],
-                parseInt(userinfo.measurements[bodyPart])
+                parseInt(userinfo.measurements[0].data[bodyPart])
               )
             );
-            if (userinfo.subusers.length>0) {
-              let subuserSize=[]
-              for (let subuser of userinfo.subusers) {
-                console.log(subuser);
-                console.log(clothBodyPartRages[bodyPart]);
-                console.log(subuser.measurements);
-                console.log(clothBodyPartRages);
-                subuserSize.push(numberSizeToTextSize(
-                  clothingSizesPerCompany[companyName],
-                  subuser.measurements
-                  ));
-                }
-                console.log(subuserSize);
-              }
           }
           clothTypesArr.push({
             [clothType]: calculateFinalSize(textSizePerBodyPart),
@@ -65,6 +46,52 @@ const SizeContext = ({ children }) => {
       });
       setFinalObjSize(userSizesPerCompany);
     }
+
+   
+    if(userinfo.subusers&&userinfo.subusers.length>0){
+    for (let i = 0; i < userinfo.subusers.length ; i++) {
+      if (
+        (userinfo.subusers[i].measurements && !userinfo.subusers[i].sizeincompaney)) {
+        let userSizesPerCompany = [];
+        for (let companyName of companiesArr) {
+          let clothTypesArr = [];
+          for (const clothType of clothTypes) {
+            console.log( clothingSizesPerCompany[companyName]);
+            const clothBodyPartRages =
+              clothingSizesPerCompany[companyName][userinfo?.subusers[i].gender][clothType];
+            let textSizePerBodyPart = [];
+            for (let bodyPart in clothBodyPartRages) {
+              textSizePerBodyPart.push(
+                numberSizeToTextSize(
+                  clothBodyPartRages[bodyPart],
+                  parseInt(userinfo.subusers[i].measurements[bodyPart])
+                )
+              );
+            }
+            clothTypesArr.push({
+              
+              [clothType]: calculateFinalSize(textSizePerBodyPart),
+            });
+          }
+          userSizesPerCompany.push({ [companyName]: clothTypesArr });
+        }
+         
+        console.log(userSizesPerCompany);
+
+        axios.patch("http://localhost:3003/users/sizeincompaneysub", {
+          id: userinfo.subusers[i]._id,
+          sizeincompany: userSizesPerCompany,
+        });
+      
+      }
+    }
+    }
+
+
+}
+
+
+
   }, [measurementsClient, userinfo, userinfo.subusers]);
 
   function translateAgeGroupToTextualSizes() {
