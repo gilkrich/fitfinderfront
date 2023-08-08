@@ -83,8 +83,8 @@ const Subusers = () => {
           <label htmlFor="">gender</label>
           <select name="" id="" onChange={(e) => setgender(e.target.value)} defaultValue={currentsub?currentsub.gender:''}>
             <option value="" defaultValue={currentsub?currentsub.gender:''}>{currentsub?currentsub.gender:''}</option>
-            <option value="man">man</option>
-            <option value="women">women</option>
+            <option value="men">man</option>
+            <option value="women">woman</option>
             <option value="boys_9_14">boys 9-14</option>
             <option value="girls_9_14">girls 9-14</option>
             <option value="boys_2_8">boys 2-8</option>

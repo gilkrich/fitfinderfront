@@ -3,23 +3,6 @@ import axios from 'axios';
 export const Context = createContext({});
 
 
-  // useEffect(() => {
-  //   async function getUser() {
-  //     if (localStorage.getItem('token')) {
-  //       try {
-  //         const findUserResponse = await axios.post("http://localhost:3003/users/istoken", { token: localStorage.getItem('token') });
-  //         setUser(findUserResponse.data);
-  //       } catch (error) {
-  //         console.log(error);
-  //         // Handle any error that might occur during the API call
-  //       }
-  //     } else {
-  //       setUser({});
-  //     }
-  //   }
-  //   getUser();
-  // }, []);
-
 const MainContext = ({children}) => {
   const [user,setuser] = useState('');
   const [refresh,setrefresh] = useState(false)
@@ -35,6 +18,8 @@ const MainContext = ({children}) => {
     }
     getuser();
   }, [refresh]);
+
+  console.log(user);
 
   return (
     <div>

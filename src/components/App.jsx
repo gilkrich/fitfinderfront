@@ -10,7 +10,6 @@ import Tutorial2 from "../components/Tutorial/Tutorial2";
 import Tutorial3 from "../components/Tutorial/Tutorial3";
 import About from "./AboutUs/About";
 import Chat from "./Chat/Chat";
-import SizesCalculator from "./SizesCalculator/SizesCalculator";
 import Profile2 from "./Profile2";
 import StylistPage from "./StylistPage";
 import StylistHomePage from "./StylistHomePage";
@@ -29,7 +28,6 @@ function App() {
           <Route path="tutorial1" element={<Tutorial1 />}></Route>
           <Route path="tutorial2" element={<Tutorial2 />}></Route>
           <Route path="tutorial3" element={<Tutorial3 />}></Route>
-          <Route path="sizescalculator" element={<SizesCalculator />}></Route>
           <Route path="profile2" element={<Profile2 />}></Route>
           <Route path="about" element={<About />}></Route>
           <Route path="chat" element={<Chat />}></Route>
