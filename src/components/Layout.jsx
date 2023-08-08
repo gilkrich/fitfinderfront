@@ -38,8 +38,7 @@ const Layout = () => {
           <Link className="layout-link" to={"/bodytypesgraph"}><div className="logo">Body Type</div></Link>
    
 
-          {/* <Link className="layout-link" to={"/style"}><div className="logo">style</div></Link> */}
-          <Link className="layout-link" to={"/calc"}><div className="logo">calc</div></Link>
+          {/* <Link className="layout-link" to={"/style"}><div className="logo">style</div></Link> */} 
 
 
 

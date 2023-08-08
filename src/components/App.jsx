@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
@@ -39,7 +38,7 @@ function App() {
           <Route path="stylesthird" element={<SizeByStyle />}></Route>
           <Route path="sizecalcpage" element={<SizeClacPage />}></Route>
           <Route path="bodytypesgraph" element={<BodyTypes />}></Route>
-          <Route path="" element={<SizeByStyle />}></Route>
+          <Route path="stylethird/:genid/:id" element={<SizeByStyle />}></Route>
 
         </Route>
       </Routes>
@@ -48,3 +47,4 @@ function App() {
 }
 
 export default App;
+

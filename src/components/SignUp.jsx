@@ -83,7 +83,7 @@ const SignUp = () => {
         <div className='check-cont'>
           <label  className="checkbox">
             <input type="radio" name="gender" onChange={(e)=>setgender(e.target.value)} className='radio' id="1" value="men" />
-            <span>men</span>
+            <span>man</span>
           </label>
           <label  className="checkbox">
             <input type="radio" name="gender" className='radio' id="2" value="women" onChange={(e)=>setgender(e.target.value)}/>

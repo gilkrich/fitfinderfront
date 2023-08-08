@@ -13,16 +13,16 @@ import React, { useEffect, useState,useContext } from "react";
   const gender= userinfo.gender
 
 
-//   useEffect(() => {
-//     if (userinfo) {
-//     // TODO: Remove this, this is just hardcoded for testing
-//     const userBodyPartSizes = {
-//       waist: 80,
-//       chest: 78,
-//       arms: 70,
-//       hips: 80,
-//       neckline: 79,
-//     };
+  useEffect(() => {
+    if (userinfo) {
+    // TODO: Remove this, this is just hardcoded for testing
+    const userBodyPartSizes = {
+      waist: 80,
+      chest: 78,
+      arms: 70,
+      hips: 80,
+      neckline: 79,
+    };
 
 
     let userSizesPerCompany = [];
@@ -44,7 +44,7 @@ import React, { useEffect, useState,useContext } from "react";
          clothTypesArr.push({
            [clothType]: calculateFinalSize(textSizePerBodyPart),
          });
-       }
+      }
        userSizesPerCompany.push({ [companyName]: clothTypesArr });
      }
      console.log(userSizesPerCompany);

@@ -24,7 +24,6 @@ const Subusers = () => {
 
     
 
-
     async function addsub(e) {
         e.preventDefault()
         let username = e.target[0].value
@@ -53,7 +52,7 @@ const Subusers = () => {
         const finduser = await axios.patch("http://localhost:3003/users/deletesub", { id: userinfo._id, subid:subid })
       }
     
-      console.log(iconimage);
+      console.log(userinfo.subusers.length<3);
      
   return (
     <div className='subusers-main-cont'>
