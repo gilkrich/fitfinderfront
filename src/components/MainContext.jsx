@@ -36,11 +36,9 @@ const MainContext = ({children}) => {
   }, []);
 
   return (
-    <div>
        <Context.Provider value={{userinfo:user}}>
       {children}
     </Context.Provider>
-   </div>
   );
 };
 

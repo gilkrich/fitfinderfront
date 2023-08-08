@@ -9,9 +9,12 @@ import { useContext } from "react";
 import { Context } from "./MainContext";
 import axios from 'axios'
 import Subusers from './Subusers'
+import  { Sizecontext } from './SizeContext/SizeContext'
+
 const Profile2 = () => {
-  const [actions, setactions] = useState(true)
   let { userinfo } = useContext(Context)
+  const{finalObjSize,setMeasurementsClient}=useContext(Sizecontext);
+  const [actions, setactions] = useState(true)
   const [act1, setact1] = useState(false)
   const [act2, setact2] = useState(false)
   const [act3, setact3] = useState(false)
@@ -29,6 +32,7 @@ const Profile2 = () => {
       hips: e.target[3].value,
       neckline: e.target[4].value
     }
+    setMeasurementsClient(measurments3 && measurments3)
     const finduser = await axios.patch("http://localhost:3003/users/addmeasurements", { id: userinfo._id, measurments: measurments3 })
   }
 
