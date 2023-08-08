@@ -13,10 +13,9 @@ const SizeContext = ({ children }) => {
   const { userinfo } = useContext(Context);
   const gender = userinfo && userinfo.gender;
 
-
   useEffect(() => {
 
-   if(userinfo){ if (
+   if(userinfo.measurements&&userinfo){ if (
       (userinfo.measurements && !userinfo.sizeincompaney)) {
       let userSizesPerCompany = [];
       for (let companyName of companiesArr) {
@@ -29,9 +28,13 @@ const SizeContext = ({ children }) => {
             textSizePerBodyPart.push(
               numberSizeToTextSize(
                 clothBodyPartRages[bodyPart],
-                parseInt(userinfo.measurements[0].data[bodyPart])
+                parseInt(userinfo?.measurements[0]?.data[bodyPart])
               )
             );
+            console.log( numberSizeToTextSize(
+              clothBodyPartRages[bodyPart],
+              parseInt(userinfo?.measurements[0]?.data[bodyPart])
+            ));
           }
           clothTypesArr.push({
             [clothType]: calculateFinalSize(textSizePerBodyPart),
@@ -43,6 +46,7 @@ const SizeContext = ({ children }) => {
       axios.patch("http://localhost:3003/users/sizeincompaney", {
         id: userinfo._id,
         sizeincompaney: userSizesPerCompany})
+       
       setFinalObjSize(userSizesPerCompany);
     }
 
@@ -143,7 +147,7 @@ const SizeContext = ({ children }) => {
         break;
       }
     }
-
+    console.log(bodyPartResult);
     return bodyPartResult;
   }
 

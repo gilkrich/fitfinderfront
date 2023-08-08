@@ -106,7 +106,7 @@ const CakeGraph = () => {
   // const gender = "women";
 
 
-  console.log(userinfo.measurements, userinfo.gender);
+  console.log(userinfo.measurements);
   // userinfo.measurements
   const result = userinfo && sizeCalculator(userinfo.measurements[0].data, userinfo.gender);
   console.log(result["H&M"]);
