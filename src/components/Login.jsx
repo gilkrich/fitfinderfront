@@ -55,7 +55,7 @@ const Login = () => {
     <span className='dont-sen'>Don't have a User yet?</span>
     <span className='createuserlogin'>Sign up here!</span>
   </div>
-  <button type='submit' className='succses-button'>Login</button>
+  <button type='submit' className='succses-button'>Submite</button>
 </form>
 
       </div>}

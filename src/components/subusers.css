@@ -8,6 +8,7 @@
    gap: 90px;
 }
 
+
 .subusers-main-cont{
     display: flex;
     flex-direction: column;
@@ -107,4 +108,51 @@ background-size: cover;
 .photo-profile-icon:focus{
     border-style: solid;
 }
+.sub-submit-btn{
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    opacity: 0.8;
+    border-color: darkorchid;
+    margin-bottom: 25px;
+}
+.sub-submit-btn:hover{
+background-color: darkorchid ;
+color: bisque;
+opacity: 0.8;
+animation: shake 0.8s 1;
 
+
+}
+.sub-new-btn{
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    opacity: 0.8;
+    border-color: darkorchid;
+    margin-top: 25px;
+
+}
+.sub-new-btn:hover{
+    background-color: darkorchid ;
+    color: bisque;
+    opacity: 0.8;
+    animation: shake 0.8s 1;
+}
+.subusername-input{
+    margin-top: 25px;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-2.5px);
+    }}
