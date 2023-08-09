@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './stylist.css'
 import { Link,useNavigate } from 'react-router-dom'
 import dresses from './images/dresses.png'
@@ -26,9 +26,9 @@ function StylistPage() {
    "girls_9_14":[pants,dresses,sweaters]
    
   }
-
   const handleClick =async(clothes)=>{
     //need to check how gender is saved
+    localStorage.setItem("cloth",clothes)
     const {data}=await axios.get(`http://localhost:3003/stylethird/${userinfo.gender}/${clothes}`)
     if(data){
       setClothes(data)
@@ -36,8 +36,9 @@ function StylistPage() {
       navigate(`/stylethird/${userinfo.gender}/${clothes}`)
     }
   }
+  
   return (
-    <div className='style-container'>
+    <div className='style-container' style={{minHeight:"90vh"}}>
       <h1 className='what-are-we'>what are we searching today?</h1>
       <div className='style-container-container'>
       <div className='style-category-container'>

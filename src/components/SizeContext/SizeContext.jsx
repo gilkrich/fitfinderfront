@@ -55,8 +55,8 @@ const SizeContext = ({ children }) => {
    
     if(userinfo.subusers&&userinfo.subusers.length>0){
     for (let i = 0; i < userinfo.subusers.length ; i++) {
-      if (
-        (userinfo.subusers[i].measurements && !userinfo.subusers[i].sizeincompany)) {
+      if ((userinfo.subusers[i].measurements && !userinfo.subusers[i].sizeincompany)) {
+
         let userSizesPerCompany = [];
         for (let companyName of companiesArr) {
           let clothTypesArr = [];

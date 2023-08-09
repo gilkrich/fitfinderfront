@@ -36,6 +36,8 @@ const SignUp = () => {
       e.preventDefault()
       if (password == verify) {
         const newuser = await axios.post(import.meta.env.VITE_SERVER+"/users/register", { username: username, email: email, password: password, gender: gender, icon: icon })
+        localStorage.setItem('token',JSON.stringify(newuser.data.token))
+        //setmadenew(true)
         setrefresh(!refresh)
         navigate('/')
       } else {

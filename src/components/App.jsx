@@ -17,9 +17,9 @@ import StylistPage from "./StylistPage";
 import StylistHomePage from "./StylistHomePage";
 import SizeByStyle from "./SizeByStyle";
 import SizeClacPage from "./SizeCalcPage/SizeClacPage";
-import BodyTypes from "./bodyTypes/bodyTypes";
-import { useEffect
- } from "react";
+import BodyTypes from "./BodyTypes/BodyTypes";
+import { useEffect} from "react";
+
 
 function App() {
   let { userinfo } = useContext(Context)

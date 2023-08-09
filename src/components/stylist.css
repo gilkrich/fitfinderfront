@@ -80,13 +80,14 @@ a:visited {
 }
 .card{
     width: 250px;
-    height: 450px;
+    min-height: 470px;
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 5px;
     border-radius: 15px;
     background-color: white;
+    word-wrap: break-word;
     
     
 }
@@ -118,9 +119,10 @@ a {
   }
   .card-content-container{
     width: 250px;
-    height: 150px;
+    min-height: 130px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     gap: 10px;
   }
