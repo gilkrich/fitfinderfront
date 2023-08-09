@@ -23,7 +23,7 @@ const Login = () => {
   let email = e.target[0].value
   let password = e.target[1].value
       try{
-        const newuser = await axios.post(import.meta.env.VITE_SERVER+"/users/login", { email:email,password:password})
+        const newuser = await axios.post(`${import.meta.env.VITE_SERVER}/users/login`, { email:email,password:password})
         if (!newuser) {
           alert('worng')
         }else{
