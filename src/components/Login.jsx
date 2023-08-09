@@ -12,6 +12,7 @@ import eye from './images/eye.png'
 
 
 
+
 const Login = () => {  
 
   let {setrefresh,refresh} = useContext(Context)
@@ -22,13 +23,13 @@ const Login = () => {
   let email = e.target[0].value
   let password = e.target[1].value
       try{
-        const newuser = await axios.post("http://localhost:3003/users/login", { email:email,password:password})
+        const newuser = await axios.post(import.meta.env.VITE_SERVER+"/users/login", { email:email,password:password})
         if (!newuser) {
           alert('worng')
         }else{
           localStorage.setItem('token',JSON.stringify(newuser.data.token))
           setrefresh(!refresh)
-          navigate("/home");
+          navigate("/");
         }
       }catch(err){
           console.log(err)
@@ -52,7 +53,7 @@ const Login = () => {
         <img src={eye} alt="" className='show-password' onClick={()=>setshowpass(!showpass)} width='15px'/>
         </div>
 
-        <div><span>Dont got a user?</span><Link>Sign up here</Link></div>
+        <div><span>Dont got a user?</span><Link to={'/signup'}>Sign up here</Link></div>
         <button type='submit' className='succses-button'>Login</button>
       </form>
       </div>}

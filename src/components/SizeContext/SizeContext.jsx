@@ -44,7 +44,7 @@ const SizeContext = ({ children }) => {
         userSizesPerCompany.push({ [companyName]: clothTypesArr });
       }
 
-      axios.patch("http://localhost:3003/users/sizeincompaney", {
+      axios.patch(import.meta.env.VITE_SERVER+"/users/sizeincompaney", {
         id: userinfo._id,
         sizeincompaney: userSizesPerCompany})
        
@@ -56,7 +56,7 @@ const SizeContext = ({ children }) => {
     if(userinfo.subusers&&userinfo.subusers.length>0){
     for (let i = 0; i < userinfo.subusers.length ; i++) {
       if (
-        (userinfo.subusers[i].measurements && !userinfo.subusers[i].sizeincompaney)) {
+        (userinfo.subusers[i].measurements && !userinfo.subusers[i].sizeincompany)) {
         let userSizesPerCompany = [];
         for (let companyName of companiesArr) {
           let clothTypesArr = [];
@@ -83,7 +83,7 @@ const SizeContext = ({ children }) => {
          
         console.log(userSizesPerCompany);
 
-        axios.patch("http://localhost:3003/users/sizeincompaneysub", {
+        axios.patch(import.meta.env.VITE_SERVER+"/users/sizeincompaneysub", {
           id: userinfo.subusers[i]._id,
           sizeincompany: userSizesPerCompany,
         });
