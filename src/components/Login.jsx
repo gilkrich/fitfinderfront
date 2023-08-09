@@ -44,17 +44,17 @@ const Login = () => {
         </p>
       </div>
       <form action="" className='login-form' onSubmit={(e)=>login(e)}>
-      {/* <TextField id="standard-basic" label="Standard" variant="standard" type='email'/> */}
-        {/* <TextField id="standard-basic" label="Standard" variant="standard" type='password' style={{color:'#f44f29'}}/> */}
-        <input type="email" placeholder='email' className='orange-input-login'/>
-        <div>
-        <input type={showpass?"text":"password"} placeholder='password' className='orange-input-login' minLength={6} maxLength={12}/>
-        <img src={eye} alt="" className='show-password' onClick={()=>setshowpass(!showpass)} width='15px'/>
-        </div>
-
-        <div><span>Dont got a user?</span><Link>Sign up here</Link></div>
-        <button type='submit' className='succses-button'>Login</button>
-      </form>
+  <input type="email" placeholder='Email' className='orange-input-login'/>
+  <div className='password-container'>
+    <input type={showpass ? "text" : "password"} placeholder='Password' minLength={6} maxLength={12} className='orange-input-login-2'/>
+    <img src={eye} alt="" className='show-password' onClick={()=>setshowpass(!showpass)} width='15px'/>
+  </div>
+  <div onClick={()=>navigate("/signup")}>
+    <span className='dont-sen'>Don't have a User yet?</span>
+    <span className='createuserlogin'>Sign up here!</span>
+  </div>
+  <button type='submit' className='succses-button'>Login</button>
+</form>
       </div>}
     </div>
   )

@@ -33,12 +33,8 @@ function SizeClacPage() {
         Choose a type of garment and get the suitable measurements for you{" "}
       </h1>
       
-      <select name="subusers" id="" onChange={(e) => {setSize(userinfo?.subusers[e.target.value].sizeincompany)
-        // if(e.target.value !==  'userinfo?.sizeincompaney') {
-        //   setSize(userinfo.subusers[userinfo.subusers.findIndex(v => v.username === e.target.value)].sizeincompaney)
-        // }
-        ,console.log(e.target.value);
-      }}>
+      <select name="subusers" id="" onChange={(e) => {setSize(userinfo?.subusers[e.target.value].sizeincompany)}}>
+      <option value="men" selected="true" disabled="disabled">select gender</option>
         <option value="choose" selected={size==userinfo?.sizeincompaney?"true":"false"} disabled="disabled">choose</option>
         {userinfo?.subusers?.map((subuserobj, i) => {return(
           console.log(subuserobj.username

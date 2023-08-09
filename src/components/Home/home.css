@@ -85,6 +85,8 @@
   /* right:  570px; */
   right: 8%;
 }
+
+
 .womenhome{
   position: absolute;
   width: 400px;
@@ -114,4 +116,13 @@
   .womenhome {
     display: none;
   }
+
+  .purple-star-one{
+    display: none;
+  }
+  
+  .purple-star-two{
+    display: none;
+  }
+  
 }
