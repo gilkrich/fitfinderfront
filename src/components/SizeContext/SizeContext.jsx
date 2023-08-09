@@ -6,7 +6,7 @@ export const Sizecontext = createContext({});
 const clothTypes = ["shirts", "pants","dresses"];
 const bodyParts = ["waist", "chest", "neckline", "arms", "hips"];
 const sizesArr = ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
-const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
+const companiesArr = ["H&M", "ZARA", "AmericanEagle","Pull&Bear","GOLF","Mango"];
 const SizeContext = ({ children }) => {
   const [finalObjSize, setFinalObjSize] = useState();
   const [measurementsClient, setMeasurementsClient] = useState("");

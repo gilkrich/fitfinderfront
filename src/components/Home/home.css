@@ -18,37 +18,10 @@
   row-gap: 20px;
 }
 
-/* .home-orangered-div {
-  background-color: orangered;
-  position: absolute;
-  height: 300px;
-  width: 30vw;
-  margin-left: 35vw;
-  margin-right: 35vw;
-  border-radius: 8rem;
-  z-index: -900;
-  display: flex;
-  justify-content: center;
-} */
-
-
 .home-btn {
   width: 200px;
   padding: 10px;
 }
-
-/* .star {
-  position: relative;
-  display: block;
-  color: #5738af;
-  width: 0px;
-  height: 0px;
-  border-right: 100px solid transparent;
-  border-bottom: 70px solid #5738af;
-  border-left: 100px solid transparent;
-  transform: rotate(35deg);
-  z-index: -900;
-} */
 
 .content-continer-h2 {
   display: flex;
@@ -70,19 +43,15 @@
 
 .purple-star-one{
   position: absolute;
-  /* top: 230px; */
   top: 15%;
   z-index: 2;
-  /* left: 560px; */
   left: 8%;
 }
 
 .purple-star-two{
   position: absolute;
-  /* top: 550px; */
   top: 70%;
   z-index: 2;
-  /* right:  570px; */
   right: 8%;
 }
 
@@ -90,10 +59,8 @@
 .womenhome{
   position: absolute;
   width: 400px;
-  /* top: 550px; */
   bottom: -35px;
   z-index: 2;
-  /* right:  570px; */
   left: 0;
   mix-blend-mode:multiply ;
 }
