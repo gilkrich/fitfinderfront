@@ -20,7 +20,7 @@ function Home() {
       <img src={womenhome} alt="" className="womenhome" />
       <div className="home-content-container">
         <Link to="/sizecalcpage">
-        <button className="home-btn">your FIT list</button>
+        <button className="home-btn">Your FIT list</button>
         </Link>
         <Link to="/bodytypesgraph">
           <button className="home-btn">The Stylist Recommendation </button>

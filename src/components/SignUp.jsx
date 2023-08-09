@@ -49,7 +49,6 @@ const SignUp = () => {
   }
 
 
-
   return (
     <div className='main-sign-up'>
       <p className='bubble'>Just few more steps and were in</p>
