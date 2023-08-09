@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../Tutorial/Tutorial1.css";
 import womenhome from '../images/result.png'
 import fitlogo from '../images/fitlogo.png'
+import purplestar from "../images/purplestar.png";
 
 function Tutorial1() {
 
@@ -24,7 +25,9 @@ function Tutorial1() {
         </button>
         <div>
           <img className="background-image" src={womenhome} alt="" />
-          {/* <img className="background-image" src={womenhome} alt="" /> */}
+          <img src={purplestar} alt="" width="100px" className="purple-star-one" />
+      <img src={purplestar} alt="" width="100px" className="purple-star-two" />
+       
         </div>
       </div>
     </div>

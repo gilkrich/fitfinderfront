@@ -63,6 +63,7 @@ function SizeClacPage() {
 
   return (
     <div className="sizecalcpage-container">
+
       {!showmidot && <h1 className="sizecalcpage-title">
         What are we looking for?
       </h1>}
@@ -138,6 +139,7 @@ function SizeClacPage() {
           <h2 style={{ color: 'rgb(87 56 175)', width: '140px' }}>{womenproducts[3].type}</h2>
           <img src={womenproducts[3].image} alt="" className="midot-image" />
         </div>
+
         <div
           onClick={() => { setCurrentCloth(clothTypes[0]), setshowmidot(true), setwich(4) }}
           className="sizecalcpage-single-cloth" style={{ backgroundColor: '#9298cc', marginBottom: '50px' }}

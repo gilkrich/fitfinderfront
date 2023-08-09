@@ -97,17 +97,17 @@ console.log(refresh);
           <p>name</p>
         </div>} */}
         {actions && <div className='profile-actions-cont'>
-          <div onClick={() => { setact1(true), setactions(false), setact4(false), setact2(false), setact3(false) }}>
-            {<Profileact icon={tape} backgroundimage={'linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)'} color={'#0093E9'} title={'My measurements'} info={'here you can look and change your user measurments'}></Profileact>}
+          <div className='box-container-profile' onClick={() => { setact1(true), setactions(false), setact4(false), setact2(false), setact3(false) }}>
+            {<Profileact icon={tape} backgroundimage={'linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)'} color={'#0093E9'} title={'My measurements'} info={'Here you can look and change your user measurments'}></Profileact>}
           </div>
-          <div onClick={() => { setact2(true), setactions(false), setact1(false), setact3(false), setact4(false) }}>
-            {<Profileact icon={person} color={''} backgroundimage={'linear-gradient( 117deg,  rgba(123,216,96,1) 39.2%, rgba(255,255,255,1) 156.2% )'} title={'my proifle info'} info={'here you can look and change your user details and personal info'}></Profileact>}
+          <div className='box-container-profile'  onClick={() => { setact2(true), setactions(false), setact1(false), setact3(false), setact4(false) }}>
+            {<Profileact icon={person} color={''} backgroundimage={'linear-gradient( 117deg,  rgba(123,216,96,1) 39.2%, rgba(255,255,255,1) 156.2% )'} title={'My profile info'} info={'here you can look and change your user details and personal info'}></Profileact>}
           </div>
-          <div onClick={() => { setact3(true), setactions(false), setact1(false), setact2(false), setact4(false) }}>
+          <div className='box-container-profile' onClick={() => { setact3(true), setactions(false), setact1(false), setact2(false), setact4(false) }}>
             {<Profileact icon={group} color={''} backgroundimage={'linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)'} title={'My Sub-Users'} info={'Press this to view or change your sub-users'} ></Profileact>}
           </div>
-          <div>
-            {<Profileact color={''} backgroundimage={'radial-gradient( circle farthest-corner at 17.1% 22.8%,  rgba(226,24,24,1) 0%, rgba(160,6,6,1) 90% )'} title={'my user info'} info={'here you can look and change your user details and personal info'}></Profileact>}
+          <div className='box-container-profile'>
+            {<Profileact color={''} backgroundimage={'radial-gradient( circle farthest-corner at 17.1% 22.8%,  rgba(226,24,24,1) 0%, rgba(160,6,6,1) 90% )'} title={'My user info'} info={'here you can look and change your user details and personal info'}></Profileact>}
           </div>
         </div>}
 
@@ -116,12 +116,13 @@ console.log(refresh);
           {act3 && <Subusers></Subusers>}
 
 
-          {act1 && 
-           <div>
-            <h1 style={{ textAlign: 'center' }}>measurements form</h1>
+
+          {act1 && <div>
+            <h1 style={{ textAlign: 'center' }}>Measurements Form</h1>
             <div className='subusers-form'>
-              <form action="" className='subusers' onSubmit={(e)=>measurments(e)}>
-                <h2>User measurements</h2>
+              <form action="" className='subusers' onSubmit={(e) => measurments(e)}>
+                <h2>User Measurements</h2>
+
                 <div className='measurements-cont'>
                   <div className='measurments-div'>
                     <label htmlFor="">waist</label>
@@ -160,7 +161,7 @@ console.log(refresh);
 
 
           {act2 && <div>
-            <h1>my info</h1>
+            <h1>My info</h1>
             <div className='profile-square-cont'>
 
               <div className='subuser-card-main'>

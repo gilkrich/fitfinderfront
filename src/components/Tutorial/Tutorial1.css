@@ -71,6 +71,37 @@
   width: 340px;
 }
 
+.purple-star-one {
+  position: absolute;
+  top: 30%;
+  z-index: 2;
+  left: 13%;
+}
+
+.purple-star-two {
+  position: absolute;
+  top: 77%;
+  z-index: 2;
+  right: 8%;
+}
+
+.purple-star-one,
+.purple-star-two {
+  position: absolute;
+  z-index: 2;
+  animation: rotate360 10s linear infinite;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
 @media (max-width: 768px) {
   .hompage-getstarted-btn {
     width: 90%;
@@ -97,6 +128,14 @@
     width: 80%;
     background-color: azure;
     margin-bottom: 2vh;
+  }
+
+  .purple-star-one{
+    display: none;
+  }
+  
+  .purple-star-two{
+    display: none;
   }
 
   
