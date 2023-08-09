@@ -44,7 +44,7 @@ const SizeContext = ({ children }) => {
         userSizesPerCompany.push({ [companyName]: clothTypesArr });
       }
 
-      axios.patch("http://localhost:3003/users/sizeincompaney", {
+      axios.patch(import.meta.env.VITE_SERVER+"/users/sizeincompaney", {
         id: userinfo._id,
         sizeincompaney: userSizesPerCompany})
        
@@ -83,7 +83,7 @@ const SizeContext = ({ children }) => {
          
         console.log(userSizesPerCompany);
 
-        axios.patch("http://localhost:3003/users/sizeincompaneysub", {
+        axios.patch(import.meta.env.VITE_SERVER+"/users/sizeincompaneysub", {
           id: userinfo.subusers[i]._id,
           sizeincompany: userSizesPerCompany,
         });
