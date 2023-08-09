@@ -55,7 +55,7 @@ const Layout = () => {
           {userinfo && profilenav && <div className="user-actions">
             <Link className="layout-link" to='profile2' onClick={() => setnav(false)}>Profile</Link>
             <Link className="layout-link" onClick={() => setnav(false)}>Switchuser</Link>
-            <Link className="layout-link" onClick={() => { setnav(false), localStorage.removeItem('token'),navigate("/"), setrefresh(!refresh) }}>Signout</Link>
+            <Link className="layout-link" onClick={() => { setnav(false), localStorage.removeItem('token'),navigate("/home"), setrefresh(!refresh) }}>Signout</Link>
           </div>}
         </div>
 

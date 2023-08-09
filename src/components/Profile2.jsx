@@ -37,27 +37,7 @@ const Profile2 = () => {
     const finduser = await axios.patch("http://localhost:3003/users/addmeasurements", { id: userinfo._id, measurments: measurments3 })
   }
 
-  async function addsub(e) {
-    e.preventDefault()
-    let username = e.target[0].value
-    let measurments3 = {
-      waist: e.target[2].value,
-      chest: e.target[3].value,
-      arms: e.target[4].value,
-      hips: e.target[5].value,
-      neckline: e.target[6].value
-    }
-    if (currentsub == '') {
-      const finduser = await axios.patch("http://localhost:3003/users/createsub", { id: userinfo._id, measurements: measurments3, username: username, gender: gender })
-    } else {
-      const finduser = await axios.patch("http://localhost:3003/users/editsub", { id: currentsub._id, measurements: measurments3, username: username, gender: gender })
-    }
-  }
-
-
-  async function deletesub(subid) {
-    const finduser = await axios.patch("http://localhost:3003/users/deletesub", { id: userinfo._id, subid: subid })
-  }
+  
 
 
 

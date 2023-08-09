@@ -15,7 +15,7 @@ import StylistPage from "./StylistPage";
 import StylistHomePage from "./StylistHomePage";
 import SizeByStyle from "./SizeByStyle";
 import SizeClacPage from "./SizeCalcPage/SizeClacPage";
-import BodyTypes from "./bodyTypes/bodyTypes";
+import BodyTypes from "./BodyTypes/BodyTypes";
 
 function App() {
   return (

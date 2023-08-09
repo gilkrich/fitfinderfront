@@ -8,17 +8,24 @@ import { Context } from "../MainContext"
 import { useContext } from "react";
 import data from "../../companies.json"
 
-
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884D8"];
 
 const CakeGraph = () => {
   const [data1, setData1] = useState();
   const {userinfo,userShape,setUserShape}=useContext(Context)
   // let { userinfo } = useContext(Context)
-
+  const navigate =useNavigate()
   if (!userinfo) {
     return <div></div>; // Add a loading state while userinfo is being fetched
   }
+  // if(userinfo&&!userinfo.hasOwnProperty("measurments")){
+  //   return(
+  //     <div>
+  //     <div>you have no measurments go fill 'em first ☻</div>
+  //     <button onClick={()=>{navigate('/profile2')}}>go to profile!</button>
+  //     </div>
+  //     )
+  //   }
   console.log(userinfo);
   function sizeCalculator(obj, gender) {
     let theObj = obj;
@@ -40,9 +47,9 @@ const CakeGraph = () => {
 
     companies.forEach((company) => {
       calculatedData[company] = {
-        shirts: { waist: [], chest: [], neckline: [], arms: [], hips: [] },
-        pants: { waist: [], chest: [], neckline: [], arms: [], hips: [] },
-        dresses: { waist: [], chest: [], neckline: [], arms: [], hips: [] }
+        shirts: { waist: [], chest: [], hips: [], arms: [], neckline: [] },
+        pants: { waist: [], chest: [], hips: [], arms: [], neckline: [] },
+        // dresses: { waist: [], chest: [], hips: [], arms: [], neckline: [] }
       };
       Object.keys(data[company][gender]).forEach((clothing) => {
         calculatedData[company][clothing] = (Object.keys(data[company][gender][clothing]).map((category) => {
@@ -84,7 +91,7 @@ const CakeGraph = () => {
       const sizeObj = {
         // [category]: calcSize.filter((item, index) => { return item.length < 4 })[0],
         // ["number"]: sizes.indexOf(calcSize.filter((item, index) => { return item.length < 4 })[0]) + 1
-        [category]: sizes.indexOf(calcSize.filter((item, index) => { return item.length < 4 })[0]) + 1
+        [category]: sizes.indexOf(calcSize.filter((item, index) => {return item.length < 4 })[0]) + 1
       }
 
       return sizeObj;
@@ -106,80 +113,102 @@ const CakeGraph = () => {
   // const gender = "women";
 
 
-  console.log(userinfo.measurements);
+  // console.log(userinfo.measurements);
   // userinfo.measurements
   const result = userinfo && sizeCalculator(userinfo.measurements[0].data, userinfo.gender);
-  console.log(result["H&M"]);
+ userinfo&& console.log(Object.entries(result["H&M"]));
+ if(result){
 
-
-  const shapes = {
-    rectangle: {
-      waist: "3-4",
-      chest: "3-4",
-      hips: "3-4"
-    },
-    apple: {
-      waist: "5-7",
-      chest: "5-7",
-      hips: "5-7"
-    },
-    pear: {
-      waist: "5-7",
-      chest: "1-2",
-      hips: "5-7"
-    },
-    upsidedowntriangle: {
-      waist: "1-2",
-      chest: "5-7",
-      hips: "1-2"
-    },
-    hourglass: {
-      waist: "1-2",
-      chest: "5-7",
-      hips: "5-7"
-    },
-    chello: {
-      waist: "3-4",
-      chest: "5-7",
-      hips: "5-7"
-    }
-  }
-  let arr = []
-  Object.keys(result["H&M"].shirts).forEach((category, index) => {
-    arr.push(Object.values(result["H&M"].shirts[category]).flat())
-  })
-  let arr1 = arr.flat()
-  arr1.pop()
-  console.log(arr1);
-  let competible = 0
-  let shapename = ""
-  let lastshapename = ""
-  let waistcount = 0
-  let chestcount = 0
-  Object.keys(shapes).forEach((shape, index) => {
-    let count = 0
-    Object.keys(shapes[shape]).forEach((category, index) => {
-      if (arr1[index] >= shapes[shape][category].split("-")[0] && arr1[index] <= shapes[shape][category].split("-")[1]) {
-        count++
+   let newarr = Object.entries(result["H&M"]).flatMap(([key, value]) => {
+     return value.flatMap((item) => {
+      // return item
+      // console.log(item);
+       const relevantKeys = ["waist", "chest", "hips"];
+       const relevantKey = Object.keys(item).find((key) => relevantKeys.includes(key));
+       if (relevantKey) {
+         return item;
+        }
+        return [];
+      });
+    });
+    // console.log(newarr)
+    let filteredarr = [];
+    newarr.forEach((item, index) => {
+      const itemStr = JSON.stringify(item);
+      if (!filteredarr.some(existingItem => JSON.stringify(existingItem) === itemStr)) {
+        filteredarr.push(item);
       }
+    });
+    
+    let filteredvalues=[]
+    filteredarr.forEach((obj,index)=>{
+      filteredvalues.push(Object.values(obj))
     })
-    console.log(count);
-    if (count > competible) {
-      competible = count
-      lastshapename = shapename
-      shapename = shape
-      if (arr1[0] >= shapes[shape]['waist'].split("-")[0] && arr1[0] <= shapes[shape]['waist'].split("-")[1]) {
-        waistcount++
-      }
-      else if (arr1[1] >= shapes[shape]['waist'].split("-")[0] && arr1[1] <= shapes[shape]['waist'].split("-")[1]) {
-        chestcount++
-      }
-      // console.log(waistcount, "h");
+    filteredvalues=filteredvalues.flat()
+    console.log(filteredvalues)
+    const shapes = {
+      chello: {
+        waist: "3-4",
+        chest: "5-7",
+        hips: "5-7"
+      },
+      rectangle: {
+        waist: "3-4",
+        chest: "3-4",
+        hips: "3-4"
+      },
+      apple: {
+        waist: "5-7",
+        chest: "5-7",
+        hips: "5-7"
+      },
+      pear: {
+        waist: "5-7",
+        chest: "1-2",
+        hips: "5-7"
+      },
+      invertedtriangle: {
+        waist: "1-2",
+        chest: "5-7",
+        hips: "1-2"
+      },
+      hourglass: {
+        waist: "1-2",
+        chest: "5-7",
+        hips: "5-7"
+      },
+     
     }
-    else if (count == competible) {
-      if (arr1[0] >= shapes[shape]['waist'].split("-")[0] && arr1[0] <= shapes[shape]['waist'].split("-")[1] && waistcount < 1) {
-        lastshapename = shapename
-        shapename = shape
+
+      let arr1=filteredvalues
+      let competible = 0
+      let shapename = ""
+      let lastshapename = ""
+      let waistcount = 0
+      let chestcount = 0
+      Object.keys(shapes).forEach((shape, index) => {
+        let count = 0
+        Object.keys(shapes[shape]).forEach((category, index) => {
+          if (arr1[index]>0&&arr1[index] >= shapes[shape][category].split("-")[0] && arr1[index] <= shapes[shape][category].split("-")[1]) {
+            count++
+          }
+        })
+        console.log(count);
+        if (count > competible) {
+          competible = count
+          lastshapename = shapename
+          shapename = shape
+          if (arr1[0] >= shapes[shape]['waist'].split("-")[0] && arr1[0] <= shapes[shape]['waist'].split("-")[1]) {
+            waistcount++
+          }
+          else if (arr1[1] >= shapes[shape]['waist'].split("-")[0] && arr1[1] <= shapes[shape]['waist'].split("-")[1]) {
+            chestcount++
+          }
+        }
+        else if (count == competible) {
+          if (arr1[0] >= shapes[shape]['waist'].split("-")[0] && arr1[0] <= shapes[shape]['waist'].split("-")[1] && waistcount < 1) {
+            lastshapename = shapename
+            shapename = shape
         waistcount++
       }
       else if (arr1[1] >= shapes[shape]['chest'].split("-")[0] && arr1[1] <= shapes[shape]['chest'].split("-")[1] && chestcount < 1) {
@@ -195,18 +224,20 @@ const CakeGraph = () => {
   ]
   if(!userShape){
     setUserShape(shapename)
+    localStorage.setItem("userShape",shapename)
   }
   if(!data1){setData1(data2)}
-
+  
   console.log(data1);
-
+  
   if (!data1) {
     return (
       <h1>he</h1>
-    )
-    
+      )
+      
+    }
+    console.log(userShape);
   }
-  console.log(userShape);
   return (
     <ResponsiveContainer width="100%" height={300}>
       <PieChart>
@@ -253,10 +284,21 @@ const CakeGraph = () => {
 };
 
 const BodyTypes = () => {
-
+  const {userinfo,userShape,setUserShape}=useContext(Context)
   const navigate = useNavigate();
-
+  if (!userinfo) {
+    return <div></div>; // Add a loading state while userinfo is being fetched
+  }
+  if(userinfo&&!userinfo.hasOwnProperty("measurements")){
+    return(
+      <div style={{minHeight:"100vh" ,backgroundColor:"#b7bbde",display:"flex",justifyContent:"center",alignItems:"center",minWidth:"95vw",flexDirection:"column"}}>
+      <div>you have no measurments go fill 'em first ☻</div>
+      <button onClick={()=>{navigate('/profile2')}}>go to profile!</button>
+      </div>
+      )
+    }
   return (
+    
     <div className="bodyTypes-container">
       <div className="bodyTypes-toparea">
         <h1 className="bodyTypes-main-title"> Your Body Types</h1>
@@ -333,7 +375,7 @@ const BodyTypes = () => {
         </div>
       </div>
     </div>
-  );
+  )
 };
 
 export default BodyTypes;

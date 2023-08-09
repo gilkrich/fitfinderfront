@@ -7,9 +7,9 @@ function ClothingCard({item}) {
         <a  href={item.producturl} target="_blank">
         <img  className="card-img" src={item.productimage} style={{width:"250px",height:"300px"}}></img>
         <div className='card-content-container'>
-        <div>שם: {item.productname}</div>
-        <div>גזרה: {item.productfit}</div>
-        <div>חברה: {item.companyname}</div>
+        <div style={{display:"flex",flexDirection:"column"}}><span>:שם </span><span>{item.productname}</span> </div>
+        <div  style={{display:"flex",flexDirection:"column"}}><span>:גזרה</span> <span>{item.productfit}</span></div>
+        <div  style={{display:"flex",flexDirection:"column"}}><span>:חברה</span><span>{item.companyname}</span> </div>
         </div>
         </a>
     </div>
