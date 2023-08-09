@@ -46,13 +46,9 @@ function StylistPage() {
             let name=item.split(".")
             name[0].split("/");
           return(
-            <div  key={index} className='style-dress-option'onClick={()=>handleClick(name[0].split("/")[4])}><img src={item} style={{height:"80px",width:"80px"}}></img><div>{name[0].split("/")[4]}</div></div>
+            <div  key={index} className="sizecalcpage-single-cloth" style={{ backgroundColor: index % 2 == 0 ? '#9298cc' : '#f6d5e0' }} onClick={()=>handleClick(name[0].split("/")[4])}><img src={item} style={{height:"80px",width:"80px"}}></img><h2 style={{ color: 'rgb(87 56 175)', width: '140px' }}>{name[0].split("/")[4]}</h2></div>
           )
         })} 
-        {/* <div className='style-dress-option'><Link to='/stylesthird'><img src={tshirt} style={{height:"80px",width:"80px"}}></img></Link></div>
-        
-        <div className='style-dress-option'><Link to='/stylesthird'><img src={skirt} style={{height:"80px",width:"80px"}}></img></Link></div>
-        <div className='style-dress-option'><Link to='/stylesthird'><img src={dress} style={{height:"80px",width:"80px"}}></img></Link></div> */}
       </div>
       </div>
     </div>

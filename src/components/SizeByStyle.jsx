@@ -6,6 +6,8 @@ import {Context} from './MainContext'
 import ClothingCard from '../ClothingCard'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import arrow from './images/orangearrow.png'
+
 function SizeByStyle() {
     let {id}=useParams()
     const shape=localStorage.getItem("userShape")
@@ -85,7 +87,10 @@ function SizeByStyle() {
   return (
     <div className='products-container' style={{width:"100%",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",minHeight:"100vh"}}>
       <div style={{display:"flex",gap:"30px",alignItems:"center"}}>
-        <span onClick={()=>{navigate(-1)}}>back</span>
+        <div className='back-button' style={{display:"flex"}} onClick={()=>{navigate(-1)}}>
+        <img src={arrow} alt="" width='30px' height='30px' />
+        <span>back</span>
+        </div>
         <span>
         <h1>your size in {id} is ...</h1>
         <h2>pick from this list</h2>

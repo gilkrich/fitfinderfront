@@ -104,28 +104,28 @@ const Profile2 = () => {
                 <div className='measurements-cont'>
                   <div className='measurments-div'>
                     <label htmlFor="">waist</label>
-                   {(editmain||userinfo.hasOwnProperty("measurements")<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.waist:''}/>}
-                   {userinfo.hasOwnProperty("measurements")>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.waist}</div>}
+                   {(editmain||!userinfo.hasOwnProperty("measurements"))&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.waist:''}/>}
+                   {userinfo.hasOwnProperty("measurements")&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.waist}</div>}
                   </div>
                   <div className='measurments-div'>
                     <label htmlFor="">chest</label>
-                    {(editmain||userinfo.hasOwnProperty("measurements")<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.chest:''}/>}
-                    {userinfo.hasOwnProperty("measurements")>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.chest}</div>}
+                    {(editmain||!userinfo.hasOwnProperty("measurements"))&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.chest:''}/>}
+                    {userinfo.hasOwnProperty("measurements")&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.chest}</div>}
                   </div>
                   <div className='measurments-div'>
                     <label htmlFor="">arms</label>
-                    {(editmain||userinfo.hasOwnProperty("measurements")<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.arms:''}/>}
-                    {userinfo.hasOwnProperty("measurements")>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.arms}</div>}
+                    {(editmain||!userinfo.hasOwnProperty("measurements"))&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.arms:''}/>}
+                    {userinfo.hasOwnProperty("measurements")&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.arms}</div>}
                   </div>
                   <div className='measurments-div'>
                     <label htmlFor="">hips</label>
-                    {(editmain||userinfo.hasOwnProperty("measurements")<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.hips:''}/>}
-                    {userinfo.hasOwnProperty("measurements")>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.hips}</div>}
+                    {(editmain||!userinfo.hasOwnProperty("measurements"))&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.hips:''}/>}
+                    {userinfo.hasOwnProperty("measurements")&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.hips}</div>}
                   </div>
                   <div className='measurments-div'>
                     <label htmlFor="">neckline</label>
-                    {(editmain||userinfo.hasOwnProperty("measurements")<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.neckline:''}/>}
-                    {userinfo.hasOwnProperty("measurements")>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.neckline}</div>}
+                    {(editmain||!userinfo.hasOwnProperty("measurements"))&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.neckline:''}/>}
+                    {userinfo.hasOwnProperty("measurements")&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.neckline}</div>}
                   </div>
                 </div>
                 {(editmain||!userinfo.measurements)&&<button type='submit' className='user-mesurments-submit'>submit</button>}
