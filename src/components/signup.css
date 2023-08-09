@@ -8,7 +8,7 @@
 }
 
 .sign-box-cont {
-    height: 525px;
+    min-height: 80vh;
     width: 350px;
     border-radius: 16px;
     background-color: #b7bbde;
