@@ -19,7 +19,7 @@ function Tutorial3() {
         </div>
         <button
           className="hompage3-justonemoreclick-btn"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/login")}
         >
           <span className="hompage-left-arrows">{"<<<"}</span>
           Login
@@ -31,6 +31,14 @@ function Tutorial3() {
         >
           <span className="hompage-left-arrows">{"<<<"}</span>
           Sign Up
+          <span className="hompage-right-arrows">{">>>"}</span>
+        </button>
+        <button
+          className="hompage3-justonemoreclick-btn-bot"
+          onClick={() => navigate("/home")}
+        >
+          <span className="hompage-left-arrows">{"<<<"}</span>
+          Exit Tutorial
           <span className="hompage-right-arrows">{">>>"}</span>
         </button>
 
