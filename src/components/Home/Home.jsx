@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import "../Home/Home.css";
+import "../Home/home.css";
 import purplestar from "../images/purplestar.png";
 import womenhome from "../images/womenhome.png";
 import { Context } from "../MainContext";
