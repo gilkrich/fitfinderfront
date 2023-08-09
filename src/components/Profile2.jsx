@@ -15,12 +15,15 @@ import  { Sizecontext } from './SizeContext/SizeContext'
 const Profile2 = () => {
   let { userinfo } = useContext(Context)
   const{finalObjSize,setMeasurementsClient}=useContext(Sizecontext);
+  let { setrefresh, refresh } = useContext(Context)
+
   const [actions, setactions] = useState(true)
   const [act1, setact1] = useState(false)
   const [act2, setact2] = useState(false)
   const [act3, setact3] = useState(false)
   const [act4, setact4] = useState(false)
   const [currentsub, setsub] = useState('')
+  const [editmain,seteditmain] = useState(false)
   const [gender, setgender] = useState('')
 
 
@@ -33,12 +36,16 @@ const Profile2 = () => {
       hips: e.target[3].value,
       neckline: e.target[4].value
     }
-    setMeasurementsClient(measurments3 && measurments3)
-    const finduser = await axios.patch("http://localhost:3003/users/addmeasurements", { id: userinfo._id, measurments: measurments3 })
+    if (!editmain) {
+      setMeasurementsClient(measurments3 && measurments3)
+      const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/addmeasurements", { id: userinfo._id, measurments: measurments3 })  
+      setrefresh(!refresh) 
+    }else{
+      const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/editmeasurements", { id: userinfo._id, measurments: measurments3 })   
+      seteditmain(false)
+      setrefresh(!refresh)
+    }
   }
-
-  
-
 
 
   return (
@@ -68,17 +75,17 @@ const Profile2 = () => {
           <p>name</p>
         </div>} */}
         {actions && <div className='profile-actions-cont'>
-          <div onClick={() => { setact1(true), setactions(false), setact4(false), setact2(false), setact3(false) }}>
-            {<Profileact icon={tape} backgroundimage={'linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)'} color={'#0093E9'} title={'My measurements'} info={'here you can look and change your user measurments'}></Profileact>}
+          <div className='box-container-profile' onClick={() => { setact1(true), setactions(false), setact4(false), setact2(false), setact3(false) }}>
+            {<Profileact icon={tape} backgroundimage={'linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)'} color={'#0093E9'} title={'My measurements'} info={'Here you can look and change your user measurments'}></Profileact>}
           </div>
-          <div onClick={() => { setact2(true), setactions(false), setact1(false), setact3(false), setact4(false) }}>
-            {<Profileact icon={person} color={''} backgroundimage={'linear-gradient( 117deg,  rgba(123,216,96,1) 39.2%, rgba(255,255,255,1) 156.2% )'} title={'my proifle info'} info={'here you can look and change your user details and personal info'}></Profileact>}
+          <div className='box-container-profile'  onClick={() => { setact2(true), setactions(false), setact1(false), setact3(false), setact4(false) }}>
+            {<Profileact icon={person} color={''} backgroundimage={'linear-gradient( 117deg,  rgba(123,216,96,1) 39.2%, rgba(255,255,255,1) 156.2% )'} title={'My profile info'} info={'here you can look and change your user details and personal info'}></Profileact>}
           </div>
-          <div onClick={() => { setact3(true), setactions(false), setact1(false), setact2(false), setact4(false) }}>
+          <div className='box-container-profile' onClick={() => { setact3(true), setactions(false), setact1(false), setact2(false), setact4(false) }}>
             {<Profileact icon={group} color={''} backgroundimage={'linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)'} title={'My Sub-Users'} info={'Press this to view or change your sub-users'} ></Profileact>}
           </div>
-          <div>
-            {<Profileact color={''} backgroundimage={'radial-gradient( circle farthest-corner at 17.1% 22.8%,  rgba(226,24,24,1) 0%, rgba(160,6,6,1) 90% )'} title={'my user info'} info={'here you can look and change your user details and personal info'}></Profileact>}
+          <div className='box-container-profile'>
+            {<Profileact color={''} backgroundimage={'radial-gradient( circle farthest-corner at 17.1% 22.8%,  rgba(226,24,24,1) 0%, rgba(160,6,6,1) 90% )'} title={'My user info'} info={'here you can look and change your user details and personal info'}></Profileact>}
           </div>
         </div>}
 
@@ -87,40 +94,52 @@ const Profile2 = () => {
           {act3 && <Subusers></Subusers>}
 
 
+
           {act1 && <div>
-            <h1 style={{ textAlign: 'center' }}>measurements form</h1>
+            <h1 style={{ textAlign: 'center' }}>Measurements Form</h1>
             <div className='subusers-form'>
               <form action="" className='subusers' onSubmit={(e) => measurments(e)}>
-                <h2>User measurements</h2>
+                <h2>User Measurements</h2>
+
                 <div className='measurements-cont'>
                   <div className='measurments-div'>
                     <label htmlFor="">waist</label>
-                    <input type="text" className='measurements-inputs' />
+                   {(editmain||userinfo.measurements.length<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.waist:''}/>}
+                   {userinfo.measurements.length>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.waist}</div>}
                   </div>
                   <div className='measurments-div'>
                     <label htmlFor="">chest</label>
-                    <input type="text" className='measurements-inputs' />
+                    {(editmain||userinfo.measurements.length<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.chest:''}/>}
+                    {userinfo.measurements.length>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.chest}</div>}
                   </div>
                   <div className='measurments-div'>
                     <label htmlFor="">arms</label>
-                    <input type="text" className='measurements-inputs' />
+                    {(editmain||userinfo.measurements.length<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.arms:''}/>}
+                    {userinfo.measurements.length>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.arms}</div>}
                   </div>
                   <div className='measurments-div'>
                     <label htmlFor="">hips</label>
-                    <input type="text" className='measurements-inputs' />
+                    {(editmain||userinfo.measurements.length<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.hips:''}/>}
+                    {userinfo.measurements.length>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.hips}</div>}
                   </div>
                   <div className='measurments-div'>
                     <label htmlFor="">neckline</label>
-                    <input type="text" className='measurements-inputs' />
+                    {(editmain||userinfo.measurements.length<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.neckline:''}/>}
+                    {userinfo.measurements.length>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.neckline}</div>}
                   </div>
                 </div>
-                <button type='submit' className='user-mesurments-submit'>submit</button>
+                {(editmain||!userinfo.measurements)&&<button type='submit' className='user-mesurments-submit'>submit</button>}
               </form>
+                {userinfo.measurements&&<button onClick={()=>seteditmain(!editmain)} className='user-mesurments-submit'>Edit</button>}
             </div>
-          </div>}
+          </div>
+          }
+
+
+
 
           {act2 && <div>
-            <h1>my info</h1>
+            <h1>My info</h1>
             <div className='profile-square-cont'>
 
               <div className='subuser-card-main'>

@@ -41,10 +41,11 @@ console.log(gender);
         }
         if (currentsub=='') {
 
+
             if(username!=""&&gender!=""&&iconimage!=undefined&&measurments3){
 
               if (userinfo.subusers.length<3) {
-                const finduser = await axios.patch("http://localhost:3003/users/createsub", { id: userinfo._id, measurements: measurments3, username: username, gender: gender ,icon:iconimage })
+                const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/createsub", { id: userinfo._id, measurements: measurments3, username: username, gender: gender ,icon:iconimage })
                 setrefresh(!refresh)
                 window.scroll({
                   top: 0,
@@ -61,14 +62,19 @@ console.log(gender);
             }
           }
           else{
-            const finduser = await axios.patch("http://localhost:3003/users/editsub", { id: currentsub._id, measurements: measurments3, username: username, gender: gender!=""?gender:currentsub.gender ,icon: currentsub.icon!=''?iconimage:currentsub.icon})
+            const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/editsub", { id: currentsub._id, measurements: measurments3, username: username, gender: gender!=""?gender:currentsub.gender ,icon: currentsub.icon!=''?iconimage:currentsub.icon})
             setrefresh(!refresh)
+             window.scroll({
+                  top: 0,
+                  left: 0,
+                  behavior: 'smooth'
+               });
           }
       }
     
 
      async function deletesub(subid) {
-        const finduser = await axios.patch("http://localhost:3003/users/deletesub", { id: userinfo._id, subid:subid })
+        const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/deletesub", { id: userinfo._id, subid:subid })
         setrefresh(!refresh)
       }
 

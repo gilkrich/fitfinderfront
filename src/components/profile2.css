@@ -147,6 +147,13 @@ border-top-right-radius: 20px;
     width: 85%;
 }
 
+.box-container-profile{
+    width: 450px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
 @media screen and (max-width: 790px) {
     
     .subuser-card-up-main{

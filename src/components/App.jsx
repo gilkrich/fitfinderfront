@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes ,useNavigate} from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "./MainContext";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Layout from "./Layout";
@@ -16,16 +18,27 @@ import StylistHomePage from "./StylistHomePage";
 import SizeByStyle from "./SizeByStyle";
 import SizeClacPage from "./SizeCalcPage/SizeClacPage";
 import BodyTypes from "./BodyTypes/BodyTypes";
+import { useEffect} from "react";
+
 
 function App() {
+  let { userinfo } = useContext(Context)
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   if (userinfo) {
+  //     navigate('/');
+  //   }
+  // }, [ navigate]);
+
   return (
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Login />}></Route>
+          <Route path={userinfo?"/tutorial1":"/"} element={<Tutorial1 />}></Route>
+          <Route path={userinfo?"/":"/home"} element={<Home />}></Route>
+          <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
-          <Route path="/home" element={<Home />}></Route>
-          <Route path="tutorial1" element={<Tutorial1 />}></Route>
           <Route path="tutorial2" element={<Tutorial2 />}></Route>
           <Route path="tutorial3" element={<Tutorial3 />}></Route>
           <Route path="profile2" element={<Profile2 />}></Route>

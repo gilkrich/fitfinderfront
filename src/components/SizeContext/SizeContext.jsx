@@ -6,7 +6,7 @@ export const Sizecontext = createContext({});
 const clothTypes = ["shirts", "pants","dresses"];
 const bodyParts = ["waist", "chest", "neckline", "arms", "hips"];
 const sizesArr = ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
-const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
+const companiesArr = ["H&M", "ZARA", "AmericanEagle","Pull&Bear","GOLF","Mango"];
 const SizeContext = ({ children }) => {
   const [finalObjSize, setFinalObjSize] = useState();
   const [measurementsClient, setMeasurementsClient] = useState("");
@@ -44,7 +44,7 @@ const SizeContext = ({ children }) => {
         userSizesPerCompany.push({ [companyName]: clothTypesArr });
       }
 
-      axios.patch("http://localhost:3003/users/sizeincompaney", {
+      axios.patch(import.meta.env.VITE_SERVER+"/users/sizeincompaney", {
         id: userinfo._id,
         sizeincompaney: userSizesPerCompany})
        
@@ -56,6 +56,7 @@ const SizeContext = ({ children }) => {
     if(userinfo.subusers&&userinfo.subusers.length>0){
     for (let i = 0; i < userinfo.subusers.length ; i++) {
       if ((userinfo.subusers[i].measurements && !userinfo.subusers[i].sizeincompany)) {
+
         let userSizesPerCompany = [];
         for (let companyName of companiesArr) {
           let clothTypesArr = [];
@@ -82,7 +83,7 @@ const SizeContext = ({ children }) => {
          
         console.log(userSizesPerCompany);
 
-        axios.patch("http://localhost:3003/users/sizeincompaneysub", {
+        axios.patch(import.meta.env.VITE_SERVER+"/users/sizeincompaneysub", {
           id: userinfo.subusers[i]._id,
           sizeincompany: userSizesPerCompany,
         });

@@ -19,13 +19,18 @@ function Home() {
       <img src={purplestar} alt="" width="100px" className="purple-star-two" />
       <img src={womenhome} alt="" className="womenhome" />
       <div className="home-content-container">
+        <Link to="/sizecalcpage">
         <button className="home-btn">your FIT list</button>
-
-        <Link to="/stylehome">
+        </Link>
+        <Link to="/bodytypesgraph">
           <button className="home-btn">The Stylist Recommendation </button>
         </Link>
-        <button className="home-btn">Share Your Fit</button>
+        <Link to="/tutorial1" >
+        <button className="home-btn">Rewatch The Tutorial</button>
+        </Link>
+        <Link to="/profile2">
         <button className="home-btn">Add Another User</button>
+        </Link>
       </div>
     </div>
   );
