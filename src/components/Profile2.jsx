@@ -15,12 +15,15 @@ import  { Sizecontext } from './SizeContext/SizeContext'
 const Profile2 = () => {
   let { userinfo } = useContext(Context)
   const{finalObjSize,setMeasurementsClient}=useContext(Sizecontext);
+  let { setrefresh, refresh } = useContext(Context)
+
   const [actions, setactions] = useState(true)
   const [act1, setact1] = useState(false)
   const [act2, setact2] = useState(false)
   const [act3, setact3] = useState(false)
   const [act4, setact4] = useState(false)
   const [currentsub, setsub] = useState('')
+  const [editmain,seteditmain] = useState(false)
   const [gender, setgender] = useState('')
 
 
@@ -33,10 +36,17 @@ const Profile2 = () => {
       hips: e.target[3].value,
       neckline: e.target[4].value
     }
-    setMeasurementsClient(measurments3 && measurments3)
-    const finduser = await axios.patch("http://localhost:3003/users/addmeasurements", { id: userinfo._id, measurments: measurments3 })
+    if (!editmain) {
+      setMeasurementsClient(measurments3 && measurments3)
+      const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/addmeasurements", { id: userinfo._id, measurments: measurments3 })  
+      setrefresh(!refresh) 
+    }else{
+      const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/editmeasurements", { id: userinfo._id, measurments: measurments3 })   
+      seteditmain(false)
+      setrefresh(!refresh)
+    }
   }
-
+console.log(refresh);
   async function addsub(e) {
     e.preventDefault()
     let username = e.target[0].value
@@ -48,17 +58,16 @@ const Profile2 = () => {
       neckline: e.target[6].value
     }
     if (currentsub == '') {
-      const finduser = await axios.patch("http://localhost:3003/users/createsub", { id: userinfo._id, measurements: measurments3, username: username, gender: gender })
+      const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/createsub", { id: userinfo._id, measurements: measurments3, username: username, gender: gender })
     } else {
-      const finduser = await axios.patch("http://localhost:3003/users/editsub", { id: currentsub._id, measurements: measurments3, username: username, gender: gender })
+      const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/editsub", { id: currentsub._id, measurements: measurments3, username: username, gender: gender })
     }
   }
 
 
   async function deletesub(subid) {
-    const finduser = await axios.patch("http://localhost:3003/users/deletesub", { id: userinfo._id, subid: subid })
+    const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/deletesub", { id: userinfo._id, subid: subid })
   }
-
 
 
   return (
@@ -107,37 +116,48 @@ const Profile2 = () => {
           {act3 && <Subusers></Subusers>}
 
 
-          {act1 && <div>
+          {act1 && 
+           <div>
             <h1 style={{ textAlign: 'center' }}>measurements form</h1>
             <div className='subusers-form'>
-              <form action="" className='subusers' onSubmit={(e) => measurments(e)}>
+              <form action="" className='subusers' onSubmit={(e)=>measurments(e)}>
                 <h2>User measurements</h2>
                 <div className='measurements-cont'>
                   <div className='measurments-div'>
                     <label htmlFor="">waist</label>
-                    <input type="text" className='measurements-inputs' />
+                   {(editmain||userinfo.measurements.length<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.waist:''}/>}
+                   {userinfo.measurements.length>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.waist}</div>}
                   </div>
                   <div className='measurments-div'>
                     <label htmlFor="">chest</label>
-                    <input type="text" className='measurements-inputs' />
+                    {(editmain||userinfo.measurements.length<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.chest:''}/>}
+                    {userinfo.measurements.length>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.chest}</div>}
                   </div>
                   <div className='measurments-div'>
                     <label htmlFor="">arms</label>
-                    <input type="text" className='measurements-inputs' />
+                    {(editmain||userinfo.measurements.length<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.arms:''}/>}
+                    {userinfo.measurements.length>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.arms}</div>}
                   </div>
                   <div className='measurments-div'>
                     <label htmlFor="">hips</label>
-                    <input type="text" className='measurements-inputs' />
+                    {(editmain||userinfo.measurements.length<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.hips:''}/>}
+                    {userinfo.measurements.length>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.hips}</div>}
                   </div>
                   <div className='measurments-div'>
                     <label htmlFor="">neckline</label>
-                    <input type="text" className='measurements-inputs' />
+                    {(editmain||userinfo.measurements.length<1)&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.neckline:''}/>}
+                    {userinfo.measurements.length>0&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.neckline}</div>}
                   </div>
                 </div>
-                <button type='submit' className='user-mesurments-submit'>submit</button>
+                {(editmain||!userinfo.measurements)&&<button type='submit' className='user-mesurments-submit'>submit</button>}
               </form>
+                {userinfo.measurements&&<button onClick={()=>seteditmain(!editmain)} className='user-mesurments-submit'>Edit</button>}
             </div>
-          </div>}
+          </div>
+          }
+
+
+
 
           {act2 && <div>
             <h1>my info</h1>

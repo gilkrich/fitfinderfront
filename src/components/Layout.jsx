@@ -20,7 +20,6 @@ const Layout = () => {
   const [isOpen, setOpen] = useState(false)
   const [profilenav, setnav] = useState(false)
 
-  // console.log(userinfo);
 
   return (
     <>
@@ -29,33 +28,31 @@ const Layout = () => {
           <img src={fitlogo} alt="" width='120px' />
         </div>
 
-        <div className="middle-nav">
-          <Link className="layout-link" to='/home'>Home</Link>
-
-          <Link className="layout-link" to={"/profile2"}><div className="logo">Profile</div></Link>
+        {userinfo && <div className="middle-nav">
+          <Link className="layout-link" to={userinfo ? "/" : "/home"}>Home</Link>
           <Link className="layout-link" to={"/tutorial1"}><div className="logo">Tutorial</div></Link>
           <Link className="layout-link" to={"/sizecalcpage"}><div className="logo">Calculator</div></Link>
           <Link className="layout-link" to={"/bodytypesgraph"}><div className="logo">Body Type</div></Link>
-   
-
-          {/* <Link className="layout-link" to={"/style"}><div className="logo">style</div></Link> */} 
 
 
+          {/* <Link className="layout-link" to={"/style"}><div className="logo">style</div></Link> */}
 
-        </div>
+
+
+        </div>}
 
         <div className="login-side">
-          {!userinfo && <Link className="layout-link login-button" to='/'>Login</Link>}
+          {!userinfo && <Link className="layout-link login-button" to='/login'>Login</Link>}
           {!userinfo && <Link className="layout-link sign-button" to='/signup'>SignUp</Link>}
           <div className="profile-image-nav" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            {userinfo && <Link className="layout-link"><img id="layout-user" src={whiteicon} width='30px' /></Link>}
+            {userinfo && <Link ><img id="layout-user" src={whiteicon} width='30px' /></Link>}
             {userinfo && !profilenav && <img src={triup} alt="" width='13px' onClick={() => setnav(true)} />}
             {userinfo && profilenav && <img src={tridown} alt="" width='13px' onClick={() => setnav(false)} />}
           </div>
           {userinfo && profilenav && <div className="user-actions">
             <Link className="layout-link" to='profile2' onClick={() => setnav(false)}>Profile</Link>
             <Link className="layout-link" onClick={() => setnav(false)}>Switchuser</Link>
-            <Link className="layout-link" onClick={() => { setnav(false), localStorage.removeItem('token'),navigate("/"), setrefresh(!refresh) }}>Signout</Link>
+            <Link className="layout-link" onClick={() => { setnav(false), localStorage.removeItem('token'), navigate("/"), setrefresh(!refresh) }}>Signout</Link>
           </div>}
         </div>
 

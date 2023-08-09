@@ -12,7 +12,7 @@ const MainContext = ({children}) => {
   useEffect(()=>{
   async function getuser() { 
       if (localStorage.getItem('token')) {
-        const finduser = await axios.post("http://localhost:3003/users/istoken", { token:JSON.parse(localStorage.getItem('token'))})
+        const finduser = await axios.post(import.meta.env.VITE_SERVER+"/users/istoken", { token:JSON.parse(localStorage.getItem('token'))})
         setuser(finduser.data)
       }else{
         setuser('')
