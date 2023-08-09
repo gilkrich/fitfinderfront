@@ -99,7 +99,6 @@ a:visited {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    width: 90%;
     justify-content: center;
 }
 a {
@@ -124,4 +123,44 @@ a {
     align-items: center;
     justify-content: space-around;
     gap: 10px;
+  }
+
+  .pagination-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-top: 30px;
+  }
+
+  .pagination{
+    display: flex;
+    column-gap: 10px;
+  }
+
+  .page-number{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-number:hover{
+    cursor: pointer;
+    background-color: rgb(87, 56, 175);
+    color: white;
+}
+
+.arrow-down{
+    display: none;
+}
+
+@media screen and (max-width: 790px) {
+ 
+   .arrow-down{
+    display: flex;
+    justify-content: center;
+   }
   }

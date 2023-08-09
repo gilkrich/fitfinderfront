@@ -13,6 +13,7 @@ import whitemwomen2 from './images/whitewomen2.png'
 import blackwomen2 from './images/blackwomen2.png'
 import { useContext } from "react";
 import { Context } from "./MainContext";
+import Iconimage from './iconimage'
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom'
 
@@ -28,7 +29,7 @@ const SignUp = () => {
   const [password, setpassword] = useState()
   const [verify, setverify] = useState()
   const [nextpage, setnextpage] = useState(false)
-  const [icon, seticon] = useState()
+  const [icon, seticon] = useState('')
   let photoarray = [blackowomen, whiteman1, blackman1, whitemwomen1, whiteman2, blackwomen2, whitemwomen2, whiteman3]
 
   async function signup(e) {
@@ -48,11 +49,12 @@ const SignUp = () => {
     }
   }
 
+  console.log(icon);
 
 
   return (
     <div className='main-sign-up'>
-      <p className='bubble'>Just few more steps and were in</p>
+      <p className='bubble'>Just few more steps and We Are In</p>
       <img src={women} alt="" className='women' />
       {!madenew && <div className='sign-box-cont'>
         <div className='title-box'>
@@ -70,10 +72,10 @@ const SignUp = () => {
             <input type="text" placeholder='username' className='orange-input' required={true} onChange={(e) => setusername(e.target.value)} defaultValue={username ? username : ''} />
             <div className='main-profile-icon-cont'>
               {photoarray.map((item, index) => (
-                <img src={item} alt="" width='80px' onClick={() => seticon(item)} />
+                 <Iconimage image={item}  seticon={seticon} key={index}></Iconimage>
               ))}
             </div>
-            <button className='submit-button'>next</button>
+            <button className='user-mesurments-submit'>Next</button>
           </form>
           }
 
@@ -94,10 +96,10 @@ const SignUp = () => {
                 <span>women</span>
               </label>
             </div>
-            <button type='submit' className='submit-button'>submit</button>
+            <button type='submit' className='user-mesurments-submit'>Submit</button>
           </form>
           }
-          {nextpage && <button className='submit-button' style={{ width: '65px' }} onClick={() => setnextpage(false)}>back</button>}
+          {nextpage && <button className='user-mesurments-submit' style={{ width: '65px' }} onClick={() => setnextpage(false)}>back</button>}
           <div style={{ display: 'flex', justifyContent: 'center' }}><span>Already got a user?</span><Link to={"/login"}>Login here</Link></div>
           {/* <img src={star} alt="" width='100px' className='starnew'/> */}
         </div>

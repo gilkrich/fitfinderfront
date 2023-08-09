@@ -25,14 +25,14 @@ const Login = () => {
       try{
         const newuser = await axios.post(`${import.meta.env.VITE_SERVER}/users/login`, { email:email,password:password})
         if (!newuser) {
-          alert('worng')
+          console.log('worng')
         }else{
           localStorage.setItem('token',JSON.stringify(newuser.data.token))
           setrefresh(!refresh)
           navigate("/");
         }
       }catch(err){
-          console.log(err)
+         alert(err.response.data.error)
       }
   }
 
@@ -51,11 +51,11 @@ const Login = () => {
     <input type={showpass ? "text" : "password"} placeholder='Password' minLength={6} maxLength={12} className='orange-input-login-2'/>
     <img src={eye} alt="" className='show-password' onClick={()=>setshowpass(!showpass)} width='15px'/>
   </div>
-  <div onClick={()=>navigate("/signup")}>
+  <div >
     <span className='dont-sen'>Don't have a User yet?</span>
-    <span className='createuserlogin'>Sign up here!</span>
+    <span onClick={()=>navigate("/signup")} className='createuserlogin'>Sign up here</span>
   </div>
-  <button type='submit' className='succses-button'>Submite</button>
+  <button type='submit' className='user-mesurments-submit'>Submit</button>
 </form>
 
       </div>}

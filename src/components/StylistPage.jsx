@@ -39,7 +39,7 @@ function StylistPage() {
   
   return (
     <div className='style-container' style={{minHeight:"90vh"}}>
-      <h1 className='what-are-we'>what are we searching today?</h1>
+      <h1 className='what-are-we'>Hhat are we searching for today?</h1>
       <div className='style-container-container'>
       <div className='style-category-container'>
         {userinfo&&obj[userinfo.gender].map((item,index)=>{

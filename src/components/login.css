@@ -1,5 +1,6 @@
-.main-login{
+.main-login {
     background-color: #5738af;
+    background-image: radial-gradient(circle 363px at 100.2% 3%, #5738af 31.1%, #f44f29 36.4%, #f44f29 50.9%, #f44f29 60.7%, #f44f29 72.5%, #5738af 72.6%);
     display: flex;
     justify-content: center;
     height: 94vh;
@@ -12,7 +13,7 @@
     margin-top: 7vh;
 }
 
-.login-main-cont{
+.login-main-cont {
     height: 450px;
     width: 380px;
     border-radius: 16px;
@@ -21,10 +22,9 @@
     row-gap: 40px;
     flex-direction: column;
     align-items: center;
-    scale: 1.25;
 }
 
-.login-form{
+.login-form {
     display: flex;
     flex-direction: column;
     row-gap: 34px;
@@ -32,14 +32,14 @@
     justify-content: center;
 }
 
-.orange-two{
+.orange-two {
     font: small-caption;
     padding: 0px;
     padding-bottom: 0px;
     background-color: #f6d5e0;
 }
 
-.orange-input-login{
+.orange-input-login {
     min-width: 80%;
     height: 3vh;
 
@@ -51,7 +51,7 @@
     cursor: pointer;
 }
 
-.orange-input-login-2{
+.orange-input-login-2 {
     min-width: 100%;
     border-radius: 10px;
     border: 0;
@@ -69,18 +69,18 @@
     right: 10px;
     transform: translateY(-50%);
     cursor: pointer;
-  }
+}
 
-.dont-sen{
+.dont-sen {
     margin-right: 0.5vw;
 
 }
 
-.createuserlogin{
+.createuserlogin {
     cursor: pointer;
 }
 
-.succses-button{
+.succses-button {
     cursor: pointer;
     width: 80%;
     height: 3vh;
@@ -91,13 +91,13 @@
 .password-container {
     position: relative;
     width: 80%;
-  }
+}
 
-  @media screen and (max-width: 790px) {
+@media screen and (max-width: 790px) {
 
-    .login-main-cont{
+    .login-main-cont {
         height: 450px;
-        width: 380px;
+        width: 340px;
         border-radius: 16px;
         background-color: #b7bbde;
         display: flex;
@@ -107,7 +107,7 @@
         scale: 1;
     }
 
-    .main-login{
+    .main-login {
         background-color: #5738af;
         display: flex;
         justify-content: center;
@@ -121,7 +121,7 @@
         margin-top: 7vh;
     }
 
-    .login-form{
+    .login-form {
         display: flex;
         flex-direction: column;
         row-gap: 34px;
@@ -130,34 +130,41 @@
         scale: 1.1;
     }
 
-    
-.succses-button{
-    cursor: pointer;
-    width: 80%;
-    height: 3vh;
-    font-size: 4vw;
-}
 
-.succses-button{
-    width: 8rem;
-    height: 2rem;
-    border-radius: 10px;
-    opacity: 0.8;
-    border-color: darkorchid;
-    cursor: pointer;
+    .succses-button {
+        cursor: pointer;
+        width: 80%;
+        height: 3vh;
+        font-size: 4vw;
+    }
 
-
-}
-.succses-button:hover{
-    background-color: darkorchid ;
-    color: bisque;
-    opacity: 0.8;
-    animation: shake 0.8s 1;
+    .succses-button {
+        width: 8rem;
+        height: 2rem;
+        border-radius: 10px;
+        opacity: 0.8;
+        border-color: darkorchid;
         cursor: pointer;
 
-}
-    
-    
 
-    
+    }
+
+    .succses-button:hover {
+        background-color: darkorchid;
+        color: bisque;
+        opacity: 0.8;
+        animation: shake 0.8s 1;
+        cursor: pointer;
+
+    }
+
+
+
+
+}
+
+@media screen and (max-width: 524px) {
+    .main-login {
+        background-image: none;
+    }
 }
