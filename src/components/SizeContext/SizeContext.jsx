@@ -32,10 +32,7 @@ const SizeContext = ({ children }) => {
                 parseInt(userinfo?.measurements[0]?.data[bodyPart])
               )
             );
-            console.log( numberSizeToTextSize(
-              clothBodyPartRages[bodyPart],
-              parseInt(userinfo?.measurements[0]?.data[bodyPart])
-            ));
+          
           }
           clothTypesArr.push({
             [clothType]: calculateFinalSize(textSizePerBodyPart),
@@ -80,19 +77,18 @@ const SizeContext = ({ children }) => {
           }
           userSizesPerCompany.push({ [companyName]: clothTypesArr });
         }
-         
+        
         console.log(userSizesPerCompany);
 
         axios.patch(import.meta.env.VITE_SERVER+"/users/sizeincompaneysub", {
           id: userinfo.subusers[i]._id,
           sizeincompany: userSizesPerCompany,
         });
-      
+       console.log(33);
         setrefresh(!refresh) 
       }
     }
     }
-
 
 }
 
@@ -150,7 +146,6 @@ const SizeContext = ({ children }) => {
         break;
       }
     }
-    console.log(bodyPartResult);
     return bodyPartResult;
   }
 
