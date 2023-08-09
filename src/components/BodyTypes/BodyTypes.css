@@ -131,7 +131,35 @@
   font-size: 1.5vw;
   margin-bottom: 5vh;
 }
+.go-to-profile{
+  min-Height:100vh ;
+  background-color:#b7bbde;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-width:"95vw";
+  flex-direction:column;
+}
+.go-to-profile-btn{
 
+}
+.go-to-profile-btn{
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    opacity: 0.8;
+    border-color: darkorchid;
+    cursor: pointer;
+
+}
+.go-to-profile-btn:hover{
+    background-color: darkorchid ;
+    color: bisque;
+    opacity: 0.8;
+    animation: shake 0.8s 1;
+    cursor: pointer;
+
+}
 @media (max-width: 768px) {
   .bodyTypes-main-title {
     text-align: center;

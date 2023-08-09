@@ -35,9 +35,8 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          {/* <Route path={userinfo?"/tutorial1":"/"} element={userinfo?<Home />:<Tutorial1 />}></Route>
-          <Route path={userinfo?"/":"/home"} element={<Home />}></Route> */}
-           {localStorage.getItem("token")?
+
+        {localStorage.getItem("token")?
            <Route path={"/"} element={<Home />}></Route>:
            <Route path={"/"} element={<Tutorial1/>}></Route>
            }

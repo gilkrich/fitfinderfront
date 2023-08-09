@@ -291,9 +291,9 @@ const BodyTypes = () => {
   }
   if(userinfo&&!userinfo.hasOwnProperty("measurements")){
     return(
-      <div style={{minHeight:"100vh" ,backgroundColor:"#b7bbde",display:"flex",justifyContent:"center",alignItems:"center",minWidth:"95vw",flexDirection:"column"}}>
-      <div>you have no measurments go fill 'em first ☻</div>
-      <button onClick={()=>{navigate('/profile2')}}>go to profile!</button>
+      <div className="go-to-profile" >
+      <h2>You Have No Measurments Go Fill 'em First ☻</h2>
+      <button className="go-to-profile-btn" onClick={()=>{navigate('/profile2')}}>go to profile!</button>
       </div>
       )
     }

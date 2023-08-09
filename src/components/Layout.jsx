@@ -28,7 +28,9 @@ const Layout = () => {
     <>
       <nav className="top-nav">
         <div className="logo-side">
+          <Link to="/home">
           <img src={fitlogo} alt="" width='120px' />
+          </Link>
         </div>
 
         {userinfo && <div className="middle-nav">
@@ -46,7 +48,7 @@ const Layout = () => {
           {!userinfo && <Link className=" login-button" to='/login'>Login</Link>}
           {!userinfo && <Link className=" sign-button" to='/signup'>SignUp</Link>}
           <div className="profile-image-nav" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            {userinfo && <Link ><img id="layout-user" src={whiteicon} width='30px' /></Link>}
+            {userinfo && <Link to="/profile2" ><img id="layout-user" src={whiteicon} width='30px' /></Link>}
             {userinfo && !profilenav && <img src={triup} alt="" width='13px' onClick={() => setnav(true)} />}
             {userinfo && profilenav && <img src={tridown} alt="" width='13px' onClick={() => setnav(false)} />}
           </div>
@@ -74,6 +76,7 @@ const Layout = () => {
           {localStorage.getItem("token") &&<Link className="layout-link" to={"/profile2"} onClick={() => setOpen(false)}><div className="logo">Profile</div></Link>}
           {localStorage.getItem("token") &&<Link className="layout-link" to={"/login"} onClick={() => {setOpen(false),localStorage.removeItem("token")}}><div className="logo">switchUser</div></Link>}
           {localStorage.getItem("token") &&<Link className="layout-link" to={"/tutorial1"} onClick={() => {setOpen(false),localStorage.removeItem("token")}}><div className="logo">Sighout</div></Link>}
+         
         </div>}
       </div>
       <Outlet className="Outlet" />

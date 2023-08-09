@@ -138,7 +138,24 @@
     font-size: 4vw;
 }
 
+.succses-button{
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    opacity: 0.8;
+    border-color: darkorchid;
+    cursor: pointer;
 
+
+}
+.succses-button:hover{
+    background-color: darkorchid ;
+    color: bisque;
+    opacity: 0.8;
+    animation: shake 0.8s 1;
+        cursor: pointer;
+
+}
     
     
 
