@@ -39,20 +39,20 @@ console.log(gender);
 
    
           if (userinfo.subusers.length<4) {
-          const finduser = await axios.patch("http://localhost:3003/users/createsub", { id: userinfo._id, measurements: measurments3, username: username, gender: gender ,icon:iconimage })
+          const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/createsub", { id: userinfo._id, measurements: measurments3, username: username, gender: gender ,icon:iconimage })
           setrefresh(!refresh)
           }  else{
             alert("too much")
           }
         }else{
-            const finduser = await axios.patch("http://localhost:3003/users/editsub", { id: currentsub._id, measurements: measurments3, username: username, gender: gender!=""?gender:currentsub.gender ,icon: currentsub.icon!=''?iconimage:currentsub.icon})
+            const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/editsub", { id: currentsub._id, measurements: measurments3, username: username, gender: gender!=""?gender:currentsub.gender ,icon: currentsub.icon!=''?iconimage:currentsub.icon})
         setrefresh(!refresh)
           }
       }
     
 
      async function deletesub(subid) {
-        const finduser = await axios.patch("http://localhost:3003/users/deletesub", { id: userinfo._id, subid:subid })
+        const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/deletesub", { id: userinfo._id, subid:subid })
         setrefresh(!refresh)
       }
 
