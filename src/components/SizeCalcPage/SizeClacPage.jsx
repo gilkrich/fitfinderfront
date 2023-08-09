@@ -22,7 +22,7 @@ function SizeClacPage() {
   const imagesArr = [HMlogo, Zaralogo, AElogo];
   const [showmidot, setshowmidot] = useState(false)
   const [wich, setwich] = useState(0)
-  const companiesArr = ["H&M", "ZARA", "AmericanEagle"];
+  const companiesArr = ["H&M", "ZARA", "AmericanEagle","Pull&Bear","GOLF","Mango"];
   const clothTypes = ["shirts", "pants", "dresses"];
   const womenproducts = [
     {
