@@ -18,10 +18,7 @@
   row-gap: 20px;
 }
 
-.home-btn {
-  width: 200px;
-  padding: 10px;
-}
+
 
 .content-continer-h2 {
   display: flex;
@@ -73,11 +70,17 @@
   border-radius: 18px;
   color: orangered;
   background-color: #f6d5e0;
+  cursor: pointer;
+
 }
 
 .home-btn:hover {
   color: whitesmoke;
   background-color: #f6d5e0;
+  animation: jump 1s ease-in-out 1;
+  cursor: pointer;
+
+
 }
 @media screen and (max-width: 768px) {
   .womenhome {
@@ -93,3 +96,10 @@
   }
   
 }
+@keyframes jump {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }}

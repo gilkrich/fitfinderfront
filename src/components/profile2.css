@@ -1,6 +1,5 @@
 .profile-cont-main{
     background-color: #b7bbde;
-    
     display: flex;
     flex-direction: column;
 }
@@ -43,11 +42,15 @@
   justify-content: center;
   align-items: center;
   column-gap: 10px;
+  cursor: pointer;
+
 }
 
 
 .back-button:hover{
  transform: translateX(-10px);
+ cursor: pointer;
+
 }
 
 .action-main-cont{
@@ -180,20 +183,24 @@ width: 380px;
      }
 }
 
-
 .user-mesurments-submit{
-  width: 200px;
-  height: 40px;
-  border-radius: 10px;
-  opacity: 0.8;
-  border-color: darkorchid;
-}
+    width: 8rem;
+    height: 2rem;
+    border-radius: 10px;
+    opacity: 0.8;
+    border-color: darkorchid;
+    cursor: pointer;
 
+}
 .user-mesurments-submit:hover{
-cursor: pointer;
-opacity: 1;
+    background-color: darkorchid ;
+    color: bisque;
+    opacity: 0.8;
+    animation: shake 0.8s 1;
+    cursor: pointer;
 
 }
+
 
 
 /* @media screen and (max-width: 460px) {

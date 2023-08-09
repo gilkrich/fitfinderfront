@@ -35,8 +35,12 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path={userinfo?"/tutorial1":"/"} element={<Tutorial1 />}></Route>
-          <Route path={userinfo?"/":"/home"} element={<Home />}></Route>
+        {localStorage.getItem("token")?
+           <Route path={"/"} element={<Home />}></Route>:
+           <Route path={"/"} element={<Tutorial1/>}></Route>
+           }
+           <Route path={"/home"} element={<Home />}></Route>
+          <Route path={"/tutorial1"} element={<Tutorial1/>}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="tutorial2" element={<Tutorial2 />}></Route>

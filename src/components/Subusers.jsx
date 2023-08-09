@@ -105,7 +105,7 @@ console.log(gender);
         </div>
       ))}
     </div>
-    <button onClick={()=>{setform(!showform),setsub('')}}>cretate new</button>
+    <button className="sub-new-btn" onClick={()=>{setform(!showform),setsub('')}}>cretate new</button>
     {showform&&<div className='subusers-form-two'>
       <form action="" className='subusers' onSubmit={(e) => addsub(e)}>
         <input type="text" placeholder='user-name' className='subusername-input' defaultValue={currentsub?currentsub.username:''}/>
@@ -114,7 +114,7 @@ console.log(gender);
           <label htmlFor="">gender</label>
           <select name="" id="" onChange={(e) => setgender(e.target.value)} >
             {/* <option  defaultValue={currentsub?currentsub.gender:''}>{currentsub?currentsub.gender:''}</option> */}
-            <option value="men" selected="true" disabled="disabled">select gender</option>
+            <option value="men"  selected="true" disabled="disabled">select gender</option>
             <option value="men">man</option>
             <option value="women">women</option>
             <option value="boys_9_14">boys 9-14</option>
@@ -151,7 +151,7 @@ console.log(gender);
                 <img src={item} alt=""key={index} className='photo-profile-icon' onClick={(e)=>seticon(e.target.src)}/>                
               ))}
             </div>
-          <button type='submit'>submit</button>
+          <button className="sub-submit-btn" type='submit'>submit</button>
       </form>
     </div>}
   </div>  
