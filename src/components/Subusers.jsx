@@ -25,7 +25,6 @@ const Subusers = () => {
     let subarray = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtEoMzdEzXRuV2RD3PizvfAAeAC1EFG7bmuG9sR9H1B5SLiooUO2XX45V3D8lOrBq7NWA&usqp=CAU','https://wallpaperaccess.com/full/99815.png','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3ZyiqMe0q6QsJaLrc8_k8PaN9kwvMOiLCSayqmuswq1Oth3P1uSDdpANGqcM43Ntb81A&usqp=CAU']
 
     
-console.log(gender);
     async function addsub(e) {
         e.preventDefault()
         let username = e.target[0].value
@@ -40,12 +39,10 @@ console.log(gender);
           }
         }
         if (currentsub=='') {
-
-
             if(username!=""&&gender!=""&&iconimage!=undefined&&measurments3){
-
               if (userinfo.subusers.length<3) {
                 const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/createsub", { id: userinfo._id, measurements: measurments3, username: username, gender: gender ,icon:iconimage })
+                setform(false)
                 setrefresh(!refresh)
                 window.scroll({
                   top: 0,
@@ -63,6 +60,7 @@ console.log(gender);
           }
           else{
             const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/editsub", { id: currentsub._id, measurements: measurments3, username: username, gender: gender!=""?gender:currentsub.gender ,icon: currentsub.icon!=''?iconimage:currentsub.icon})
+            setform(false)
             setrefresh(!refresh)
              window.scroll({
                   top: 0,
@@ -72,17 +70,13 @@ console.log(gender);
           }
       }
     
-
      async function deletesub(subid) {
         const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/deletesub", { id: userinfo._id, subid:subid })
         setrefresh(!refresh)
       }
 
-      console.log(gender);
-      console.log(iconimage);
-      console.log(currentsub);
+ 
     
-      console.log(userinfo.subusers.length<3);
      
   return (
     <div className='subusers-main-cont'>
