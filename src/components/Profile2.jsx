@@ -52,9 +52,9 @@ const Profile2 = () => {
     <div className='profile-cont-main'>
       <div className='profile-info-cont'>
         {!actions &&
-          <div className='back-button'>
+          <div onClick={() => setactions(true)} className='back-button'>
             <img src={arrow} alt="" width='30px' height='30px' />
-            <h2 onClick={() => setactions(true)}>back</h2>
+            <h2>Back</h2>
           </div>}
         {actions && <div className='profile-square-cont'>
 
@@ -96,34 +96,34 @@ const Profile2 = () => {
 
 
           {act1 && <div>
-            <h1 style={{ textAlign: 'center' }}>Measurements Form</h1>
+            <h1 style={{ textAlign: 'center' }}>Fill & Edit your measurments</h1>
             <div className='subusers-form'>
               <form action="" className='subusers' onSubmit={(e) => measurments(e)}>
-                <h2>User Measurements</h2>
+                <h2>My measurements</h2>
 
                 <div className='measurements-cont'>
                   <div className='measurments-div'>
-                    <label htmlFor="">waist</label>
+                    <label htmlFor="">Waist</label>
                    {(editmain||!userinfo.hasOwnProperty("measurements"))&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.waist:''}/>}
                    {userinfo.hasOwnProperty("measurements")&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.waist}</div>}
                   </div>
                   <div className='measurments-div'>
-                    <label htmlFor="">chest</label>
+                    <label htmlFor="">Chest</label>
                     {(editmain||!userinfo.hasOwnProperty("measurements"))&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.chest:''}/>}
                     {userinfo.hasOwnProperty("measurements")&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.chest}</div>}
                   </div>
                   <div className='measurments-div'>
-                    <label htmlFor="">arms</label>
+                    <label htmlFor="">Arms</label>
                     {(editmain||!userinfo.hasOwnProperty("measurements"))&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.arms:''}/>}
                     {userinfo.hasOwnProperty("measurements")&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.arms}</div>}
                   </div>
                   <div className='measurments-div'>
-                    <label htmlFor="">hips</label>
+                    <label htmlFor="">Hips</label>
                     {(editmain||!userinfo.hasOwnProperty("measurements"))&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.hips:''}/>}
                     {userinfo.hasOwnProperty("measurements")&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.hips}</div>}
                   </div>
                   <div className='measurments-div'>
-                    <label htmlFor="">neckline</label>
+                    <label htmlFor="">Neckline</label>
                     {(editmain||!userinfo.hasOwnProperty("measurements"))&&<input type="text" className='measurements-inputs' defaultValue={editmain?userinfo.measurements[0].data.neckline:''}/>}
                     {userinfo.hasOwnProperty("measurements")&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.neckline}</div>}
                   </div>

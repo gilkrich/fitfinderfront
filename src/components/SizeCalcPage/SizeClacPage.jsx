@@ -99,8 +99,8 @@ function SizeClacPage() {
       </div>
 
       {showmidot && <div className='back-button'>
-        <img src={arrow} alt="" width='30px' height='30px' />
-        <h2 onClick={() => setshowmidot(false)}>back</h2>
+        <img  onClick={() => setshowmidot(false)} src={arrow} alt="" width='30px' height='30px' />
+        <h2  onClick={() => setshowmidot(false)} >back</h2>
       </div>}
 
 

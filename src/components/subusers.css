@@ -13,6 +13,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: 50px;
+    margin-top: 40px;
 }
 
 .subuser-card{
@@ -86,6 +88,19 @@ background-size: cover;
 }
 
 
+.black:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.white:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
 .subusers-form-two{
     display: flex;
     flex-direction: column;
@@ -93,7 +108,12 @@ background-size: cover;
     align-items: center;
     text-align: center;
     width: 400px;
-    background-color: whitesmoke;
+    background: rgba(87, 56, 175, 0.28);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0px);
+-webkit-backdrop-filter: blur(0px);
+border: 1px solid rgba(87, 56, 175, 0.63);
     row-gap: 50px;
     margin-top: 50px;
     border-radius: 15px;

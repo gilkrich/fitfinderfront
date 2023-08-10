@@ -16,6 +16,35 @@
 
 }
 
+
+.subusers-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    height: 500px;
+    
+    /* background-color: whitesmoke; */
+    /* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+background: rgba(87, 56, 175, 0.28);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0px);
+-webkit-backdrop-filter: blur(0px);
+border: 1px solid rgba(87, 56, 175, 0.63);
+    row-gap: 50px;
+    margin-top: 50px;
+    border-radius: 15px;
+}
+
 .info-cont{
     display: flex;
     flex-direction: column;
@@ -37,9 +66,9 @@
 .back-button{
   text-align: center;
   cursor: pointer;
+  margin-left: 150px;
   transition: transform 0.3s ease-in-out;
   display: flex;
-  justify-content: center;
   align-items: center;
   column-gap: 10px;
   cursor: pointer;
@@ -164,6 +193,12 @@ border-top-right-radius: 20px;
         height: 150px;
     }
 
+    .back-button{
+       margin-left: 0;
+       justify-content: center;
+      
+      }
+
     .subuser-card-down-main{
         width: 380px;
         height: 30px;
@@ -188,13 +223,14 @@ width: 380px;
     height: 2rem;
     border-radius: 10px;
     opacity: 0.8;
-    border-color: darkorchid;
+    border-color: #5738af;
+    color: #5738af;
     cursor: pointer;
 
 }
 .user-mesurments-submit:hover{
-    background-color: darkorchid ;
-    color: bisque;
+    background-color: #5738af;
+    color: white;
     opacity: 0.8;
     animation: shake 0.8s 1;
     cursor: pointer;

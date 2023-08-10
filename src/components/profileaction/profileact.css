@@ -60,32 +60,6 @@
 
 
 
-.subusers-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 400px;
-    height: 500px;
-    /* background-color: whitesmoke; */
-    /* From https://css.glass */
-/* From https://css.glass */
-/* From https://css.glass */
-/* From https://css.glass */
-/* From https://css.glass */
-/* From https://css.glass */
-/* From https://css.glass */
-background: rgba(87, 56, 175, 0.28);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(0px);
--webkit-backdrop-filter: blur(0px);
-border: 1px solid rgba(87, 56, 175, 0.63);
-    row-gap: 50px;
-    margin-top: 50px;
-    border-radius: 15px;
-}
 
 .measurements-cont {
     display: flex;
