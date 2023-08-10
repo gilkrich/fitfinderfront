@@ -55,7 +55,7 @@ function StylistPage() {
             let name=item.split(".")
             name[0].split("/");
           return(
-            <div  key={index} className="sizecalcpage-single-cloth" style={{ backgroundColor: index % 2 == 0 ? '#9298cc' : '#f6d5e0' }} onClick={()=>handleClick(obj2[userinfo.gender][index])}><img src={item} style={{height:"80px",width:"80px"}}></img><h2 style={{ color: 'rgb(87 56 175)', width: '140px' }}>{name[0].split("/")[4]}</h2></div>
+            <div  key={index} className="sizecalcpage-single-cloth" style={{ backgroundColor: index % 2 == 0 ? '#9298cc' : '#f6d5e0' }} onClick={()=>handleClick(obj2[userinfo.gender][index])}><img src={item} style={{height:"80px",width:"80px"}}></img><h2 style={{ color: 'rgb(87 56 175)', width: '140px' }}>{obj2[userinfo.gender][index]}</h2></div>
           )
         })} 
       </div>
