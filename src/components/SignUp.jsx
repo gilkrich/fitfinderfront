@@ -9,7 +9,7 @@ import whiteman2 from './images/whiteman2.png'
 import whiteman3 from './images/whiteman3.png'
 import blackman1 from './images/blackman1.png'
 import whitemwomen1 from './images/whitewomen1.png'
-import whitemwomen2 from './images/whitewomen2.png'
+import whitemwomen2 from './images/whitewomen2.png' 
 import blackwomen2 from './images/blackwomen2.png'
 import { useContext } from "react";
 import { Context } from "./MainContext";
