@@ -13,7 +13,7 @@ import whitemwomen2 from './images/whitewomen2.png'
 import blackwomen2 from './images/blackwomen2.png'
 import { useContext } from "react";
 import { Context } from "./MainContext";
-import Iconimage from './iconimage'
+import Iconimage from './Iconimage'
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom'
 
