@@ -78,15 +78,15 @@ const Profile2 = () => {
           <div className='box-container-profile' onClick={() => { setact1(true), setactions(false), setact4(false), setact2(false), setact3(false) }}>
             {<Profileact icon={tape} backgroundimage={'linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)'} color={'#0093E9'} title={'My measurements'} info={'Here you can look and change your user measurments'}></Profileact>}
           </div>
-          <div className='box-container-profile'  onClick={() => { setact2(true), setactions(false), setact1(false), setact3(false), setact4(false) }}>
+          {/* <div className='box-container-profile'  onClick={() => { setact2(true), setactions(false), setact1(false), setact3(false), setact4(false) }}>
             {<Profileact icon={person} color={''} backgroundimage={'linear-gradient( 117deg,  rgba(123,216,96,1) 39.2%, rgba(255,255,255,1) 156.2% )'} title={'My profile info'} info={'here you can look and change your user details and personal info'}></Profileact>}
-          </div>
+          </div> */}
           <div className='box-container-profile' onClick={() => { setact3(true), setactions(false), setact1(false), setact2(false), setact4(false) }}>
             {<Profileact icon={group} color={''} backgroundimage={'linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)'} title={'My Sub-Users'} info={'Press this to view or change your sub-users'} ></Profileact>}
           </div>
-          <div className='box-container-profile'>
+          {/* <div className='box-container-profile'>
             {<Profileact color={''} backgroundimage={'radial-gradient( circle farthest-corner at 17.1% 22.8%,  rgba(226,24,24,1) 0%, rgba(160,6,6,1) 90% )'} title={'My user info'} info={'here you can look and change your user details and personal info'}></Profileact>}
-          </div>
+          </div> */}
         </div>}
 
         {!actions && <div className='action-main-cont'>
