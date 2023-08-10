@@ -35,7 +35,7 @@ function Tutorial3() {
         </button>
         <button
           className="hompage3-justonemoreclick-btn-bot"
-          onClick={() => navigate("/home")}
+          onClick={() => navigate(localStorage.getItem("token")?"/home":"/tutorial1")}
         >
           <span className="hompage-left-arrows">{"<<<"}</span>
           Exit Tutorial

@@ -292,7 +292,7 @@ const BodyTypes = () => {
   if(userinfo&&!userinfo.hasOwnProperty("measurements")){
     return(
       <div className="go-to-profile" >
-      <h2>You Have No Measurments Go Fill 'em First ☻</h2>
+      <h2>You Have No Measurements Go Fill 'em First ☻</h2>
       <button className="go-to-profile-btn" onClick={()=>{navigate('/profile2')}}>go to profile!</button>
       </div>
       )
