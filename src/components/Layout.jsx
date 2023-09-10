@@ -28,7 +28,7 @@ const Layout = () => {
     <>
       <nav className="top-nav">
         <div className="logo-side">
-          <Link to="/home">
+          <Link to={userinfo ? "/" : "/tutorial1"}>
           <img src={fitlogo} alt="" width='120px' />
           </Link>
         </div>
