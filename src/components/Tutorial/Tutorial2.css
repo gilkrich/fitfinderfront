@@ -9,8 +9,9 @@
   background-color: #b7bbde;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
-  min-height: 80vh;
+  min-height: 89vh;
 }
 
 .homepage2-title {
@@ -53,6 +54,7 @@
   align-items: center;
   cursor: pointer;
   width: 40vw;
+  transition: margin 0.5s ease-in-out
 }
 
 .homepage2-both-sides {

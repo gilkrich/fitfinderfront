@@ -28,7 +28,7 @@ const Layout = () => {
     <>
       <nav className="top-nav">
         <div className="logo-side">
-          <Link to="/home">
+          <Link to={userinfo ? "/" : "/tutorial1"}>
           <img src={fitlogo} alt="" width='120px' />
           </Link>
         </div>
@@ -54,7 +54,7 @@ const Layout = () => {
           {userinfo && profilenav && <div className="user-actions">
             <Link className="layout-link" to='profile2' onClick={() => setnav(false)}>Profile</Link>
             <Link className="layout-link" onClick={() => {setnav(false),localStorage.removeItem('token'), navigate("/login"), setrefresh(!refresh)} }>Switchuser</Link>
-            <Link className="layout-link" onClick={() => { setnav(false), localStorage.removeItem('token'), navigate("/tutorial1"), setrefresh(!refresh) }}>Signout</Link>
+            <Link className="layout-link" to={'/tutorial1'} onClick={() => { setnav(false), localStorage.removeItem('token'), setrefresh(!refresh) }}>Signout</Link>
           </div>}
         </div>
 
