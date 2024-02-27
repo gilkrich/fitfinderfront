@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 800px;
+  height: 93vh;
   row-gap: 200px;
 }
 
@@ -27,7 +27,9 @@
 }
 
 .home-orangered-div {
-  background-color: #f44f29;
+  /* background-color: #f44f29; */
+  background-color: #e7764b;
+  background-image: linear-gradient(62deg, #e7764b 0%, #eb330e 100%);
   position: absolute;
   top: 205px;
   height: 460px;
@@ -69,7 +71,10 @@
   border: 0;
   border-radius: 18px;
   color: orangered;
-  background-color: #f6d5e0;
+  /* background-color: #f6d5e0; */
+  background-color: #efd5df;
+  background-image: linear-gradient(191deg, #efd5df 0%, #d2b1bf 100%);
+  box-shadow: #490185 0px 2px 1px 0px;
   cursor: pointer;
 
 }

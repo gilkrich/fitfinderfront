@@ -12,6 +12,7 @@ import womenti from "../images/womenti.png";
 import womendress from "../images/womendress.png";
 import womenjackets from "../images/womenjackets.png";
 import womensweater from "../images/womensweater.png";
+import womentries from "../images/womentries.png";
 import arrow from '../images/orangearrow.png'
 import { Context } from "../MainContext";
 
@@ -105,6 +106,7 @@ function SizeClacPage() {
 
 
       {!showmidot && <div className="sizecalcpage-clothes-div">
+       <div className="sizecalcpage-clothes-div">
 
         {clothTypes.map((item, index) => {
           if (rightgender=='women'||rightgender=="girls_9_14"||rightgender=="girls_2_8") {
@@ -117,19 +119,19 @@ function SizeClacPage() {
               <img src={womenproducts[index].image} alt="" className="midot-image" />
             </div>
               )
-          }else{
-            if (index!=2) {
+            }else{
+              if (index!=2) {
               return(
                 <div
                 onClick={() => { setCurrentCloth(clothTypes[index]), setshowmidot(true), setwich(index) }}
                 className="sizecalcpage-single-cloth" style={{ backgroundColor: index % 2 == 0 ? '#9298cc' : '#f6d5e0' }}
-              >
+                >
                 <h2 style={{ color: 'rgb(87 56 175)', width: '140px' }}>{womenproducts[index].type}</h2>
                 <img src={womenproducts[index].image} alt="" className="midot-image" />
               </div>
                 )
+              }
             }
-          }
         })}
 
         <div
@@ -142,12 +144,15 @@ function SizeClacPage() {
 
         <div
           onClick={() => { setCurrentCloth(clothTypes[0]), setshowmidot(true), setwich(4) }}
-          className="sizecalcpage-single-cloth" style={{ backgroundColor: '#9298cc', marginBottom: '50px' }}
-        >
+          className="sizecalcpage-single-cloth" style={{ backgroundColor: '#9298cc' }}
+          >
           <h2 style={{ color: 'rgb(87 56 175)', width: '140px' }}>{womenproducts[4].type}</h2>
           <img src={womenproducts[4].image} alt="" className="midot-image" />
         </div>
 
+          </div>
+
+        <img src={womentries} alt="" className="women-tries-image" />
       </div>
 
 
