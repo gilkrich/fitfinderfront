@@ -18,6 +18,7 @@ import StylistHomePage from "./StylistHomePage";
 import SizeByStyle from "./SizeByStyle";
 import SizeClacPage from "./SizeCalcPage/SizeClacPage";
 import BodyTypes from "./BodyTypes/BodyTypes";
+import NewSizeCalcPage from "./NewSizeCalcPage/NewSizeCalcPage";
 import { useEffect} from "react";
 
 
@@ -55,6 +56,7 @@ function App() {
           <Route path="sizecalcpage" element={<SizeClacPage />}></Route>
           <Route path="bodytypesgraph" element={<BodyTypes />}></Route>
           <Route path="stylethird/:genid/:id" element={<SizeByStyle />}></Route>
+          <Route path="/newcalcpage" element={<NewSizeCalcPage />}></Route>
 
         </Route>
       </Routes>

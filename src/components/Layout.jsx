@@ -7,6 +7,7 @@ import { Context } from "./MainContext";
 import { useState } from "react";
 import Hamburger from 'hamburger-react'
 import fitlogo from './images/fitlogo.png'
+import fitlogonew from './images/fitlogonew.png'
 import triup from './images/triup.png'
 import tridown from './images/tridown.png'
 import whiteicon from './images/whiteicon.png'
@@ -29,7 +30,7 @@ const Layout = () => {
       <nav className="top-nav">
         <div className="logo-side">
           <Link to={userinfo ? "/" : "/tutorial1"}>
-          <img src={fitlogo} alt="" width='120px' />
+          <img src={fitlogonew} alt="" width='170px' />
           </Link>
         </div>
 
