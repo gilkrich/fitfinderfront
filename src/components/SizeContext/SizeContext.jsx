@@ -147,10 +147,8 @@ const SizeContext = ({ children }) => {
       ) {
         // console.log(sizesArr[0])
         let arrHolder=bodyPartRanges.length>sizesArr.length?pantsSizeArr:sizesArr;
-        console.log(arrHolder,bodyPartMesurement);
         // bodyPartResult = arrHolder.length==pantsSizeArr.length?arrHolder[j+(arrHolder.length-bodyPartRanges.length)]+"/"+pantsSizeArrL[j+(arrHolder.length-bodyPartRanges.length)]:arrHolder[j+(arrHolder.length-bodyPartRanges.length)];
         bodyPartResult=arrHolder[j+(arrHolder.length-bodyPartRanges.length)];
-        console.log(bodyPartResult)
         break;
       }
     }
@@ -161,13 +159,13 @@ const SizeContext = ({ children }) => {
     const validSizes = Object.values(clothSizes).filter(
       (size) => size !== "Sorry" && size !== ""
     );
-    
-    let arrHolderfinal=isNaN(Number(validSizes[0]))?sizesArr:pantsSizeArr;
+    console.log(validSizes)
+    let arrHolderfinal=isNaN(Number(validSizes[0]))||Number(validSizes[0])==0?sizesArr:pantsSizeArr;
     const totalSizeIndex = validSizes.reduce(
       (acc, size) => acc + arrHolderfinal.indexOf(size),
       0
     );
-     
+     console.log(totalSizeIndex)
     const averageSizeIndex = Math.ceil(totalSizeIndex / validSizes.length);
     if(arrHolderfinal.length==pantsSizeArr.length){
       return pantsSizeArr[averageSizeIndex]+"/"+pantsSizeArrL[averageSizeIndex]
