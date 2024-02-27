@@ -1,11 +1,14 @@
 import React, { useEffect, useState, useContext, createContext } from "react";
 import clothingSizesPerCompany from "../../companies.json";
+import newClothingSizesPerCompany from "../../newcompanies.json"
 import axios from "axios";
 import { Context } from "../MainContext";
 export const Sizecontext = createContext({});
 const clothTypes = ["shirts", "pants","dresses"];
 const bodyParts = ["waist", "chest", "neckline", "arms", "hips"];
-const sizesArr = ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
+const sizesArr = ["0","XXS", "XS", "S", "M", "L", "XL", "XXL","XXXL"];
+const pantsSizeArrL=["0","XXS","XS","S","M","M","L","L","XL","XL","XXL","XXL","XXXL","XXXL"]
+const pantsSizeArr = ["30","32","34","36","38","40","42","44","46","48","50","52","54","56"]
 const companiesArr = ["H&M", "ZARA", "AmericanEagle","Pull&Bear","GOLF","Mango"];
 const SizeContext = ({ children }) => {
   const [finalObjSize, setFinalObjSize] = useState();
@@ -23,7 +26,8 @@ const SizeContext = ({ children }) => {
         let clothTypesArr = [];
         for (const clothType of clothTypes) {
           const clothBodyPartRages =
-            clothingSizesPerCompany[companyName][gender][clothType];
+            // clothingSizesPerCompany[companyName][gender][clothType];
+            newClothingSizesPerCompany[companyName][gender][clothType];
           let textSizePerBodyPart = [];
           for (let bodyPart in clothBodyPartRages) {
             textSizePerBodyPart.push(
@@ -40,6 +44,7 @@ const SizeContext = ({ children }) => {
         }
         userSizesPerCompany.push({ [companyName]: clothTypesArr });
       }
+        console.log(userSizesPerCompany);
 
       axios.patch(import.meta.env.VITE_SERVER+"/users/sizeincompaney", {
         id: userinfo._id,
@@ -77,7 +82,6 @@ const SizeContext = ({ children }) => {
           }
           userSizesPerCompany.push({ [companyName]: clothTypesArr });
         }
-        
         console.log(userSizesPerCompany);
 
         axios.patch(import.meta.env.VITE_SERVER+"/users/sizeincompaneysub", {
@@ -102,7 +106,7 @@ const SizeContext = ({ children }) => {
     } else if (gender === "girls_9_14" || gender === "boys_9_14") {
       return ["9Y", "10Y", "11Y", "12Y", "13Y", "14Y", "15Y"];
     } else if (gender === "women" || gender === "men") {
-      return ["xxs", "xs", "s", "m", "l", "xl", "xxl"];
+      return ["0","XXS", "XS", "S", "M", "L", "XL", "XXL","XXXL"];
     } else {
       console.log("error: invalid gender");
       return [];
@@ -132,6 +136,7 @@ const SizeContext = ({ children }) => {
     ) {
       return "Sorry";
     }
+   
 
     let bodyPartResult = "Sorry";
     for (let j = 0; j < bodyPartRanges.length; j++) {
@@ -142,7 +147,10 @@ const SizeContext = ({ children }) => {
         lowerRangeNumber <= bodyPartMesurement &&
         bodyPartMesurement < HigherLeftNumber
       ) {
-        bodyPartResult = sizesArr[j];
+        // console.log(sizesArr[0])
+        let arrHolder=bodyPartRanges.length>sizesArr.length?pantsSizeArr:sizesArr;
+        // bodyPartResult = arrHolder.length==pantsSizeArr.length?arrHolder[j+(arrHolder.length-bodyPartRanges.length)]+"/"+pantsSizeArrL[j+(arrHolder.length-bodyPartRanges.length)]:arrHolder[j+(arrHolder.length-bodyPartRanges.length)];
+        bodyPartResult=arrHolder[j+(arrHolder.length-bodyPartRanges.length)];
         break;
       }
     }
@@ -153,14 +161,17 @@ const SizeContext = ({ children }) => {
     const validSizes = Object.values(clothSizes).filter(
       (size) => size !== "Sorry" && size !== ""
     );
-
+    
+    let arrHolderfinal=isNaN(Number(validSizes[0]))?sizesArr:pantsSizeArr;
     const totalSizeIndex = validSizes.reduce(
-      (acc, size) => acc + sizesArr.indexOf(size),
+      (acc, size) => acc + arrHolderfinal.indexOf(size),
       0
     );
-
+     
     const averageSizeIndex = Math.ceil(totalSizeIndex / validSizes.length);
-
+    if(arrHolderfinal.length==pantsSizeArr.length){
+      return pantsSizeArr[averageSizeIndex]+"/"+pantsSizeArrL[averageSizeIndex]
+    }
     return sizesArr[averageSizeIndex];
   }
 
