@@ -15,9 +15,10 @@ import womensweater from "../images/womensweater.png";
 import womentries from "../images/womentries.png";
 import arrow from '../images/orangearrow.png'
 import { Context } from "../MainContext";
-
+import { useNavigate } from "react-router-dom";
 
 function SizeClacPage() {
+  const navigate =useNavigate()
   let { setrefresh, refresh } = useContext(Context)
   const { userinfo } = useContext(Context);
   const imagesArr = [HMlogo, Zaralogo, AElogo];
@@ -61,7 +62,14 @@ function SizeClacPage() {
   const [currentCloth, setCurrentCloth] = useState("shirts");
 
   console.log(rightgender);
-
+  if(userinfo&&!userinfo.hasOwnProperty("measurements")){
+    return(
+      <div className="go-to-profile" >
+      <h2>You Have No Measurements Go Fill 'em First ☻</h2>
+      <button className="go-to-profile-btn" onClick={()=>{navigate('/profile2')}}>go to profile!</button>
+      </div>
+      )
+    }
   return (
     <div className="sizecalcpage-container">
 
@@ -112,7 +120,10 @@ function SizeClacPage() {
           if (rightgender=='women'||rightgender=="girls_9_14"||rightgender=="girls_2_8") {
             return(
               <div
-              onClick={() => { setCurrentCloth(clothTypes[index]), setshowmidot(true), setwich(index) }}
+              onClick={() => {
+                
+                setCurrentCloth(clothTypes[index]), setshowmidot(true), setwich(index) }
+              }
               className="sizecalcpage-single-cloth" style={{ backgroundColor: index % 2 == 0 ? '#9298cc' : '#f6d5e0' }}
             >
               <h2 style={{ color: 'rgb(87 56 175)', width: '140px' }}>{womenproducts[index].type}</h2>
