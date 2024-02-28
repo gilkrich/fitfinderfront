@@ -57,6 +57,7 @@ function App() {
           <Route path="bodytypesgraph" element={<BodyTypes />}></Route>
           <Route path="stylethird/:genid/:id" element={<SizeByStyle />}></Route>
           <Route path="/newcalcpage" element={<NewSizeCalcPage />}></Route>
+          <Route path="/about" element={<About/>}></Route>
 
         </Route>
       </Routes>

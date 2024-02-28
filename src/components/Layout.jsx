@@ -87,7 +87,7 @@ const Layout = () => {
         <a href="#"> <img className="icon-footer" width="32" height="32" src={tiktok} alt="tiktok--v1"/> </a> 
         <a href="#"> <img className="icon-footer" width="32" height="32" src={snapchat} alt="snapchat"/> </a> 
         </div>
-        <div className="fast-links"> <Link to="home"> Home</Link><p>Service</p><p>About</p><p>Terms</p><p>Privaty policy</p></div>
+        <div className="fast-links"> <Link to="home"> Home</Link><p>Service</p><Link to="/about">About</Link><p>Terms</p><p>Privaty policy</p></div>
         <div className="made-by"><img width="20" height="20" src="https://img.icons8.com/wired/64/copyright.png" alt="copyright"/><p>made by the badass team</p></div>
       </footer>
     </>
