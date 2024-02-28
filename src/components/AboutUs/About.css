@@ -1,7 +1,6 @@
 .about-main-div{
     display: flex;
     flex-direction: column;
-    align-items: center;
     height: 100%;
     width:100%;
     font-family: Arial, Helvetica, sans-serif;
@@ -13,16 +12,47 @@
     width:90%;
     min-height: 100%;
     gap: 30px;
+    align-items: end;
+    margin-left: 5%;
 }
 h2{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    font-size: large;
 }
 ul{
     padding-right: 20px;
 }
 li{
     padding: 5px;
+}
+.bubble1{
+  transform: translatey(0px);
+  animation: float 5s ease-in-out infinite;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #774f38;
+  background-color: #f6d5e0;
+  padding: 50px;
+  border-radius: 11px;
+  box-shadow: 12px 12px #f44f29;
+  font-family: "Baloo 2", cursive;
+  left: 250px;
+  bottom: 300px;
+  width:fit-content;
+  word-wrap: break-word;
+}
+.odot{
+    font-family: "Baloo 2", cursive;
+    font-size:26px;
+}
+.hehe{
+    max-width:50%;
+    max-height:60%;
+}
+@media screen and (max-width: 790px) {
+    .hehe{
+        max-width: 100%;
+    }
 }
