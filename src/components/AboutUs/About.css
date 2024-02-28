@@ -1,0 +1,28 @@
+.about-main-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width:100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.about-main-p{
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    width:90%;
+    min-height: 100%;
+    gap: 30px;
+}
+h2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: large;
+}
+ul{
+    padding-right: 20px;
+}
+li{
+    padding: 5px;
+}
