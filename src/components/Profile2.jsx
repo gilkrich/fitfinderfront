@@ -25,7 +25,7 @@ const Profile2 = () => {
   const [currentsub, setsub] = useState('')
   const [editmain,seteditmain] = useState(false)
   const [gender, setgender] = useState('')
-
+  const [showAlert,setShowAlert] = useState(false)
 
   async function measurments(e) {
     e.preventDefault()
@@ -46,7 +46,12 @@ const Profile2 = () => {
       setrefresh(!refresh)
     }
   }
-
+ const handleSubmit=()=>{
+  setShowAlert(true);
+  setTimeout(() => {
+    setShowAlert(false);
+}, 4000);
+ }
 
   return (
     <div className='profile-cont-main'>
@@ -128,13 +133,12 @@ const Profile2 = () => {
                     {userinfo.hasOwnProperty("measurements")&&!editmain&&<div className='measurements-inputs'>{userinfo.measurements[0].data.neckline}</div>}
                   </div>
                 </div>
-                {(editmain||!userinfo.measurements)&&<button type='submit' className='user-mesurments-submit'>submit</button>}
+                {(editmain||!userinfo.measurements)&&<button type='submit' className='user-mesurments-submit' onClick={handleSubmit}>submit</button>}
               </form>
                 {userinfo.measurements&&<button onClick={()=>seteditmain(!editmain)} className='user-mesurments-submit'>Edit</button>}
             </div>
           </div>
           }
-
 
 
 
@@ -167,6 +171,7 @@ const Profile2 = () => {
         </div>}
         {/* <img src={womenimage} alt="" className='women-image-black' /> */}
       </div>
+      {showAlert&&(<div className='custom-alert'><span>Measurements added successfully!</span></div>)}
     </div>
   )
 

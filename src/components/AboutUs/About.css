@@ -7,7 +7,6 @@
 }
 .about-main-p{
     display: flex;
-    text-align: right;
     flex-direction: column;
     width:90%;
     min-height: 100%;
@@ -29,9 +28,7 @@ li{
 .bubble1{
   transform: translatey(0px);
   animation: float 5s ease-in-out infinite;
-  text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 3px;
   color: #774f38;
   background-color: #f6d5e0;
   padding: 50px;
