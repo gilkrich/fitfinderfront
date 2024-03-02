@@ -159,13 +159,13 @@ const SizeContext = ({ children }) => {
     const validSizes = Object.values(clothSizes).filter(
       (size) => size !== "Sorry" && size !== ""
     );
-    console.log(validSizes)
+    // console.log(validSizes)
     let arrHolderfinal=isNaN(Number(validSizes[0]))||Number(validSizes[0])==0?sizesArr:pantsSizeArr;
     const totalSizeIndex = validSizes.reduce(
       (acc, size) => acc + arrHolderfinal.indexOf(size),
       0
     );
-     console.log(totalSizeIndex)
+    //  console.log(totalSizeIndex)
     const averageSizeIndex = Math.ceil(totalSizeIndex / validSizes.length);
     if(arrHolderfinal.length==pantsSizeArr.length){
       return pantsSizeArr[averageSizeIndex]+"/"+pantsSizeArrL[averageSizeIndex]
