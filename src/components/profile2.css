@@ -2,6 +2,7 @@
     background-color: #b7bbde;
     display: flex;
     flex-direction: column;
+    min-height: 90vh;
 }
 
 .profile-info-cont{
