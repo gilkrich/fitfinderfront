@@ -25,6 +25,13 @@ const Subusers = () => {
     let photoarray =[blackowomen,whiteman1,blackman1,whitemwomen1,whiteman2,blackwomen2,whitemwomen2,whiteman3]
     let subarray = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtEoMzdEzXRuV2RD3PizvfAAeAC1EFG7bmuG9sR9H1B5SLiooUO2XX45V3D8lOrBq7NWA&usqp=CAU','https://wallpaperaccess.com/full/99815.png','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3ZyiqMe0q6QsJaLrc8_k8PaN9kwvMOiLCSayqmuswq1Oth3P1uSDdpANGqcM43Ntb81A&usqp=CAU']
   
+    const [selectedIcon, setSelectedIcon] = useState(null);
+  
+    const handleIconClick = (icon) => {
+      setSelectedIcon(icon);
+      seticon(icon)
+    };
+
     async function addsub(e) {
         e.preventDefault()
         let username = e.target[0].value
@@ -141,7 +148,7 @@ const Subusers = () => {
         </div>
             <div className='images-cont'>
               {photoarray&&photoarray.map((item,index)=>(
-                <Iconimage image={item}  seticon={seticon} key={index}></Iconimage>))}
+                <Iconimage image={item}  seticon={handleIconClick} key={index} isSelected={item===selectedIcon}></Iconimage>))}
             </div>
           <button style={{marginBottom:'20px'}} className="user-mesurments-submit" type='submit'>submit</button>
       </form>
