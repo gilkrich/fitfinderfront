@@ -32,6 +32,14 @@ const SignUp = () => {
   const [icon, seticon] = useState('')
   let photoarray = [blackowomen, whiteman1, blackman1, whitemwomen1, whiteman2, blackwomen2, whitemwomen2, whiteman3]
 
+    const [selectedIcon, setSelectedIcon] = useState(null);
+  
+    const handleIconClick = (icon) => {
+      setSelectedIcon(icon);
+      seticon(icon)
+    };
+  
+
   async function signup(e) {
     try {
       e.preventDefault()
@@ -42,7 +50,7 @@ const SignUp = () => {
         setrefresh(!refresh)
         navigate('/')
       } else {
-        console.log('passwords do not match')
+        alert('passwords do not match')
       }
     } catch (err) {
       console.log(err);
@@ -68,13 +76,16 @@ const SignUp = () => {
         <div className='sign-square'>
 
 
-          {!nextpage && <form action="" className='form-cont-two' onSubmit={() => setnextpage(true)} >
+          {!nextpage && <form action="" className='form-cont-two' onSubmit={() =>icon? setnextpage(true):alert("you must choose avatar first")} >
             <input type="text" placeholder='username' className='orange-input' required={true} onChange={(e) => setusername(e.target.value)} defaultValue={username ? username : ''} />
+            <div className='icon-container'> 
+            <div>choose avatar</div>
             <div className='main-profile-icon-cont'>
               {photoarray.map((item, index) => (
-                 <Iconimage image={item}  seticon={seticon} key={index}></Iconimage>
-              ))}
+                <Iconimage image={item}  seticon={handleIconClick} key={index} isSelected={item===selectedIcon}></Iconimage>
+                ))}
             </div>
+                </div>
             <button className='user-mesurments-submit'>Next</button>
           </form>
           }

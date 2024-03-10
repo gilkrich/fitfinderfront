@@ -101,6 +101,11 @@
   }
   
 }
+/* @media screen and (max-width:440px){
+  .home-btn{
+    width: 320px;
+  }
+} */
 @keyframes jump {
   0%, 100% {
       transform: translateY(0);
