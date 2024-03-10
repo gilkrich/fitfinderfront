@@ -25,7 +25,6 @@ const Subusers = () => {
     const navigate =useNavigate()
     let photoarray =[blackowomen,whiteman1,blackman1,whitemwomen1,whiteman2,blackwomen2,whitemwomen2,whiteman3]
     let subarray = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtEoMzdEzXRuV2RD3PizvfAAeAC1EFG7bmuG9sR9H1B5SLiooUO2XX45V3D8lOrBq7NWA&usqp=CAU','https://wallpaperaccess.com/full/99815.png','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3ZyiqMe0q6QsJaLrc8_k8PaN9kwvMOiLCSayqmuswq1Oth3P1uSDdpANGqcM43Ntb81A&usqp=CAU']
-  
     const [selectedIcon, setSelectedIcon] = useState(null);
     
   
@@ -106,7 +105,7 @@ const Subusers = () => {
              <h3>{item.username}</h3>
              <div className='sub-buttons-cont'>
               <button className='sub-button black' onClick={()=>deletesub(item._id)}>delete</button>
-              <button className='sub-button white' onClick={()=>{setsub(item),setform(!showform),seticon(item.icon)}}>edit</button>
+              <button className='sub-button white' onClick={()=>{setsub(item),setform(!showform),seticon(item.icon),setCreateNewText(false)}}>edit</button>
              </div>
            </div>
            <div className='image-circle'>
