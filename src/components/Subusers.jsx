@@ -21,11 +21,13 @@ const Subusers = () => {
     const [gender, setgender] = useState(currentsub?currentsub.gender:'')
     const [iconimage,seticon] = useState(currentsub.icon!=''?currentsub.icon:'')
     const [showform,setform] = useState(false)
+    const [createNewText,setCreateNewText] = useState(false)
     const navigate =useNavigate()
     let photoarray =[blackowomen,whiteman1,blackman1,whitemwomen1,whiteman2,blackwomen2,whitemwomen2,whiteman3]
     let subarray = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtEoMzdEzXRuV2RD3PizvfAAeAC1EFG7bmuG9sR9H1B5SLiooUO2XX45V3D8lOrBq7NWA&usqp=CAU','https://wallpaperaccess.com/full/99815.png','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3ZyiqMe0q6QsJaLrc8_k8PaN9kwvMOiLCSayqmuswq1Oth3P1uSDdpANGqcM43Ntb81A&usqp=CAU']
   
     const [selectedIcon, setSelectedIcon] = useState(null);
+    
   
     const handleIconClick = (icon) => {
       setSelectedIcon(icon);
@@ -46,10 +48,14 @@ const Subusers = () => {
           }
         }
         if (currentsub=='') {
-            if(username!=""&&gender!=""&&iconimage!=undefined&&measurments3){
+            if(username!=""&&gender!=""&&iconimage!=''&&measurments3){
               if (userinfo.subusers.length<3) {
                 const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/createsub", { id: userinfo._id, measurements: measurments3, username: username, gender: gender ,icon:iconimage })
                 setform(false)
+                setsub('')
+                seticon('')
+                setCreateNewText(false)
+                setSelectedIcon(null)
                 setrefresh(!refresh)
                 window.scroll({
                   top: 0,
@@ -66,8 +72,11 @@ const Subusers = () => {
             }
           }
           else{
-            const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/editsub", { id: currentsub._id, measurements: measurments3, username: username, gender: gender!=""?gender:currentsub.gender ,icon: currentsub.icon!=''?iconimage:currentsub.icon})
+            const finduser = await axios.patch(import.meta.env.VITE_SERVER+"/users/editsub", { id: currentsub._id, measurements: measurments3, username: username, gender: gender!=""?gender:currentsub.gender ,icon: iconimage!=''?iconimage:currentsub.icon})
             setform(false)
+            setsub('')
+            seticon('')
+            setSelectedIcon(null)
             setrefresh(!refresh)
              window.scroll({
                   top: 0,
@@ -97,7 +106,7 @@ const Subusers = () => {
              <h3>{item.username}</h3>
              <div className='sub-buttons-cont'>
               <button className='sub-button black' onClick={()=>deletesub(item._id)}>delete</button>
-              <button className='sub-button white' onClick={()=>{setsub(item),setform(!showform)}}>edit</button>
+              <button className='sub-button white' onClick={()=>{setsub(item),setform(!showform),seticon(item.icon)}}>edit</button>
              </div>
            </div>
            <div className='image-circle'>
@@ -106,7 +115,7 @@ const Subusers = () => {
         </div>
       ))}
     </div>
-    <button className="user-mesurments-submit" onClick={()=>{setform(!showform),setsub('')}}>cretate new</button>
+    <button className="user-mesurments-submit" onClick={()=>{setform(!showform),setsub(''),setSelectedIcon(null),seticon(''),setCreateNewText(!createNewText)}}>{createNewText?'Cancel':'Cretate New'}</button>
     {showform&&<div className='subusers-form-two'>
       <form action="" className='subusers' onSubmit={(e) => addsub(e)}>
         <input type="text" placeholder='user-name' className='subusername-input' defaultValue={currentsub?currentsub.username:''}/>
