@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 
-const Iconimage = ({image,seticon}) => {
-  const [ischoose,setischoose] = useState(false)
+const Iconimage = ({image,seticon,isSelected}) => {
   return (
-  <img onClick={()=>{setischoose(!ischoose),seticon(image)}} src={image} alt="" className={ischoose?'choose-icon-image-c':'choose-icon-image'}/>
+  <img onClick={()=>{seticon(image)}} src={image} alt="" className={isSelected?'choose-icon-image-c':'choose-icon-image'}/>
   )
 }
 

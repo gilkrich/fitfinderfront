@@ -189,7 +189,7 @@ border-top-right-radius: 20px;
 @media screen and (max-width: 790px) {
     
     .subuser-card-up-main{
-        width: 380px;
+        width: 90%;
         height: 150px;
     }
 
@@ -200,13 +200,17 @@ border-top-right-radius: 20px;
       }
 
     .subuser-card-down-main{
-        width: 380px;
+        width: 90%;
         height: 30px;
     }
 
     .profile-action-cont{
-width: 380px;
+        width: 380px;
 
+    }
+    .profile-square-cont{
+        margin-left:7%;
+        display: block;
     }
 
     .top-part-cont{
@@ -216,6 +220,9 @@ width: 380px;
      .circle{
        left: 0px;
      }
+     /* .subusers-form{
+        max-width: 80%;
+     } */
 }
 
 .user-mesurments-submit{

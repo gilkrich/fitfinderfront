@@ -113,8 +113,11 @@
 @media screen and (max-width: 790px) {
 
     .profile-action-cont {
-        width: 380px;
+        width:90%;
 
+    }
+    .action-title{
+        width: 90%;
     }
 
     .top-part-cont {
@@ -123,5 +126,8 @@
 
     .circle {
         left: 0px;
+    }
+    .measurements-cont{
+        max-width: 90%;
     }
 }
